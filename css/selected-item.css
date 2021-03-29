@@ -1,0 +1,124 @@
+html, body{
+  background-color: Gainsboro;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+fieldset, label {
+    margin: 0;
+    padding: 0
+}
+
+/* temp top */
+.top{
+  height: 108px;
+  width: auto;
+  background-color: white;
+}
+
+/*  temp sections */
+.sections{
+  display: flex;
+}
+
+/* temp side-bar */
+.side-bar{
+  width: 200px;
+  background-color: white;
+}
+
+.main {
+  display: flex;
+  min-width: 720px;
+}
+
+.header{
+  height: 200px;
+  width: 100%;
+  /* background-color: Gainsboro; */
+}
+
+.header img{
+  margin-right: 25px;
+  margin-bottom: 20px;
+}
+
+.item-name{
+  font-weight: normal;
+  font-size: 2rem;
+}
+
+.header-right{
+  display: flex;
+  flex-direction: column;
+}
+
+.header-right a{
+  color: #33691e;
+  font-weight: 900;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.page{
+  height: 500%;
+  width: 100%;
+  min-width: 1063.330px;
+  min-height: 561px;
+  display: flex;
+}
+
+.container{
+  background-color: white;
+  margin-top: 5%;
+  width: 68%;
+  margin-left: 6%;
+  margin-bottom: 5%;
+  padding: 25px;
+}
+
+.similar-items{
+  margin-right: 4%;
+  margin-top: 8%;
+  width: 17%;
+  height: 100%;
+}
+
+.btn-success{
+  background-color: #689f38;
+  border-color: #689f38;
+}
+
+.btn-success:hover {
+  background-color: forestgreen;
+  border-color: forestgreen;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.24);
+}
+
+.title{
+  display: flex;
+  margin-bottom: 10%;
+  min-width: 200px;
+}
+
+.similar-tag{
+  font-weight: bold;
+  margin-right: 15%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.title button{
+  font-weight: bold;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 1rem;
+}
+
+.sim-item{
+  height: 10%;
+  min-height: 245px;
+  width: 85%;
+  background-color: white;
+  margin-top: 5%;
+}
