@@ -1,28 +1,28 @@
-html, body{
+html, body {
   background-color: Gainsboro;
   height: 100%;
   font-family: 'Roboto', sans-serif;
 }
 
 fieldset, label {
-    margin: 0;
-    padding: 0
+  margin: 0;
+  padding: 0
 }
 
 /* temp top */
-.top{
+.top {
   height: 108px;
   width: auto;
   background-color: white;
 }
 
 /*  temp sections */
-.sections{
+.sections {
   display: flex;
 }
 
 /* temp side-bar */
-.side-bar{
+.side-bar {
   width: 200px;
   background-color: white;
 }
@@ -32,35 +32,36 @@ fieldset, label {
   min-width: 720px;
 }
 
-.header{
+.header {
   height: 200px;
   width: 100%;
   /* background-color: Gainsboro; */
 }
 
-.header img{
+.header img {
   margin-right: 25px;
   margin-bottom: 20px;
 }
 
-.item-name{
+.item-name {
   font-weight: normal;
   font-size: 2rem;
 }
 
-.header-right{
+.header-right {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-.header-right a{
+.header-right a {
   color: #33691e;
   font-weight: 900;
   font-size: 15px;
   text-decoration: none;
 }
 
-.page{
+.page {
   height: 500%;
   width: 100%;
   min-width: 1063.330px;
@@ -68,7 +69,7 @@ fieldset, label {
   display: flex;
 }
 
-.container{
+.container {
   background-color: white;
   margin-top: 5%;
   width: 68%;
@@ -77,48 +78,169 @@ fieldset, label {
   padding: 25px;
 }
 
-.similar-items{
+.similar-items {
   margin-right: 4%;
   margin-top: 8%;
   width: 17%;
   height: 100%;
 }
 
-.btn-success{
+.btn-success {
   background-color: #689f38;
   border-color: #689f38;
 }
 
 .btn-success:hover {
-  background-color: forestgreen;
-  border-color: forestgreen;
-  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.24);
+  background-color: #86BB47;
+  border-color: #86BB47;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.24);
 }
 
-.title{
+.btn-link {
+  color: #33691e;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 900;
+  vertical-align: middle;
+  display: flex;
+}
+
+.btn-link:hover {
+  color: #86BB47;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.title {
   display: flex;
   margin-bottom: 10%;
   min-width: 200px;
 }
 
-.similar-tag{
+.similar-tag {
   font-weight: bold;
   margin-right: 15%;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.title button{
+.title button {
   font-weight: bold;
   padding-top: 2px;
   padding-bottom: 2px;
   font-size: 1rem;
 }
 
-.sim-item{
+.sim-item {
   height: 10%;
   min-height: 245px;
   width: 85%;
   background-color: white;
   margin-top: 5%;
+}
+
+.row {
+  display: flex;
+  padding: 0;
+  font-size: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.row-2 {
+  display: flex;
+  padding: 0;
+  font-size: 0;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  margin-top: auto;
+  margin-bottom: 2%;
+}
+
+.row-3 {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.install {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 900;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.genre {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.reviewers {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: grey;
+  margin-left: 7px;
+  font-size: 13px;
+}
+
+.fa-user {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 11px;
+  color: grey;
+  margin-left: 7px;
+}
+
+.fa-star {
+  font-size: 9px;
+  color: grey;
+  margin-left: 2px;
+}
+
+.fa-star-half-alt {
+  font-size: 9px;
+  color: grey;
+  margin-left: 2px;
+}
+
+.stars {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.fa-plus-square {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.fa-exclamation-circle {
+  margin-top: auto;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+  color: #B2CB39;
+  margin-right: 4px;
+}
+
+.available {
+  margin: 0;
+  font-size: 13px;
+}
+
+.offers {
+  color: #737373;
+  font-weight: 900;
+  font-size: 13px;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+.three-plus {
+  width: fit-content;
+  margin-top: auto;
 }
