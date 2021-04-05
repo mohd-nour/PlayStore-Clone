@@ -27,7 +27,7 @@ fieldset, label {
   background-color: white;
 }
 
-.stext{
+.stext {
   font-size: 13px;
 }
 
@@ -39,19 +39,21 @@ fieldset, label {
   width: 68%;
   margin-left: 6%;
   margin-bottom: 5%;
-  padding-right: 25px;
+  padding-right: 0;
   padding-left: 0;
   padding-top: 0;
+  flex-direction: column;
 }
 
-.app-img{
+.app-img {
   margin-left: 25px;
   margin-top: 25px;
 }
 
 .header {
-  height: 200px;
+  height: inherit;
   width: 100%;
+  padding-right: 25px;
 }
 
 .header img {
@@ -110,6 +112,7 @@ fieldset, label {
   font-weight: 900;
   vertical-align: middle;
   display: flex;
+  cursor: pointer;
 }
 
 .btn-link:hover {
@@ -131,7 +134,7 @@ fieldset, label {
   margin-bottom: auto;
 }
 
-.see-more{
+.see-more {
   font-weight: bold;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -154,7 +157,7 @@ fieldset, label {
   margin: 0;
 }
 
-.second-row{
+.second-row {
   margin-top: auto;
   margin-bottom: 2%;
   height: auto;
@@ -229,4 +232,79 @@ fieldset, label {
 .three-plus {
   width: fit-content;
   margin-top: auto;
+}
+
+.visual {
+  display: flex;
+  margin-left: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.slider-container {
+  display: flex;
+  overflow-x: scroll;
+  overflow: hidden;
+}
+
+.slider-image {
+  height: 310px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#scroll-left {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 20px;
+  color: grey;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#scroll-right {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 20px;
+  color: grey;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#scrollRight {
+  display: flex;
+  width: 40px;
+  cursor: pointer;
+}
+
+#scrollLeft {
+  display: flex;
+  width: 40px;
+  cursor: pointer;
+}
+
+.description-text {
+  font-size: 14px;
+  line-height: 24px;
+  width: 620px;
+  margin: auto;
+  max-height: 140px;
+  overflow: hidden;
+}
+
+.more {
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.more-container{
+  height: 70px;
+  display: flex;
+  background-image: linear-gradient(to top,white, transparent);
+  position: relative;
+  bottom: 40px;
 }
