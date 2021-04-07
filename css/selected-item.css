@@ -308,7 +308,7 @@ fieldset, label {
   bottom: 40px;
 }
 
-.lrmargin{
+.lrmargin {
   margin-left: 25px;
   margin-right: 25px;
 }
@@ -320,6 +320,80 @@ fieldset, label {
   font-size: 12px;
 }
 
-.review-ex-mark{
+.review-ex-mark {
   color: grey;
+}
+
+.point-review {
+  color: #333;
+  font-size: 64px;
+  font-weight: 100;
+  line-height: 64px;
+  text-align: center;
+}
+
+.size-fourteen{
+  font-size: 14px;
+  margin-right: 3px;
+}
+
+.left-side-review{
+  margin-left: 55px;
+  margin-right: 50px;
+}
+
+.right-side-review{
+  width: 59%;
+  display: inline-grid;
+}
+
+.review-bars{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.review-word{
+  margin-left: 25px;
+}
+
+.new-stars{
+  margin-bottom: 10px;
+}
+
+.review-bar{
+  display: flex;
+}
+
+.review-nb {
+  margin-right: 5px;
+  font-size: 11px;
+}
+
+.bar-shape{
+  height: 20px;
+}
+
+#bar5{
+  width: 100%;
+  background-color: #57bb8a;
+}
+
+#bar4{
+  width: 16%;
+  background-color: #9ace6a;
+}
+
+#bar3{
+  width: 6%;
+  background-color: #ffcf02;
+}
+
+#bar2{
+  width: 2%;
+  background-color: #ff9f02;
+}
+
+#bar1{
+  width: 6%;
+  background-color: #ff6f31;
 }
