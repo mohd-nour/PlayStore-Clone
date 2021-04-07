@@ -16,7 +16,6 @@ fieldset, label {
   background-color: white;
 }
 
-/*  temp sections */
 .flex-display {
   display: flex;
 }
@@ -301,10 +300,26 @@ fieldset, label {
   margin-right: auto;
 }
 
-.more-container{
+.more-container {
   height: 70px;
   display: flex;
-  background-image: linear-gradient(to top,white, transparent);
+  background-image: linear-gradient(to top, white, transparent);
   position: relative;
   bottom: 40px;
+}
+
+.lrmargin{
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.review-btn {
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+}
+
+.review-ex-mark{
+  color: grey;
 }
