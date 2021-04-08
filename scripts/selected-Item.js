@@ -5,9 +5,13 @@ function pageLoad() {
   var leftBtn = document.getElementById("scrollLeft");
   var rightBtn = document.getElementById("scrollRight");
   var readmore = document.getElementById("read-more");
+  var showHidden = document.getElementsByClassName("showHidden")[0];
+  var readMoreReviews = document.getElementById("read-more-reviews");
   leftBtn.onclick = scrollLeft;
   rightBtn.onclick = scrollRight;
   readmore.onclick = readMore;
+  showHidden.onclick = showContent;
+  readMoreReviews.onclick = readAllReviews;
 }
 
 function scrollRight() {
@@ -47,6 +51,14 @@ function readMore() {
     document.getElementById("read-more").innerHTML = "COLLAPSE";
     isOpen = true;
   }
+}
 
+function showContent (event) {
+  event.target.style.display = "none";
+  document.getElementById("hidden1").style.display = "contents";
+}
 
+function readAllReviews() {
+  document.getElementsByClassName("review-list")[0].style.height = "auto";
+  document.getElementById("read-more-reviews").style.display = "none";
 }

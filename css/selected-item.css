@@ -30,6 +30,10 @@ fieldset, label {
   font-size: 13px;
 }
 
+.mtext{
+  font-size: 14px;
+}
+
 .main {
   display: flex;
   min-width: 720px;
@@ -332,35 +336,35 @@ fieldset, label {
   text-align: center;
 }
 
-.size-fourteen{
+.size-fourteen {
   font-size: 14px;
   margin-right: 3px;
 }
 
-.left-side-review{
+.left-side-review {
   margin-left: 55px;
   margin-right: 50px;
 }
 
-.right-side-review{
+.right-side-review {
   width: 59%;
   display: inline-grid;
 }
 
-.review-bars{
+.review-bars {
   margin-top: 25px;
   margin-bottom: 25px;
 }
 
-.review-word{
+.review-word {
   margin-left: 25px;
 }
 
-.new-stars{
+.new-stars {
   margin-bottom: 10px;
 }
 
-.review-bar{
+.review-bar {
   display: flex;
 }
 
@@ -369,31 +373,153 @@ fieldset, label {
   font-size: 11px;
 }
 
-.bar-shape{
+.bar-shape {
   height: 20px;
 }
 
-#bar5{
+#bar5 {
   width: 100%;
   background-color: #57bb8a;
 }
 
-#bar4{
+#bar4 {
   width: 16%;
   background-color: #9ace6a;
 }
 
-#bar3{
+#bar3 {
   width: 6%;
   background-color: #ffcf02;
 }
 
-#bar2{
+#bar2 {
   width: 2%;
   background-color: #ff9f02;
 }
 
-#bar1{
+#bar1 {
   width: 6%;
   background-color: #ff6f31;
+}
+
+.review-item {
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  float: left;
+}
+
+.user-name {
+  font-weight: 900;
+}
+
+.review-right-upper {
+  margin-left: 60px;
+  display: flex;
+}
+
+.review-right-lower {
+  display: flex;
+}
+
+.review-right-up-right {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+
+.likeMore {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  color: grey;
+  font-size: 15px;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.thumb {
+  font-size: 20px;
+}
+
+.dotsmore {
+  margin-bottom: auto;
+  margin-left: 15px;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+#hidden1 {
+  display: none;
+}
+
+.showHidden {
+  background-color: white;
+  border: solid 1px;
+}
+
+.showHidden:hover {
+  box-shadow: 1px 2px 2px grey;
+}
+
+.review-list {
+  height: 803.335px;
+  overflow: hidden;
+}
+
+.moreReviews {
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.read-all-reviews {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.more-info {
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.more-info tr {
+  padding-bottom: 15px;
+}
+
+.left-margin {
+  margin-left: 50px;
+}
+
+.table-data-final {
+  vertical-align: baseline;
+}
+
+.table-data-final-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-data {
+  padding-bottom: 20px;
+}
+
+.green{
+  color: green;
+  font-weight: 300;
 }
