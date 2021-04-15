@@ -460,7 +460,7 @@ a{
     position: relative;
     width: 100%;
     text-decoration: none;
-    
+
 }
 .filter_cont{/*containing filter divs*/
     float: left;
@@ -506,7 +506,7 @@ a{
 .dropdown{
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAQAAACR313BAAAAaElEQVR4AWP4jxfSXjqXrygzVwYhmClYmJUlAZcuqiz+X/w4VxkimS1cdKH4f9EcuHShbvEHiAK45K9CNyS7880hCvKMIZLFATC7URX8hEkipBEKvgMV/IVKYnqsMKL4ZVElHUMNLwQAZCvi2TxdGw0AAAAASUVORK5CYII=);
     height: 15px;
-    margin: 18px 3px; 
+    margin: 18px 3px;
     width: 15px;
 }
 .categ_home{
@@ -585,7 +585,7 @@ a{
     position: relative;
     right: 35px;
     white-space: nowrap;
-    
+
 }
 .h_s_cont{
     position: relative;
