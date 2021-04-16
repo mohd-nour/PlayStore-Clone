@@ -34,9 +34,11 @@ body {
   background-color: #FF4D4D;
   color: white;
   border: none;
-  padding: 8px 12px;
+  height: 30px;
+  padding: 0 13px;
   border-radius: 5px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .listing-body {
