@@ -63,10 +63,11 @@ body {
 
 .field-wrapper {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .field-wrapper input {
+  margin-top: 5px;
   border: 1px solid #DADCE0;
   padding: 13px 15px;
   border-radius: 4px;
