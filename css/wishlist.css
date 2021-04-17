@@ -22,25 +22,11 @@ body {
   flex-direction: row;
 }
 
-.see-more {
-  margin: auto 5px auto auto;
-}
 
 .heading-title {
   margin-right: auto;
   font-size: 18px;
   font-weight: 400;
-}
-
-.see-more-btn {
-  background-color: #FF4D4D;
-  color: white;
-  border: none;
-  height: 30px;
-  padding: 0 12px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 500;
 }
 
 .listing-body {
@@ -58,10 +44,11 @@ body {
 }
 
 .listing-top {
-  height: 230px;
-  width: 160px;
+  margin: 10px;
+  height: 140px;
+  width: 140px;
   background-color: #919191;
-  background-image: url("https://play-lh.googleusercontent.com/IGBZ1EnPb2k9XgFsSv0W04b8z08unyKPKkx6Qaxk05_7_wLsNH5kmKA9YK8ySiz4dDL0mxm6S4g-mmTDlSk=w320-h460-rw");
+  background-image: url("https://play-lh.googleusercontent.com/cQBJ7Jwvz0jex8sL7LjgLId-wOdmMajSZbpC-bzHDhS5uK9Zms0fFsXEVNGvlIUk_g=s180-rw");
   background-size: cover;
 }
 
