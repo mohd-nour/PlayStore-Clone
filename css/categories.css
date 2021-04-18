@@ -48,6 +48,12 @@ body {
   flex-direction: row;
 }
 
+.listing-body-seemore {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .listing-card {
   display: block;
   margin: 0 5px;
