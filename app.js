@@ -107,9 +107,7 @@ const reviewSchema = {
   refID: String,
   name: String,
   profile: String,
-  rating: [{
-    type: String
-  }], // to save array
+  rating: Number, // to save array
   date: String,
   likes: String,
   review: String
@@ -120,7 +118,6 @@ const Review = mongoose.model("Review", reviewSchema);
 
 // Review schema to be embedded in app/book/movie schema as list
 // Needs server side code to retrieve linked document
-
 
 // mongoose user schema
 const userSchema = {
