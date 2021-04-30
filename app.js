@@ -201,19 +201,19 @@ const Review = mongoose.model("Review", reviewSchema);
 // Review schema to be embedded in app/book/movie schema as list
 // Main documents need server side scripting to retrieve linked review documents
 
-// mongoose user schema
-const userSchema = {
-  email: String,
-  wishlist: [{
-    type: String
-  }], // array of wishlist IDs
-  lastVisited: [{
-    type: String
-  }], // array of visited IDs
-};
-
-// app model with apps collection
-const User = mongoose.model("User", userSchema);
+// // mongoose user schema
+// const userSchema = {
+//   email: String,
+//   wishlist: [{
+//     type: String
+//   }], // array of wishlist IDs
+//   lastVisited: [{
+//     type: String
+//   }], // array of visited IDs
+// };
+//
+// // app model with apps collection
+// const User = mongoose.model("User", userSchema);
 
 // the main page
 app.get("/", (req, res) => {
