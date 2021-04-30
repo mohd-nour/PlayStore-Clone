@@ -28,6 +28,9 @@ mongoose.connect("mongodb://localhost:27017/playstoreDB", {
   useUnifiedTopology: true
 });
 
+
+// The following code will be refactored into separate files after testing is completed
+
 // mongoose movie Schema
 const movieSchema = {
   title: String,
@@ -117,7 +120,7 @@ const reviewSchema = {
 const Review = mongoose.model("Review", reviewSchema);
 
 // Review schema to be embedded in app/book/movie schema as list
-// Needs server side code to retrieve linked document
+// Main documents need server side scripting to retrieve linked review documents
 
 // mongoose user schema
 const userSchema = {
