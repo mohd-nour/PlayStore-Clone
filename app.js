@@ -1,6 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const passport = require("passport");
 const bodyParser = require("body-parser");
+const LocalStrategy = require("passport-local");
+const User =  require("./models/user");
 const ejs = require("ejs");
 
 //create an express app
@@ -123,7 +126,7 @@ const Review = mongoose.model("Review", reviewSchema);
 // Main documents need server side scripting to retrieve linked review documents
 
 // mongoose user schema
-const userSchema = {
+/*const userSchema = {
   email: String,
   wishlist: [{
     type: String
@@ -131,10 +134,25 @@ const userSchema = {
   lastVisited: [{
     type: String
   }], // array of visited IDs
-};
+};*/
 
 // app model with apps collection
-const User = mongoose.model("User", userSchema);
+//const User = mongoose.model("User", userSchema);
+
+//auth, added by omar
+app.use(require("express-session")({
+  secret:"Any normal Word",//decode or encode session
+      resave: false,          
+      saveUninitialized:false    
+  }));
+
+  passport.serializeUser(User.serializeUser());       //session encoding
+  passport.deserializeUser(User.deserializeUser());   //session decoding
+  passport.use(new LocalStrategy(User.authenticate()));
+app.use(bodyParser.urlencoded({ extended:true }))
+app.use(passport.initialize());
+app.use(passport.session());
+//
 
 // the main page
 app.get("/", (req, res) => {
@@ -151,7 +169,44 @@ app.get("/", (req, res) => {
     }
   });
 });
+//auth by omar
+//registration
+app.get("/signin", (req, res) => {
+  res.render("signin");
+});
+//
+app.post("/signin",passport.authenticate("local",{
+  successRedirect:"/",//
+  failureRedirect:"/signin"}),
+  function (req, res){
 
+  });
+//
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
+//
+app.post("/signup",(req,res)=>{
+    
+  User.register(new User({username: req.body.username}),req.body.password,function(err,user){
+      if(err){
+          console.log(err);
+          res.render("signup");
+      }
+      else if(req.body.cpassword != req.body.password){
+        res.render("signup");
+      }
+  passport.authenticate("local")(req,res,function(){
+      res.redirect("/signin");//
+  })    
+  })
+})
+
+app.get("/logout",(req,res)=>{
+  req.logout();
+  res.redirect("/signin");
+});
+//
 // listen on port 3000
 app.listen(3000, () => {
   console.log("listening on port 3000");
