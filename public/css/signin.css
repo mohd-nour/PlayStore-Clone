@@ -99,6 +99,16 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+.forgot-pass {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.remember{
+  font-size: 14px;
+  color: #1A73E8;
+  font-weight: bold;
+}
 
 .signin-account-container {
   display: flex;
