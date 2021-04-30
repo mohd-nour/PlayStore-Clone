@@ -112,7 +112,7 @@ const reviewSchema = {
   }], // to save array
   date: String,
   likes: String,
-  review: String,
+  review: String
 };
 
 // app model with apps collection
@@ -134,7 +134,7 @@ const userSchema = {
 };
 
 // app model with apps collection
-const User = mongoose.model("User", Schema);
+const User = mongoose.model("User", userSchema);
 
 // the main page
 app.get("/", (req, res) => {
@@ -144,6 +144,7 @@ app.get("/", (req, res) => {
     if (err) {
       console.log(err);
     } else {
+      // In EJS, use foundItems array and tap into attributes to display in frontend
       res.render("categories", {
         movies: foundItems
       });
