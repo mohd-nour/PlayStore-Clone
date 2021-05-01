@@ -42,8 +42,8 @@
               <i class="star fas fa-star fa-xs"></i>
             </div>
             <div class="price">
-              <!-- need to truncate number only .replace(/[^\d,]/g,'') -->
-              <p> LBP <%= movie.price.replace(/[^\d,]/g,'') %> </p>
+              <!-- Match xxx,xxx,xxx from price string-->
+              <p> LBP <%= movie.price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %> </p>
             </div>
           </div>
         </div>
