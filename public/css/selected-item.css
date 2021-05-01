@@ -1,12 +1,14 @@
-html, body {
+html,
+body {
   background-color: Gainsboro;
   height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-fieldset, label {
+fieldset,
+label {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 /* temp top */
@@ -30,7 +32,7 @@ fieldset, label {
   font-size: 13px;
 }
 
-.mtext{
+.mtext {
   font-size: 14px;
 }
 
@@ -86,7 +88,7 @@ fieldset, label {
 .page {
   height: 500%;
   width: 100%;
-  min-width: 1063.330px;
+  min-width: 1063.33px;
   min-height: 561px;
   display: flex;
 }
@@ -104,8 +106,8 @@ fieldset, label {
 }
 
 .btn-success:hover {
-  background-color: #86BB47;
-  border-color: #86BB47;
+  background-color: #86bb47;
+  border-color: #86bb47;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -119,7 +121,7 @@ fieldset, label {
 }
 
 .btn-link:hover {
-  color: #86BB47;
+  color: #86bb47;
   text-decoration: none;
   font-weight: bold;
 }
@@ -217,7 +219,7 @@ fieldset, label {
   margin-top: auto;
   margin-bottom: 5px;
   font-size: 0.8rem;
-  color: #B2CB39;
+  color: #b2cb39;
   margin-right: 4px;
 }
 
@@ -519,7 +521,22 @@ fieldset, label {
   padding-bottom: 20px;
 }
 
-.green{
+.green {
   color: green;
   font-weight: 300;
+}
+
+#headerVideoLink i {
+  font-size: 70px;
+  color: white;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#headerVideoLink:hover {
+  text-decoration: none;
 }

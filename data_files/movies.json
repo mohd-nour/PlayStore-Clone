@@ -14,8 +14,7 @@
     "quality": "47%",
     "audioLanguage": "English [5.1], French (France) [5.1, AD], Portuguese (Brazil) [5.1, AD], Russian [5.1], Spanish (Latin America) [5.1], Thai [5.1], Turkish [5.1]",
     "subtitles": "Arabic, Chinese (Simplified), Chinese (Traditional), Danish, Dutch, English [CC], Finnish, French (France), Greek, Icelandic, Korean, Norwegian, Portuguese (Brazil), Russian, Spanish (Latin America), Swedish, Thai, Turkish, Vietnamese",
-    "group": ["New Movies", "Top-Selling Movies"],
-    "_id": 29
+    "group": ["New Movies", "Top-Selling Movies"]
   },
   {
     "title": "THE MARKSMAN",
@@ -33,8 +32,7 @@
     "quality": "37%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 30
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Tenet",
@@ -52,8 +50,7 @@
     "quality": "Available",
     "audioLanguage": "Available",
     "subtitles": "Available",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 31
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Roald Dahl's The Witches",
@@ -71,8 +68,7 @@
     "quality": "48%",
     "audioLanguage": "Available",
     "subtitles": "Available",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 32
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "BOSS LEVEL",
@@ -90,8 +86,7 @@
     "quality": "73%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 33
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "GREENLAND",
@@ -109,8 +104,7 @@
     "quality": "78%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 34
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "HONEST THIEF",
@@ -128,8 +122,7 @@
     "quality": "39%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 35
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Spider-Man: Far From Home",
@@ -147,8 +140,7 @@
     "quality": "90%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 36
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Harry Potter and the Chamber of Secrets",
@@ -166,8 +158,7 @@
     "quality": "82%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Arabic, Chinese (Singapore), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Indonesian, Italian, Latvian, Lithuanian, Malay, Norwegian, Polish, Portuguese (Brazil), Romanian, Serbian, Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 37
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "THE WAR WITH GRANDPA",
@@ -185,8 +176,7 @@
     "quality": "29%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 38
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Maze Runner: The Death Cure",
@@ -204,8 +194,7 @@
     "quality": "43%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Bulgarian, Chinese (Simplified), Chinese (Singapore), Chinese (Taiwan), Chinese (Traditional), Croatian, Danish, Dutch (Belgium), Dutch (Netherlands), English [CC], Estonian, Finnish, French, French (Canada), German, Greek, Hungarian, Icelandic, Indonesian, Italian, Latvian, Lithuanian, Norwegian, Polish, Portuguese, Portuguese (Brazil), Russian, Serbian, Slovak, Slovenian, Spanish, Spanish (Latin America), Swedish, Turkish, Ukrainian",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 39
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Joker",
@@ -223,8 +212,7 @@
     "quality": "68%",
     "audioLanguage": "Czech [5.1], English [5.1], French (Canada) [5.1], French (France) [5.1], German [5.1], Hungarian [5.1], Italian [5.1], Japanese [5.1], Polish [5.1], Portuguese (Brazil) [5.1], Russian [5.1], Spanish (Latin America) [5.1], Spanish [5.1], Thai [5.1], Ukrainian [5.1]",
     "subtitles": "Arabic, Cantonese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French (France), German [CC], Greek, Hungarian, Icelandic, Italian [CC], Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Russian, Slovenian, Spanish, Spanish (Latin America), Swedish, Thai, Turkish",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 40
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Harry Potter and the Prisoner of Azkaban",
@@ -242,8 +230,7 @@
     "quality": "90%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Arabic, Chinese (Singapore), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Indonesian, Italian, Latvian, Lithuanian, Malay, Norwegian, Polish, Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian, Spanish (Mexico), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 41
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Harry Potter and the Goblet of Fire",
@@ -261,8 +248,7 @@
     "quality": "88%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Arabic, Chinese (Singapore), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Indonesian, Italian, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 42
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Spider-Man: Homecoming",
@@ -280,8 +266,7 @@
     "quality": "92%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Chinese (Simplified), Chinese (Traditional), Czech, Danish, Dutch, English (United Kingdom) [CC], English [CC], Finnish, Greek, Hungarian, Icelandic, Indonesian, Norwegian, Polish, Portuguese (Portugal), Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Ukrainian",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 43
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "AFTER WE COLLIDED",
@@ -299,8 +284,7 @@
     "quality": "14%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 44
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Harry Potter and the Half-Blood Prince",
@@ -318,8 +302,7 @@
     "quality": "84%",
     "audioLanguage": "Cantonese [Stereo], Czech [5.1], Dutch [5.1], English [5.1], French (France) [5.1], German [5.1], Hebrew [5.1], Hungarian [5.1], Italian [Stereo], Korean [5.1], Polish [5.1], Portuguese (Brazil) [5.1], Russian [5.1], Slovak [5.1], Spanish (Latin America) [5.1], Spanish [5.1], Thai [Stereo], Turkish [5.1], Ukrainian [5.1]",
     "subtitles": "Arabic, Cantonese, Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French (France), German, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Italian, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Slovak, Slovenian, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 45
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "JOHN WICK: CHAPTER 3 - PARABELLUM",
@@ -337,8 +320,7 @@
     "quality": "89%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 46
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "Harry Potter and the Deathly Hallows - Part 2",
@@ -356,8 +338,7 @@
     "quality": "96%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Arabic, Chinese (Hong Kong), Chinese (Simplified), Chinese (Singapore), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Indonesian, Italian, Latvian, Lithuanian, Malay, Norwegian, Polish, Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish",
-    "group": ["New Movies", "Top-Selling Movies", "New rental movies"],
-    "_id": 47
+    "group": ["New Movies", "Top-Selling Movies", "New rental movies"]
   },
   {
     "title": "The Emoji Movie",
@@ -375,8 +356,7 @@
     "quality": "7%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Chinese (Hong Kong), Chinese (Simplified), Chinese (Traditional), Czech, Danish, Dutch, English (United Kingdom) [CC], English [CC], Finnish, Greek, Hungarian, Icelandic, Indonesian, Norwegian, Polish, Portuguese (Portugal), Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Ukrainian",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 48
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Tom and Jerry: The Fast and the Furry",
@@ -394,8 +374,7 @@
     "quality": "71%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Arabic, Croatian, Danish, Dutch, English [CC], Finnish, French, German, Norwegian, Portuguese, Slovenian, Spanish, Swedish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 49
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "IT",
@@ -413,8 +392,7 @@
     "quality": "86%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Cantonese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Italian, Latvian, Lithuanian, Norwegian, Polish, Portuguese, Russian, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 50
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Cloudy With a Chance of Meatballs 2",
@@ -432,8 +410,7 @@
     "quality": "71%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese (Hong Kong), Chinese (Simplified), Dutch, English (United States) [CC], English [CC], Finnish, French, Swedish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 51
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "The Lego Movie",
@@ -451,8 +428,7 @@
     "quality": "96%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Chinese (Hong Kong), Chinese (Simplified), Chinese (Singapore), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Finnish, French, German, Hebrew, Hungarian, Icelandic, Indonesian, Italian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian, Swedish, Thai, Turkish, Ukrainian",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 52
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Me Before You",
@@ -470,8 +446,7 @@
     "quality": "54%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Cantonese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Italian, Korean, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Russian, Slovak, Spanish, Spanish (Latin America), Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 53
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Jumanji: Welcome to the Jungle",
@@ -489,8 +464,7 @@
     "quality": "76%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Chinese (Hong Kong), Chinese (Simplified), Chinese (Traditional), Czech, Danish, Dutch, English (United Kingdom) [CC], English (United States) [CC], English [CC], Finnish, Greek, Hebrew, Hungarian, Icelandic, Norwegian, Polish, Portuguese (Portugal), Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 54
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Alvin And The Chipmunks: Chipwrecked",
@@ -508,8 +482,7 @@
     "quality": "12%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Danish, Dutch, English [CC], Finnish, French, German, Hungarian, Italian, Norwegian, Portuguese, Russian, Spanish (Latin America), Swedish, Turkish, Ukrainian, Vietnamese",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 55
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "The LEGO NINJAGO Movie",
@@ -527,8 +500,7 @@
     "quality": "56%",
     "audioLanguage": "English [5.1]",
     "subtitles": "English [CC]",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 56
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Annabelle",
@@ -546,8 +518,7 @@
     "quality": "29%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Chinese (Hong Kong), Chinese (Simplified), Chinese (Singapore), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Korean, Lithuanian, Norwegian, Polish, Portuguese, Portuguese (Brazil), Russian, Slovenian, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 57
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "The Amazing Spider-Man",
@@ -565,8 +536,7 @@
     "quality": "72%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Chinese (Hong Kong), Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Italian, Latvian, Lithuanian, Norwegian, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 58
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Home Alone 2: Lost In New York",
@@ -584,8 +554,7 @@
     "quality": "34%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese (Simplified), Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Italian, Latvian, Lithuanian, Norwegian, Polish, Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 59
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Monte Carlo",
@@ -603,8 +572,7 @@
     "quality": "40%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Arabic, Chinese (Hong Kong), Chinese (Taiwan), Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hungarian, Indonesian, Latvian, Lithuanian, Malay, Norwegian, Polish, Portuguese, Romanian, Russian, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian, Vietnamese",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 60
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Rampage",
@@ -622,8 +590,7 @@
     "quality": "51%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Cantonese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Italian, Latvian, Lithuanian, Norwegian, Polish, Portuguese, Russian, Slovenian, Spanish, Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 61
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Just Married",
@@ -641,8 +608,7 @@
     "quality": "20%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Arabic, Chinese (Hong Kong), Chinese (Traditional), Croatian, Czech, Dutch, French, Greek, Hebrew, Hungarian, Icelandic, Italian, Polish, Romanian, Russian, Slovenian, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 62
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "The Legend of Tarzan",
@@ -660,8 +626,7 @@
     "quality": "36%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Cantonese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Russian, Slovenian, Spanish, Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 63
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Justice League",
@@ -679,8 +644,7 @@
     "quality": "40%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Cantonese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Italian, Latvian, Lithuanian, Norwegian, Polish, Portuguese, Russian, Slovenian, Spanish, Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 64
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "RELIC",
@@ -698,8 +662,7 @@
     "quality": "92%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New rental movies"],
-    "_id": 65
+    "group": ["New rental movies"]
   },
   {
     "title": "BLITHE SPIRIT",
@@ -717,8 +680,7 @@
     "quality": "28%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New rental movies"],
-    "_id": 66
+    "group": ["New rental movies"]
   },
   {
     "title": "WILD MOUNTAIN THYME",
@@ -736,8 +698,7 @@
     "quality": "29%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New rental movies"],
-    "_id": 67
+    "group": ["New rental movies"]
   },
   {
     "title": "DIVORCE CLUB",
@@ -755,8 +716,7 @@
     "quality": "French [5.1]",
     "audioLanguage": "Arabic, English",
     "subtitles": "108 minutes",
-    "group": ["New rental movies"],
-    "_id": 68
+    "group": ["New rental movies"]
   },
   {
     "title": "BODY BROKERS",
@@ -774,8 +734,7 @@
     "quality": "64%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New rental movies"],
-    "_id": 69
+    "group": ["New rental movies"]
   },
   {
     "title": "BIGFOOT 2",
@@ -793,8 +752,7 @@
     "quality": "36%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New rental movies"],
-    "_id": 70
+    "group": ["New rental movies"]
   },
   {
     "title": "FEAR OF RAIN",
@@ -812,8 +770,7 @@
     "quality": "50%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New rental movies"],
-    "_id": 71
+    "group": ["New rental movies"]
   },
   {
     "title": "THE SILENCING",
@@ -831,8 +788,7 @@
     "quality": "17%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New rental movies"],
-    "_id": 72
+    "group": ["New rental movies"]
   },
   {
     "title": "Sound Of Metal",
@@ -850,8 +806,7 @@
     "quality": "97%",
     "audioLanguage": "English [5.1], Russian [5.1]",
     "subtitles": "Arabic, Chinese (Simplified), Chinese (Traditional), Czech, Danish, Dutch, English [CC], Estonian, Finnish, French (France), Greek, Hungarian, Icelandic, Korean, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Russian, Slovak, Slovenian, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["New rental movies"],
-    "_id": 73
+    "group": ["New rental movies"]
   },
   {
     "title": "Cats & Dogs: Paws Unite!",
@@ -869,8 +824,7 @@
     "quality": "11%",
     "audioLanguage": "Danish [5.1], English [5.1], Finnish [5.1], French (France) [5.1], German [5.1], Norwegian [5.1], Polish [5.1], Portuguese (Brazil) [5.1], Russian [5.1], Spanish (Latin America) [5.1], Spanish [5.1], Swedish [5.1]",
     "subtitles": "Arabic, Chinese (Traditional), Danish, Dutch, English [CC], Finnish, French (France), German [CC], Greek, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Russian, Spanish, Spanish (Latin America), Swedish, Thai",
-    "group": ["New rental movies"],
-    "_id": 74
+    "group": ["New rental movies"]
   },
   {
     "title": "The Craft: Legacy",
@@ -888,8 +842,7 @@
     "quality": "49%",
     "audioLanguage": "English [5.1], French (France) [5.1], German [5.1], Italian [5.1], Portuguese (Brazil) [5.1], Russian [5.1], Spanish [5.1]",
     "subtitles": "Arabic, Cantonese, Chinese (Simplified), Chinese (Traditional), Czech, Danish, Dutch, English [CC], Finnish, French (France), German, Greek, Hungarian, Icelandic, Italian, Japanese, Korean, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Russian, Slovak, Slovenian, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian, Vietnamese",
-    "group": ["New rental movies"],
-    "_id": 75
+    "group": ["New rental movies"]
   },
   {
     "title": "LOVE SARAH",
@@ -907,8 +860,7 @@
     "quality": "58%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["New rental movies"],
-    "_id": 76
+    "group": ["New rental movies"]
   },
   {
     "title": "Teen Titans Go! To the Movies",
@@ -926,8 +878,7 @@
     "quality": "91%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Cantonese, English [CC], Estonian, Greek, Icelandic, Lithuanian, Slovenian",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 77
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Sonic The Hedgehog",
@@ -945,8 +896,7 @@
     "quality": "63%",
     "audioLanguage": "English [5.1], French (France) [5.1], Spanish (Latin America) [5.1], Spanish [5.1]",
     "subtitles": "Arabic, English [CC], French (France), Spanish, Spanish (Latin America)",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 78
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Turbo: A Power Rangers Movie",
@@ -964,8 +914,7 @@
     "quality": "15%",
     "audioLanguage": "English [5.1]",
     "subtitles": "English (United States) [CC]",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 79
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Batman: Return of the Caped Crusaders",
@@ -983,8 +932,7 @@
     "quality": "94%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Chinese (Simplified), Chinese (Traditional), Dutch, English [CC], French, Italian, Portuguese (Brazil), Spanish (Latin America), Thai",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 80
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "The Amazing Spider-Man 2",
@@ -1002,8 +950,7 @@
     "quality": "51%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese (Hong Kong), Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English (United Kingdom) [CC], English [CC], Finnish, French, Greek, Hebrew, Icelandic, Indonesian, Norwegian, Portuguese (Portugal), Slovenian, Spanish (Latin America), Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 81
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Avengers Confidential: Black Widow & Punisher",
@@ -1021,8 +968,7 @@
     "quality": "45%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese, Chinese (Traditional), Danish, Dutch, English [CC], French, Norwegian, Spanish (Latin America), Swedish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 82
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "CODE 8",
@@ -1040,8 +986,7 @@
     "quality": "80%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 83
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Deadpool 2",
@@ -1059,8 +1004,7 @@
     "quality": "84%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Azerbaijani, Bulgarian, Burmese, Chinese (Simplified), Chinese (Singapore), Chinese (Taiwan), Croatian, Czech, Danish, Dutch (Belgium), Dutch (Netherlands), English, Estonian, Finnish, French, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Italian, Khmer, Lao, Lithuanian, Malay, Mongolian, Norwegian, Portuguese, Portuguese (Brazil), Romanian, Serbian, Slovak, Slovenian, Spanish, Spanish (Latin America), Thai, Turkish, Ukrainian, Vietnamese",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 84
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Dragonball: Evolution",
@@ -1078,8 +1022,7 @@
     "quality": "15%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Arabic, English [CC]",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 85
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "X-Men Origins: Wolverine",
@@ -1097,8 +1040,7 @@
     "quality": "37%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Chinese (Traditional), Danish, Dutch, English [CC], Finnish, French, German, Hungarian, Italian, Norwegian, Polish, Portuguese, Spanish (Latin America), Swedish, Turkish, Ukrainian",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 86
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "DCU: Batman: Assault on Arkham",
@@ -1116,8 +1058,7 @@
     "quality": "75%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Chinese (China), Chinese (Hong Kong), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Italian, Korean, Malay, Norwegian, Polish, Portuguese (Brazil), Russian, Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 87
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Spider-Man (2002)",
@@ -1135,8 +1076,7 @@
     "quality": "90%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Finnish, French, German, Greek, Hebrew, Hungarian, Italian, Norwegian, Polish, Portuguese (Portugal), Romanian, Russian, Serbian, Slovenian, Spanish (Mexico), Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 88
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Words on Bathroom Walls",
@@ -1154,8 +1094,7 @@
     "quality": "90%",
     "audioLanguage": "English [5.1], Portuguese (Brazil) [5.1], Spanish (Latin America) [5.1]",
     "subtitles": "Arabic, Chinese (Simplified), Chinese (Traditional), Czech, Danish, English [CC], Finnish, French (France), Greek, Hungarian, Icelandic, Japanese, Korean, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Slovak, Spanish, Spanish (Latin America), Swedish, Thai, Turkish",
-    "group": ["Comedy drama movies"],
-    "_id": 89
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "American Beauty",
@@ -1173,8 +1112,7 @@
     "quality": "87%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Dutch, English [CC], French, Spanish (Latin America)",
-    "group": ["Comedy drama movies"],
-    "_id": 90
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "Happiest Season",
@@ -1192,8 +1130,7 @@
     "quality": "83%",
     "audioLanguage": "English [5.1], French (France) [5.1], German [5.1], Polish [5.1], Portuguese (Brazil) [5.1], Russian [5.1], Spanish (Latin America) [5.1], Spanish [5.1], Turkish [5.1]",
     "subtitles": "Arabic, Czech, Danish, Dutch, English [CC], Finnish, French (France), German, Greek, Hungarian, Icelandic, Korean, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Russian, Slovak, Slovenian, Spanish (Latin America), Swedish, Turkish, Ukrainian",
-    "group": ["Comedy drama movies"],
-    "_id": 91
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "SERIAL (BAD) WEDDINGS 2",
@@ -1211,8 +1148,7 @@
     "quality": "67%",
     "audioLanguage": "French [5.1]",
     "subtitles": "Arabic, English",
-    "group": ["Comedy drama movies"],
-    "_id": 92
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "What To Expect When You're Expecting",
@@ -1230,8 +1166,7 @@
     "quality": "23%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Arabic, English [CC]",
-    "group": ["Comedy drama movies"],
-    "_id": 93
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "THE PERSONAL HISTORY OF DAVID COPPERFIELD",
@@ -1249,8 +1184,7 @@
     "quality": "92%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["Comedy drama movies"],
-    "_id": 94
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "THE INTOUCHABLES",
@@ -1268,8 +1202,7 @@
     "quality": "75%",
     "audioLanguage": "French [5.1]",
     "subtitles": "Arabic",
-    "group": ["Comedy drama movies"],
-    "_id": 95
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "THE GENTLEMEN",
@@ -1287,8 +1220,7 @@
     "quality": "75%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["Comedy drama movies"],
-    "_id": 96
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "Crazy Rich Asians",
@@ -1306,8 +1238,7 @@
     "quality": "91%",
     "audioLanguage": "English [5.1]",
     "subtitles": "English [CC]",
-    "group": ["Comedy drama movies"],
-    "_id": 97
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "A DOG'S JOURNEY",
@@ -1325,8 +1256,7 @@
     "quality": "50%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["Comedy drama movies"],
-    "_id": 98
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "This Is Where I Leave You",
@@ -1344,8 +1274,7 @@
     "quality": "44%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Chinese (Hong Kong), Chinese (Traditional), Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Korean, Lithuanian, Norwegian, Polish, Portuguese, Portuguese (Brazil), Russian, Slovenian, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["Comedy drama movies"],
-    "_id": 99
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "Inherent Vice",
@@ -1363,8 +1292,7 @@
     "quality": "73%",
     "audioLanguage": "Czech [5.1], English [5.1], Russian [5.1], Spanish (Latin America) [5.1], Thai [5.1]",
     "subtitles": "Arabic, Cantonese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French (France), German [CC], Greek, Hebrew, Hungarian, Icelandic, Italian [CC], Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Slovenian, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["Comedy drama movies"],
-    "_id": 100
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "Knives Out",
@@ -1382,8 +1310,7 @@
     "quality": "97%",
     "audioLanguage": "English [5.1], Portuguese (Brazil) [5.1], Spanish (Latin America) [5.1]",
     "subtitles": "Arabic, English [CC], Portuguese (Brazil), Spanish (Latin America)",
-    "group": ["Comedy drama movies"],
-    "_id": 101
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "MADE IN ITALY",
@@ -1401,8 +1328,7 @@
     "quality": "44%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["Comedy drama movies"],
-    "_id": 102
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "Sweeney Todd: The Demon Barber Of Fleet Street (2007)",
@@ -1420,8 +1346,7 @@
     "quality": "86%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["Comedy drama movies"],
-    "_id": 103
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "Once Upon a Time in Hollywood",
@@ -1439,8 +1364,7 @@
     "quality": "85%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Bulgarian, Chinese (Simplified), Czech, Danish, Dutch, English [CC], Finnish, Greek, Hebrew, Hungarian, Icelandic, Norwegian, Polish, Portuguese (Portugal), Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["Comedy drama movies"],
-    "_id": 104
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "HUNT FOR THE WILDER PEOPLE",
@@ -1458,8 +1382,7 @@
     "quality": "97%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["Comedy drama movies"],
-    "_id": 105
+    "group": ["Comedy drama movies"]
   },
   {
     "title": "Mike and Dave Need Wedding Dates",
@@ -1477,8 +1400,7 @@
     "quality": "38%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Cantonese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, Dutch (Belgium), English [CC], Estonian, Finnish, French, French (Canada), German, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Italian, Latvian, Lithuanian, Malay, Norwegian, Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Slovak, Slovenian, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian, Vietnamese",
-    "group": ["Laugh out loud movies"],
-    "_id": 106
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "Smurfs: The Lost Village",
@@ -1496,8 +1418,7 @@
     "quality": "40%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese (Hong Kong), Czech, Danish, Dutch, Finnish, Greek, Hungarian, Norwegian, Polish, Portuguese (Portugal), Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish",
-    "group": ["Laugh out loud movies"],
-    "_id": 107
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "Hotel Transylvania",
@@ -1515,8 +1436,7 @@
     "quality": "45%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese (Hong Kong), Chinese (Traditional), Croatian, Czech, Greek, Hebrew, Polish, Romanian, Serbian, Slovak, Thai",
-    "group": ["Laugh out loud movies"],
-    "_id": 108
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "Peter Rabbit",
@@ -1534,8 +1454,7 @@
     "quality": "63%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese (Hong Kong), Chinese (Simplified), Chinese (Traditional), Czech, Danish, Dutch, English (United Kingdom) [CC], English [CC], Finnish, Hebrew, Hungarian, Icelandic, Indonesian, Norwegian, Polish, Portuguese (Portugal), Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Ukrainian",
-    "group": ["Laugh out loud movies"],
-    "_id": 109
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "Hotel Transylvania 3",
@@ -1553,8 +1472,7 @@
     "quality": "62%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Cantonese, Chinese (Simplified), Chinese (Traditional), English [CC], Greek, Indonesian, Polish, Spanish (Latin America), Thai, Turkish",
-    "group": ["Laugh out loud movies"],
-    "_id": 110
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "Dora And The Lost City Of Gold",
@@ -1572,8 +1490,7 @@
     "quality": "85%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Cantonese, Chinese (Traditional), Czech, Dutch, English [CC], French (France), Greek, Hungarian, Korean, Polish, Portuguese (Brazil), Romanian, Spanish, Spanish (Latin America), Thai, Turkish, Vietnamese",
-    "group": ["Laugh out loud movies"],
-    "_id": 111
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "Buddy Games",
@@ -1591,8 +1508,7 @@
     "quality": "17%",
     "audioLanguage": "English [5.1], French (France) [5.1], Spanish [5.1]",
     "subtitles": "English [CC], French (France), Spanish, Spanish (Latin America)",
-    "group": ["Laugh out loud movies"],
-    "_id": 112
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "12 HOUR SHIFT",
@@ -1610,8 +1526,7 @@
     "quality": "78%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["Laugh out loud movies"],
-    "_id": 113
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "Zombieland: Double Tap",
@@ -1629,8 +1544,7 @@
     "quality": "69%",
     "audioLanguage": "English [5.1], French (France) [5.1], German [5.1], Italian [5.1]",
     "subtitles": "Arabic, Bulgarian, Cantonese, Chinese (Simplified), Chinese (Traditional), Czech, Danish, Dutch, English, Finnish, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Norwegian, Polish, Portuguese (Portugal), Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian, Vietnamese",
-    "group": ["Laugh out loud movies"],
-    "_id": 114
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "Hotel Transylvania 2",
@@ -1648,8 +1562,7 @@
     "quality": "55%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese (Hong Kong), Chinese (Traditional), English (United Kingdom) [CC], English [CC], Greek",
-    "group": ["Laugh out loud movies"],
-    "_id": 115
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "The Last Shift",
@@ -1667,8 +1580,7 @@
     "quality": "64%",
     "audioLanguage": "English [5.1], Italian [5.1], Portuguese (Brazil) [5.1]",
     "subtitles": "Arabic, Chinese (Traditional), Czech, Danish, Dutch, English [CC], Finnish, French (France), Greek, Hungarian, Icelandic, Italian, Japanese, Korean, Norwegian, Polish, Portuguese (Brazil), Russian, Slovak, Slovenian, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["Laugh out loud movies"],
-    "_id": 116
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "VIVARIUM",
@@ -1686,8 +1598,7 @@
     "quality": "72%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["Laugh out loud movies"],
-    "_id": 117
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "Home Alone",
@@ -1705,8 +1616,7 @@
     "quality": "67%",
     "audioLanguage": "English [Stereo]",
     "subtitles": "Chinese (Hong Kong), Chinese (Simplified), Czech, Danish, Dutch, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Italian, Norwegian, Polish, Portuguese, Russian, Spanish (Latin America), Swedish, Thai, Turkish",
-    "group": ["Laugh out loud movies"],
-    "_id": 118
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "THINK LIKE A DOG",
@@ -1724,8 +1634,7 @@
     "quality": "70%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic",
-    "group": ["Laugh out loud movies"],
-    "_id": 119
+    "group": ["Laugh out loud movies"]
   },
   {
     "title": "Annabelle: Creation",
@@ -1743,8 +1652,7 @@
     "quality": "71%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Cantonese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Italian, Latvian, Lithuanian, Norwegian, Portuguese, Portuguese (Brazil), Romanian, Russian, Slovenian, Spanish, Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 120
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "The Shape of Water",
@@ -1762,8 +1670,7 @@
     "quality": "92%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Chinese (Simplified), Chinese (Singapore), Chinese (Taiwan), Chinese (Traditional), Croatian, Czech, Danish, Dutch (Belgium), Dutch (Netherlands), English, Estonian, Finnish, French, French (Canada), German, Greek, Hebrew, Hindi, Hungarian, Icelandic, Indonesian, Italian, Korean, Latvian, Lithuanian, Malay, Norwegian, Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian, Vietnamese",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 121
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "The Conjuring 2",
@@ -1781,8 +1688,7 @@
     "quality": "80%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Cantonese, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Estonian, Finnish, French, German, Greek, Hebrew, Hungarian, Icelandic, Italian, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Portugal), Russian, Slovenian, Spanish, Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 122
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Bridge of Spies",
@@ -1800,8 +1706,7 @@
     "quality": "90%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese (China), Chinese (Hong Kong), Chinese (Simplified), Chinese (Taiwan), Danish, Dutch, English [CC], Finnish, French, German, Norwegian, Swedish, Vietnamese",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 123
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "Traffik",
@@ -1819,8 +1724,7 @@
     "quality": "27%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Chinese (Simplified), Chinese (Traditional), Danish, Dutch, English [CC], Finnish, Norwegian, Polish, Portuguese, Swedish, Thai, Turkish, Vietnamese",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 124
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "The Marine",
@@ -1838,8 +1742,7 @@
     "quality": "20%",
     "audioLanguage": "English [5.1]",
     "subtitles": "English [CC]",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 125
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "The Intruder (Subbed)",
@@ -1857,8 +1760,7 @@
     "quality": "33%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Arabic, Bulgarian, Czech, Danish, Dutch, Finnish, Greek, Hebrew, Hungarian, Icelandic, Norwegian, Polish, Portuguese, Slovak, Slovenian, Spanish, Swedish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 126
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "The Shallows",
@@ -1876,8 +1778,7 @@
     "quality": "78%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Chinese (Simplified), Chinese (Traditional), Czech, Danish, Dutch, English (United Kingdom) [CC], English [CC], Finnish, Greek, Hungarian, Icelandic, Norwegian, Polish, Portuguese (Portugal), Slovak, Slovenian, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 127
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   },
   {
     "title": "A Quiet Place",
@@ -1895,7 +1796,6 @@
     "quality": "96%",
     "audioLanguage": "English [5.1]",
     "subtitles": "Bulgarian, Cantonese (Hong Kong), Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English [CC], Finnish, Greek, Hungarian, Indonesian, Lithuanian, Malay, Norwegian, Polish, Portuguese, Romanian, Serbian, Slovak, Slovenian, Swedish, Thai, Turkish",
-    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"],
-    "_id": 128
+    "group": ["Recommended For You", "Thrilling movies", "Superhero movies"]
   }
 ]

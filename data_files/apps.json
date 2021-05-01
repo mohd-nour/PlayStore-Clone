@@ -41,8 +41,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "Century Games Pte. Ltd.",
-    "group": ["New & Updated Games", "Recommended For You"],
-    "_id": 0
+    "group": ["New & Updated Games", "Recommended For You"]
   },
   {
     "title": "Golf Strike",
@@ -83,8 +82,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "Miniclip.com",
-    "group": ["New & Updated Games", "Recommended For You"],
-    "_id": 1
+    "group": ["New & Updated Games", "Recommended For You"]
   },
   {
     "title": "The Walking Dead: Survivors",
@@ -125,8 +123,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "Galaxy Play Technology Limited",
-    "group": ["New & Updated Games", "Recommended For You"],
-    "_id": 2
+    "group": ["New & Updated Games", "Recommended For You"]
   },
   {
     "title": "Hay Day",
@@ -173,8 +170,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "Supercell",
-    "group": ["New & Updated Games", "Recommended For You"],
-    "_id": 3
+    "group": ["New & Updated Games", "Recommended For You"]
   },
   {
     "title": "YouTube",
@@ -202,8 +198,7 @@
     "permission": "Flag as inappropriate",
     "offeredBy": "Google LLC",
     "developer": "Visit websiteytandroid-support@google.comPrivacy Policy1600 Amphitheatre Parkway, Mountain View 94043",
-    "group": ["New & Updated Games", "Recommended For You"],
-    "_id": 4
+    "group": ["New & Updated Games", "Recommended For You"]
   },
   {
     "title": "TikTok",
@@ -231,8 +226,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "TikTok Pte. Ltd.",
-    "group": ["New & Updated Games", "Recommended For You"],
-    "_id": 5
+    "group": ["New & Updated Games", "Recommended For You"]
   },
   {
     "title": "Subway Surfers",
@@ -279,8 +273,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "SYBO Games",
-    "group": ["New & Updated Games", "Recommended For You"],
-    "_id": 6
+    "group": ["New & Updated Games", "Recommended For You"]
   },
   {
     "title": "Snapchat",
@@ -310,8 +303,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "Snap Inc",
-    "group": ["New & Updated Games", "Recommended For You"],
-    "_id": 7
+    "group": ["New & Updated Games", "Recommended For You"]
   },
   {
     "title": "GIPHY: GIF & Sticker Keyboard & Maker",
@@ -340,8 +332,7 @@
     "permission": "Flag as inappropriate",
     "offeredBy": "Giphy, Inc.",
     "developer": "Visit websitesupport@giphy.comPrivacy Policy",
-    "group": ["Laugh Out Loud", "Just Updated"],
-    "_id": 8
+    "group": ["Laugh Out Loud", "Just Updated"]
   },
   {
     "title": "9GAG: Funny gifs, pics, fresh memes & viral videos",
@@ -369,8 +360,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "9GAG",
-    "group": ["Laugh Out Loud", "Just Updated"],
-    "_id": 9
+    "group": ["Laugh Out Loud", "Just Updated"]
   },
   {
     "title": "The Zueiras Voice: Text to Speech, Read Aloud TTS",
@@ -411,8 +401,7 @@
     "permission": "Flag as inappropriate",
     "offeredBy": "Bruno Piovan",
     "developer": "Visit websitebrunopiovan@gmail.comPrivacy PolicyRua Jasmim, 167\nOsasco, SP",
-    "group": ["Laugh Out Loud", "Just Updated"],
-    "_id": 10
+    "group": ["Laugh Out Loud", "Just Updated"]
   },
   {
     "title": "iFunny  fresh memes, gifs and videos",
@@ -451,8 +440,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "iFunny Inc.",
-    "group": ["Laugh Out Loud", "Just Updated"],
-    "_id": 11
+    "group": ["Laugh Out Loud", "Just Updated"]
   },
   {
     "title": "Audiomack: Download New Music Offline Free",
@@ -490,8 +478,7 @@
     "permission": "Flag as inappropriate",
     "offeredBy": "Audiomack",
     "developer": "Visit websitesupport@audiomack.comPrivacy Policy648 Broadway Suite 302\nNew York, NY 10012",
-    "group": ["Laugh Out Loud", "Just Updated"],
-    "_id": 12
+    "group": ["Laugh Out Loud", "Just Updated"]
   },
   {
     "title": "Forest: Stay focused",
@@ -522,8 +509,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "Seekrtech",
-    "group": ["Laugh Out Loud", "Just Updated"],
-    "_id": 13
+    "group": ["Laugh Out Loud", "Just Updated"]
   },
   {
     "title": "Daylio - Diary, Journal, Mood Tracker",
@@ -554,8 +540,7 @@
     "permission": "Flag as inappropriate",
     "offeredBy": "Habitics",
     "developer": "Visit websitehello@daylio.netPrivacy PolicyDudova 1\n85102 Bratislava, Slovakia",
-    "group": ["Laugh Out Loud", "Just Updated"],
-    "_id": 14
+    "group": ["Laugh Out Loud", "Just Updated"]
   },
   {
     "title": "Photo Lab Picture Editor & Art Face Editing Filter",
@@ -585,8 +570,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "Linerock Investments LTD",
-    "group": ["Laugh Out Loud", "Just Updated"],
-    "_id": 15
+    "group": ["Laugh Out Loud", "Just Updated"]
   },
   {
     "title": "Neon Photo Editor - Photo Filters, Collage Maker",
@@ -619,8 +603,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "InShot Inc.",
-    "group": ["Laugh Out Loud", "Just Updated"],
-    "_id": 16
+    "group": ["Laugh Out Loud", "Just Updated"]
   },
   {
     "title": "Mimo: Learn coding in JavaScript, Python and HTML",
@@ -664,8 +647,7 @@
     "permission": "Flag as inappropriate",
     "offeredBy": "Mimohello GmbH",
     "developer": "Visit websitesupport@getmimo.comPrivacy PolicySchanzstrae 14/1.1\n1150 Wien\nAustria, Europe",
-    "group": ["Discover Science", "Educational"],
-    "_id": 17
+    "group": ["Discover Science", "Educational"]
   },
   {
     "title": "SoloLearn: Learn to Code for Free",
@@ -696,8 +678,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "SoloLearn",
-    "group": ["Discover Science", "Educational"],
-    "_id": 18
+    "group": ["Discover Science", "Educational"]
   },
   {
     "title": "Solar System Scope",
@@ -735,8 +716,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "INOVE, s.r.o.",
-    "group": ["Discover Science", "Educational"],
-    "_id": 19
+    "group": ["Discover Science", "Educational"]
   },
   {
     "title": "Reading Academy! Kids Learn to Read and Write!",
@@ -783,8 +763,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "Bini Bambini",
-    "group": ["Discover Science", "Educational"],
-    "_id": 20
+    "group": ["Discover Science", "Educational"]
   },
   {
     "title": "Udemy - Online Courses",
@@ -828,8 +807,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "Udemy",
-    "group": ["Discover Science", "Educational"],
-    "_id": 21
+    "group": ["Discover Science", "Educational"]
   },
   {
     "title": "Duolingo: Learn Languages Free",
@@ -858,8 +836,7 @@
     "permission": "View details",
     "offeredBy": "Flag as inappropriate",
     "developer": "Duolingo",
-    "group": ["Discover Science", "Educational"],
-    "_id": 22
+    "group": ["Discover Science", "Educational"]
   },
   {
     "title": "Photomath",
@@ -894,8 +871,7 @@
     "permission": "Flag as inappropriate",
     "offeredBy": "Photomath, Inc.",
     "developer": "Visit websitesupport@photomath.appPrivacy Policy20 E 3rd Ave.\nSan Mateo, CA 94401",
-    "group": ["Discover Science", "Educational"],
-    "_id": 23
+    "group": ["Discover Science", "Educational"]
   },
   {
     "title": "TouchRetouch",
@@ -922,8 +898,7 @@
     "permission": "Flag as inappropriate",
     "offeredBy": "ADVA Soft",
     "developer": "Visit websitetouchretouch@adva-soft.comPrivacy PolicyADVA Soft GmbH\nScherenbergstr. 8\n10439 Berlin\nGermany",
-    "group": ["Premuim"],
-    "_id": 24
+    "group": ["Premuim"]
   },
   {
     "title": "CryptoTab Browser Promine on a PRO level",
@@ -957,8 +932,7 @@
     "permission": "$0.99 - $399.99 per item",
     "offeredBy": "View details",
     "developer": "Flag as inappropriate",
-    "group": ["Premuim"],
-    "_id": 25
+    "group": ["Premuim"]
   },
   {
     "title": "FiLMiC Pro: Professional HD Manual Video Camera",
@@ -988,8 +962,7 @@
     "permission": "$2.99 - $13.99 per item",
     "offeredBy": "View details",
     "developer": "Flag as inappropriate",
-    "group": ["Premuim"],
-    "_id": 26
+    "group": ["Premuim"]
   },
   {
     "title": "Noteshelf: Take Notes | Handwriting | Annotate PDF",
@@ -1034,8 +1007,7 @@
     "permission": "Flag as inappropriate",
     "offeredBy": "Fluid Touch",
     "developer": "Visit websitenoteshelf@fluidtouch.bizPrivacy PolicyCORPORATE OFFICE\nFluid Touch PTD LTD\n24 Ean Kiam Pl, Singapore - 429115\n\nDEVELOPMENT CENTER\nFluid Touch PVT LTD\nModern Profound Tech Park 3F, Whitefields, Kondapur, Hyderabad - 500081",
-    "group": ["Premuim"],
-    "_id": 27
+    "group": ["Premuim"]
   },
   {
     "title": "Toca Life: Office",
@@ -1070,7 +1042,6 @@
     "permission": "Flag as inappropriate",
     "offeredBy": "Toca Boca",
     "developer": "Visit websitesupport@tocaboca.comPrivacy PolicyLumaparksvgen 9\n120 31 Stockholm\nSweden",
-    "group": ["Premuim"],
-    "_id": 28
+    "group": ["Premuim"]
   }
 ]

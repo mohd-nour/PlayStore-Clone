@@ -22,7 +22,7 @@ function scrollRight() {
     slider.scroll({
       top: 0,
       left: xCoord + 80,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }
 }
@@ -35,13 +35,13 @@ function scrollLeft() {
     slider.scroll({
       top: 0,
       left: xCoord - 80,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }
 }
 
 function readMore() {
-  var desc = document.getElementsByClassName('description-text')[0];
+  var desc = document.getElementsByClassName("description-text")[0];
   if (isOpen) {
     desc.style.maxHeight = "140px";
     document.getElementById("read-more").innerHTML = "READ MORE";
@@ -53,7 +53,7 @@ function readMore() {
   }
 }
 
-function showContent (event) {
+function showContent(event) {
   event.target.style.display = "none";
   document.getElementById("hidden1").style.display = "contents";
 }
