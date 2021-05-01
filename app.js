@@ -70,19 +70,16 @@ const movie1 = new Movie({
     "https://play-lh.googleusercontent.com/RlzFjXfaYgU2yqhbnY6AE3N4puRb53S2AdFTo8A7NlCgn2cqfWcN0atfdRagHipHR6aA=w200-h300-rw",
   yearProduced: "2016",
   duration: "86 minutes",
-<<<<<<< HEAD
   price: "LBP 16,000",
   genre: ["Drama, Action"],
   video: "https://play.google.com/video/lava/web/player/yt:movie:wYboAQqILJY?autoplay=1&embed=play",
   description: "In the taut thriller, when Nancy (Blake Lively) is surfing on a secluded beach, she finds herself on the feeding ground of a great white shark. Though she is stranded only 200 yards from shore, survival proves to be the ultimate test of wills, requiring all of Nancys ingenuity, resourcefulness, and fortitude.",
-=======
   price: "LBP 16,000 Buy",
   genre: ["Drama"],
   video:
     "https://play.google.com/video/lava/web/player/yt:movie:wYboAQqILJY?autoplay=1&embed=play",
   description:
     "In the taut thriller, when Nancy (Blake Lively) is surfing on a secluded beach, she finds herself on the feeding ground of a great white shark. Though she is stranded only 200 yards from shore, survival proves to be the ultimate test of wills, requiring all of Nancys ingenuity, resourcefulness, and fortitude.",
->>>>>>> 29f0d8d0456fc4845dd1731c41433885594ba4fc
   actors: "Blake Lively, scar Jaenada",
   producers: "Lynn Harris, Matti Leshem",
   director: "scar Jaenada",
