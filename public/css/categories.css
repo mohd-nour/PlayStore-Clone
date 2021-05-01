@@ -56,7 +56,7 @@ body {
 
 .listing-card {
   display: block;
-  margin: 0 5px;
+  margin: 5px 5px;
   box-shadow:
     0 1px 1px rgba(0, 0, 0, 0.11),
     0 2px 2px rgba(0, 0, 0, 0.11),
@@ -67,11 +67,13 @@ body {
   height: 230px;
   width: 160px;
   background-color: #919191;
-  background-image: url("https://play-lh.googleusercontent.com/IGBZ1EnPb2k9XgFsSv0W04b8z08unyKPKkx6Qaxk05_7_wLsNH5kmKA9YK8ySiz4dDL0mxm6S4g-mmTDlSk=w320-h460-rw");
   background-size: cover;
 }
 
 .listing-bottom {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
   padding: 10px 10px 0 10px;

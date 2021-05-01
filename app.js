@@ -13,21 +13,20 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 //connect to database
-// const mongoAtlasUri =
-//   "mongodb+srv://user:test12345@cluster0.a2fvo.mongodb.net/playstore?retryWrites=true&w=majority";
-// mongoose
-//   .connect(mongoAtlasUri, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() => console.log("Mongoose is connected"))
-//   .catch((error) => {
-//     console.log(error);
-//   });
+const mongoAtlasUri =
+  "mongodb+srv://user:test12345@cluster0.a2fvo.mongodb.net/playstore?retryWrites=true&w=majority";
+mongoose
+  .connect(mongoAtlasUri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Mongoose is connected"))
+  .catch((error) => {
+    console.log(error);
+  });
 
 // local community Server for testing
-mongoose.connect("mongodb://localhost:27017/playstoreDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
+// mongoose.connect("mongodb://localhost:27017/playstoreDB", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
 
 // The following code will be refactored into separate files after testing is completed
 
@@ -63,8 +62,8 @@ const movie1 = new Movie({
   mainImage: "https://play-lh.googleusercontent.com/RlzFjXfaYgU2yqhbnY6AE3N4puRb53S2AdFTo8A7NlCgn2cqfWcN0atfdRagHipHR6aA=w200-h300-rw",
   yearProduced: "2016",
   duration: "86 minutes",
-  price: "LBP 16,000 Buy",
-  genre: ["Drama"],
+  price: "LBP 16,000",
+  genre: ["Drama, Action"],
   video: "https://play.google.com/video/lava/web/player/yt:movie:wYboAQqILJY?autoplay=1&embed=play",
   description: "In the taut thriller, when Nancy (Blake Lively) is surfing on a secluded beach, she finds herself on the feeding ground of a great white shark. Though she is stranded only 200 yards from shore, survival proves to be the ultimate test of wills, requiring all of Nancys ingenuity, resourcefulness, and fortitude.",
   actors: "Blake Lively, scar Jaenada",
@@ -186,10 +185,9 @@ const app1 = new Application({
 const reviewSchema = {
   refID: String,
   totalScore: String,
-
   name: String,
   profile: String,
-  stars: Number, // to save array
+  stars: Number,
   date: String,
   likes: String,
   review: String
@@ -230,6 +228,16 @@ app.get("/", (req, res) => {
     }
   });
 });
+
+app.get("/seemoremov", function(req, res) {
+  // finding all documents in movies collection
+  Movie.find({}, function(err, movies) {
+    // passing array of movies documents to seemoremov.ejs
+    res.render("seemoremov", {
+      movies: movies,
+    });
+  });
+})
 
 // listen on port 3000
 app.listen(3000, () => {

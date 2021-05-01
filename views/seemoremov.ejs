@@ -23,16 +23,16 @@
         <h2 class="category-title">Top selling movies</h2>
       </div>
     </div>
-
     <!-- Container Body -->
     <div class="listing-body-seemore">
+      <% movies.forEach(function(movie) { %>
       <!-- Card -->
       <div class="listing-card">
-        <div class="listing-top">
+        <div class="listing-top" style="background-image: url(<%= movie.mainImage %>)">
         </div>
         <div class="listing-bottom">
-          <a class="item-title">Monster Hunter</a>
-          <p class="item-subtitle">Action & adventure</p>
+          <a class="item-title"><%= movie.title %></a>
+          <p class="item-subtitle"><%= movie.genre %></p>
           <div class="item-info">
             <div class="rating">
               <i class="star fas fa-star fa-xs"></i>
@@ -42,137 +42,13 @@
               <i class="star fas fa-star fa-xs"></i>
             </div>
             <div class="price">
-              <p>LBP 6,000</p>
+              <!-- need to truncate number only .replace(/[^\d,]/g,'') -->
+              <p><%= movie.price %></p>
             </div>
           </div>
         </div>
       </div>
-      <!-- Card -->
-      <div class="listing-card">
-        <div class="listing-top">
-        </div>
-        <div class="listing-bottom">
-          <a class="item-title">Monster Hunter</a>
-          <p class="item-subtitle">Action & adventure</p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP 6,000</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card">
-        <div class="listing-top">
-        </div>
-        <div class="listing-bottom">
-          <a class="item-title">Monster Hunter</a>
-          <p class="item-subtitle">Action & adventure</p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP 6,000</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card">
-        <div class="listing-top">
-        </div>
-        <div class="listing-bottom">
-          <a class="item-title">Monster Hunter</a>
-          <p class="item-subtitle">Action & adventure</p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP 6,000</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card">
-        <div class="listing-top">
-        </div>
-        <div class="listing-bottom">
-          <a class="item-title">Monster Hunter</a>
-          <p class="item-subtitle">Action & adventure</p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP 6,000</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card">
-        <div class="listing-top">
-        </div>
-        <div class="listing-bottom">
-          <a class="item-title">Monster Hunter</a>
-          <p class="item-subtitle">Action & adventure</p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP 6,000</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card">
-        <div class="listing-top">
-        </div>
-        <div class="listing-bottom">
-          <a class="item-title">Monster Hunter</a>
-          <p class="item-subtitle">Action & adventure</p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP 6,000</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <% }) %>
     </div>
   </div>
 </body>
