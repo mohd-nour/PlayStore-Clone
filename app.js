@@ -142,7 +142,12 @@ const reviewSchema = {
 const Review = mongoose.model("Review", reviewSchema);
 
 // the main page
-app.get("/", (req, res, next) => {
+app.get("/", (req, res) => {
+  var topMovies;
+  var newMovies;
+  var recMovies;
+  var actionMovies;
+  // array of top-selling movies
   Movie.find({
     group: "Top-Selling Movies"
   }, function(err, movies) {
@@ -150,14 +155,49 @@ app.get("/", (req, res, next) => {
       console.log(err);
     } else {
       // In EJS, use found items array and tap into attributes to display in frontend
-      res.render("categories", {
-        topMovies: movies,
-        newMovies: movies,
-        recMovies: movies,
-        actionMovies: movies
-      });
+      topMovies = movies;
     }
   });
+  // array of new movies
+  Movie.find({
+    group: "New rental movies"
+  }, function(err, movies) {
+    if (err) {
+      console.log(err);
+    } else {
+      // In EJS, use found items array and tap into attributes to display in frontend
+      newMovies = movies;
+    }
+  });
+  // array of recommended movies
+  Movie.find({
+    group: "Recommended For You"
+  }, function(err, movies) {
+    if (err) {
+      console.log(err);
+    } else {
+      // In EJS, use found items array and tap into attributes to display in frontend
+      recMovies = movies;
+    }
+  });
+  // array of action/thrilling movies
+  Movie.find({
+    group: "Thrilling movies"
+  }, function(err, movies) {
+    if (err) {
+      console.log(err);
+    } else {
+      // In EJS, use found items array and tap into attributes to display in frontend
+      actionMovies = movies;
+    }
+  });
+  console.log(actionMovies);
+  // res.render("categories", {
+  //   topMovies: topMovies,
+  //   newMovies: newMovies,
+  //   recMovies: recMovies,
+  //   actionMovies: actionMovies
+  // });
 });
 
 app.get("/seemoremov/:listName", function(req, res) {
