@@ -182,22 +182,21 @@ app.get("/", (req, res) => {
   });
   // array of action/thrilling movies
   Movie.find({
-    group: "Thrilling movies"
+    group: "Superhero movies"
   }, function(err, movies) {
     if (err) {
       console.log(err);
     } else {
       // In EJS, use found items array and tap into attributes to display in frontend
       actionMovies = movies;
+      res.render("categories", {
+        topMovies: topMovies,
+        newMovies: newMovies,
+        recMovies: recMovies,
+        actionMovies: actionMovies
+      });
     }
   });
-  console.log(actionMovies);
-  // res.render("categories", {
-  //   topMovies: topMovies,
-  //   newMovies: newMovies,
-  //   recMovies: recMovies,
-  //   actionMovies: actionMovies
-  // });
 });
 
 app.get("/seemoremov/:listName", function(req, res) {
