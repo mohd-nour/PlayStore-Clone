@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
-const { cwd } = require("process");
+const {
+  cwd
+} = require("process");
 var ObjectId = require("mongodb").ObjectID;
 
 //create an express app
@@ -44,11 +46,9 @@ const movieSchema = {
   yearProduced: String,
   duration: String,
   price: String,
-  genre: [
-    {
-      type: String,
-    },
-  ],
+  genre: [{
+    type: String,
+  }, ],
   video: String,
   description: String,
   actors: String,
@@ -57,11 +57,9 @@ const movieSchema = {
   quality: String,
   audioLanguage: String,
   subtitles: String,
-  group: [
-    {
-      type: String,
-    },
-  ],
+  group: [{
+    type: String,
+  }, ],
 };
 
 // movie model with movies collection
@@ -73,11 +71,9 @@ const bookSchema = {
   mainImage: String,
   creator: String,
   date: String,
-  genre: [
-    {
-      type: String,
-    },
-  ],
+  genre: [{
+    type: String,
+  }, ],
   price: String,
   description: String,
   more: String,
@@ -98,17 +94,13 @@ const Book = mongoose.model("Book", bookSchema);
 const appSchema = {
   title: String,
   mainImage: String,
-  genre: [
-    {
-      type: String,
-    },
-  ],
+  genre: [{
+    type: String,
+  }, ],
   video: String,
-  images: [
-    {
-      type: String,
-    },
-  ],
+  images: [{
+    type: String,
+  }, ],
   description: String,
   more: String,
   updated: String,
@@ -122,11 +114,9 @@ const appSchema = {
   permission: String,
   offeredBy: String,
   developer: String,
-  group: [
-    {
-      type: String,
-    },
-  ],
+  group: [{
+    type: String,
+  }, ],
 };
 
 // app model with apps collection
@@ -143,11 +133,9 @@ const reviewSchema = {
   total: {
     type: "String",
   },
-  reviews: [
-    {
-      type: mongoose.Schema.Types.Mixed,
-    },
-  ],
+  reviews: [{
+    type: mongoose.Schema.Types.Mixed,
+  }, ],
 };
 
 // app model with apps collection
@@ -155,25 +143,72 @@ const Review = mongoose.model("Review", reviewSchema);
 
 // the main page
 app.get("/", (req, res) => {
-  // fetch all movie documents from movie collection and pass to categories EJS
-  Movie.find({}, function (err, foundItems) {
+  var topMovies;
+  var newMovies;
+  var recMovies;
+  var actionMovies;
+  // array of top-selling movies
+  Movie.find({
+    group: "Top-Selling Movies"
+  }, function(err, movies) {
     if (err) {
       console.log(err);
     } else {
-      // In EJS, use foundItems array and tap into attributes to display in frontend
+      // In EJS, use found items array and tap into attributes to display in frontend
+      topMovies = movies;
+    }
+  });
+  // array of new movies
+  Movie.find({
+    group: "New rental movies"
+  }, function(err, movies) {
+    if (err) {
+      console.log(err);
+    } else {
+      // In EJS, use found items array and tap into attributes to display in frontend
+      newMovies = movies;
+    }
+  });
+  // array of recommended movies
+  Movie.find({
+    group: "Recommended For You"
+  }, function(err, movies) {
+    if (err) {
+      console.log(err);
+    } else {
+      // In EJS, use found items array and tap into attributes to display in frontend
+      recMovies = movies;
+    }
+  });
+  // array of action/thrilling movies
+  Movie.find({
+    group: "Superhero movies"
+  }, function(err, movies) {
+    if (err) {
+      console.log(err);
+    } else {
+      // In EJS, use found items array and tap into attributes to display in frontend
+      actionMovies = movies;
       res.render("categories", {
-        movies: foundItems,
+        topMovies: topMovies,
+        newMovies: newMovies,
+        recMovies: recMovies,
+        actionMovies: actionMovies
       });
     }
   });
 });
 
-app.get("/seemoremov", function (req, res) {
+app.get("/seemoremov/:listName", function(req, res) {
+  const listName = req.params.listName;
   // finding all documents in movies collection
-  Movie.find({}, function (err, movies) {
+  Movie.find({
+    group: listName
+  }, function(err, movies) {
     // passing array of movies documents to seemoremov.ejs
     res.render("seemoremov", {
-      movies: movies,
+      listTitle: listName,
+      movies: movies
     });
   });
 });
@@ -181,11 +216,18 @@ app.get("/seemoremov", function (req, res) {
 //get selected-app item
 app.get("/apps/:id", (req, res) => {
   const id = req.params.id;
-  Application.findById({ _id: ObjectId(id) })
+  Application.findById({
+      _id: ObjectId(id)
+    })
     .then((result) => {
-      Review.findOne({ type: "app" })
+      Review.findOne({
+          type: "app"
+        })
         .then((appReview) => {
-          res.render("app", { app: result, review: appReview });
+          res.render("app", {
+            app: result,
+            review: appReview
+          });
         })
         .catch((err) => {
           console.log(err);
@@ -200,3 +242,4 @@ app.get("/apps/:id", (req, res) => {
 app.listen(3000, () => {
   console.log("listening on port 3000");
 });
+//dhsajsnsak

@@ -22,12 +22,29 @@
 
   <%- include('partials/search.ejs') %>
 
+<<<<<<< HEAD
   <body>
     <!-- Listing Container 1 -->
     <div class="category-container first-container">
       <div class="title-header">
         <div class="heading-title">
           <h2 class="category-title">Top selling movies</h2>
+=======
+<body>
+  <!-- Listing Container 1 -->
+  <div class="category-container first-container">
+    <div class="title-header">
+      <div class="heading-title">
+        <h2 class="category-title"><%= listTitle %></h2>
+      </div>
+    </div>
+    <!-- Container Body -->
+    <div class="listing-body-seemore">
+      <% movies.forEach(function(movie) { %>
+      <!-- Card -->
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= movie.mainImage %>)">
+>>>>>>> 122209de7d999f8b297e1ec34d3eeebd2c8f5985
         </div>
       </div>
       <!-- Container Body -->
