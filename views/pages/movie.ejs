@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title><%= app.title %></title>
+    <title>#Title</title>
     <!-- bootstrap -->
     <link
       rel="stylesheet"
@@ -54,26 +54,29 @@
         <div class="main container shadow">
           <div class="header">
             <img
-              src="<%= app.mainImage %>"
+              src="https://play-lh.googleusercontent.com/TouR_TZ2_Gye7nIkwvhP6axS18By-uxrAcfT1EKkE-Fmy0AVuicsU8cXJno8j7qmCX79O9l_0cRndYS89w=w200-h300-rw"
               class="rounded float-left app-img"
               alt="item image"
             />
             <div class="header-right">
-              <h1 class="item-name"><%= app.title %></h1>
-              <div class="row">
+              <h1 class="item-name">#Title</h1>
+              <!-- <div class="row">
                 <a class="vert-cent" href="#">
                   <% app.genre.forEach( element =>{ %> <%= element %> <% }) %>
                 </a>
                 <div class="stars vert-cent">
+                  <% let s = review.totalScore;%> <%let z = parseFloat(s);%>
+                  <%for(var i=1; i <= 5; i++){%> <%if(z >= i){%>
                   <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <%}else if(z >= (parseFloat(i) - 0.5)){%>
                   <i class="fas fa-star-half-alt"></i>
+                  <%}else{%>
+                  <i class="far fa-star"></i>
+                  <%}%> <%}%>
                 </div>
                 <p class="reviewers vert-cent stext"><%= review.total %></p>
                 <i class="fas fa-user vert-cent"></i>
-              </div>
+              </div> -->
               <img
                 class="three-plus"
                 src="https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=s14-rw"
@@ -101,41 +104,14 @@
             <div id="scrollLeft">
               <i id="scroll-left" class="fas fa-chevron-left"></i>
             </div>
-
-            <div class="slider-container">
-              <!-- <div class="container">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <p class="text-center mt-5">
-                      <a
-                        href="#headerPopup"
-                        id="headerVideoLink"
-                        class="btn btn-outline-danger popup-modal"
-                        >See Why Solodev WXP</a
-                      >
-                    </p>
-                    <div
-                      id="headerPopup"
-                      class="mfp-hide embed-responsive embed-responsive-21by9"
-                    >
-                      <iframe
-                        class="embed-responsive-item"
-                        width="854"
-                        height="480"
-                        src="https://www.youtube.com/embed/qN3OueBm9F4"
-                        frameborder="0"
-                        allow="autoplay; encrypted-media"
-                        allowfullscreen
-                      ></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
+            <!-- <div class="slider-container">
+              <% for(var i=0; i < app.images.length; i++){ %> <% if(i == 0 &&
+              app.video != ""){%>
               <a href="#headerPopup" id="headerVideoLink">
                 <div style="display: grid">
                   <img
                     class="slider-image"
-                    src="https://i.ytimg.com/vi/2c7ae0rr-Ns/hqdefault.jpg"
+                    src="<%= app.images[i]%>"
                     alt=""
                     style="grid-column: 1; grid-row: 1"
                   />
@@ -150,33 +126,20 @@
                   class="embed-responsive-item"
                   width="854"
                   height="480"
-                  src="https://www.youtube.com/embed/qN3OueBm9F4"
+                  src="<%= app.video %>"
                   frameborder="0"
                   allow="autoplay; encrypted-media"
                   allowfullscreen
                 ></iframe>
               </div>
+              <% } else { %>
               <img
                 class="slider-image"
-                src="https://play-lh.googleusercontent.com/FcL8U0TnRExDrbzYiPXu_YdZZ0JK6wgLpkKvib1T2YrZEa9iA_2bUQR1maiLjT25NA=w720-h310-rw"
-                alt=""
+                src="<%= app.images[i] %>"
+                alt="app image"
               />
-              <img
-                class="slider-image"
-                src="https://play-lh.googleusercontent.com/ER2yGEKm1-qiQnudYu4LyLl9RFT1f2oHvEUi_O5jtvsFwFTH7--ZsblLmH8Hx0JTzQ=w720-h310-rw"
-                alt=""
-              />
-              <img
-                class="slider-image"
-                src="https://play-lh.googleusercontent.com/KF4paO-kj4AEwrZ_aYh0DKL99dxBVAin_XXsZ5ndWKfgkYd4ShRiqn9yKzP1SpTIuag=w720-h310-rw"
-                alt=""
-              />
-              <img
-                class="slider-image"
-                src="https://play-lh.googleusercontent.com/zSUp6OsW0EBvjeJ345KMVfdqbYvol8OSbHMS3lXInTAoWoXEDSHW0gyvh4GTj56B698=w1280-h578-rw"
-                alt=""
-              />
-            </div>
+              <%} } %>
+            </div> -->
 
             <div id="scrollRight">
               <i id="scroll-right" class="fas fa-chevron-right"></i>
@@ -184,76 +147,13 @@
           </div>
 
           <div class="description">
-            <div class="description-text">
-              <b
-                >Join Crash Bandicoot and his sister Coco on a mission to save
-                the multiverse!</b
-              ><br /><br />Think fast to keep Crash and Coco running, jumping,
-              spinning and smashing in lanes loaded with obstacles. Speed
-              through mysterious lands, defeating the henchmen of Doctor Neo
-              Cortex.<br /><br />Swipe to explore wild and exotic locations.
-              Customize Crash and Coco with N.Sane Skins, build an arsenal of
-              stupendous weapons, and hone those running skills for rewards.<br /><br />Get
-              ready for the run of a lifetime!<br /><br /><b>
-                Legendary locations and infamous bosses </b
-              ><br />A variety of running challenges await Bandicoot fans, both
-              new and back for more!<br /><br />The Wumpa Archipelago is vast,
-              featuring classics such as Turtle Woods, Temple Ruins and The
-              Great Gate to delight all Crash fans. Every adventure is a thrill
-              ride, risking dangerous Sewer or Later or a dash through the
-              perilous Snow Go Mountain.<br /><br />Dr Neo Cortex has pulled
-              from the multiverse Crash and Coco's most dangerous enemies: Nina
-              Cortex, Dingodile, Dr N-Gin, Fake Crash &amp; Coco plus many more
-              old and new bosses are stealing Power Gems. It's up to Crash and
-              Coco to stop them!<br /><br /><b>Team up for greater rewards</b
-              ><br />Get ready to join the best Bandicoot in the asynchronous
-              multiplayer runs!<br /><br />Teams are about playing with friends
-              and pulling together, with bragging rights for being the best and
-              seeing your name on the leaderboards. Who went farthest, or lasted
-              longest? By challenging others, your Team could claim huge
-              Trophies.<br /><br /><b>Adventure in bold Bandicoot style</b
-              ><br />There is more than meets the eye with incredible skins
-              available to unlock.<br /><br />The classic Crash Bandicoot and
-              Coco are yours from the start, plus Punk skins to make a
-              statement. As you explore the multiverse, you'll unlock skins that
-              give extra Trophies, bonuses, modifiers and even an Aku Aku
-              Mask!<br /><br /><b>Unlock new lands to explore</b><br />Choose
-              where to take Crash or Coco running for prizes or just for fun.<br /><br />Rewards
-              offered, or enemies faced, influence choices of Skins and weapons
-              to take running with you. Islands pose varied challenges with
-              multiple routes and lanes weaving to-and-fro, above and below. The
-              resources to collect depend on the path you take, so choose
-              wisely.<br /><br /><b>Perfect that aim, boost your game</b
-              ><br />When it comes to boss battles, Crash and Coco make weapons
-              to take ’em down!<br /><br />Serums to sloosh Frosty Ant Drone out
-              of his lane. Bombs that rattle Nitro Crab in his shell. It takes a
-              Ray Gun AND Bazooka to humiliate Nitro Neo Cortex.<br /><br /><b
-                >Build and upgrade your bandicoot base</b
-              ><br />Help Coco to develop her Wumpa Island HQ.<br /><br />Coco
-              or Crash go on-the-run to comb Wumpa Island for resources. Parts
-              are used to build high-tech labs where weapons get made, such as
-              Nitro Bombs and Frosty Ray Guns.<br /><br />Visit our website for
-              more details at http://crashontherun.com/<br /><br />Follow Crash
-              for the latest news!<br />Instagram: @CrashOnTheRun<br />Twitter:
-              @CrashOnTheRun<br />Facebook: CrashOnTheRun<br /><br />Crash
-              Bandicoot: On the Run! is completely free to play but some
-              optional in-game items will require payment.<br /><br />You must
-              be connected to the Internet to access the game.<br />The download
-              of this app is only a partial download of the game. Additional
-              content will be installed upon opening the app.<br /><br />By
-              downloading this game you are agreeing to our terms of service;
-              https://king.com/termsAndConditions.<br /><br />Easily sync the
-              game between devices and access full game features when connected
-              to the internet.<br /><br />Do not sell my data: King shares your
-              personal information with advertising partners to personalize ads.
-              Learn more at https://king.com/privacyPolicy. If you wish to
-              exercise your Do Not Sell My Data rights, you can do so by
-              contacting us via the in-game help centre or by going to
-              https://soporto.king.com/contact<br /><br />© 2021 Activision
-              Publishing Inc. CRASH BANDICOOT: ON THE RUN!, CRASH BANDICOOT and
-              CRASH are trademarks of Activision Publishing, Inc. KING and the
-              KING crown logo are trademarks of King.com Ltd.
-            </div>
+            <!-- <div class="description-text">
+              <% let x = app.description; %> <% let list = x.split(" "); %> <%
+              for(var i=0; i < list.length; i++) {%> <%if(list[i].endsWith(".")
+              || list[i].includes(".")){%> <%=list[i]%>
+              <br />
+              <%} else {%> <%=list[i]%> <%}%> <%}%>
+            </div> -->
 
             <div class="more-container">
               <div id="read-more" class="btn-link more">READ MORE</div>
@@ -274,22 +174,25 @@
               </button>
             </div>
             <div class="lrmargin flex-display review-bars">
-              <div class="left-side-review">
-                <h1 class="point-review">4.5</h1>
+              <!-- <div class="left-side-review">
+                <h1 class="point-review"><%= review.totalScore %></h1>
                 <div class="stars vert-cent new-stars">
+                  <%let y = parseFloat(review.totalScore);%> <%for(var i=1; i <=
+                  5; i++){%> <%if(y >= i){%>
                   <i class="fas fa-star size-fourteen"></i>
-                  <i class="fas fa-star size-fourteen"></i>
-                  <i class="fas fa-star size-fourteen"></i>
-                  <i class="fas fa-star size-fourteen"></i>
+                  <%}else if(y >= (parseFloat(i) - 0.5)){%>
                   <i class="fas fa-star-half-alt size-fourteen"></i>
+                  <%}else{%>
+                  <i class="far fa-star size-fourteen"></i>
+                  <%}%> <%}%>
                 </div>
                 <div class="row">
                   <i class="fas fa-user vert-cent size-fourteen"></i>
                   <p class="reviewers vert-cent stext size-fourteen">
-                    567,618 total
+                    <%= review.total %>
                   </p>
                 </div>
-              </div>
+              </div> -->
               <div class="right-side-review">
                 <div class="review-bar">
                   <span class="review-nb">5</span>
@@ -645,6 +548,7 @@
               </div>
             </div>
           </div>
+
           <hr class="lrmargin" />
           <div class="add-info">
             <p class="lrmargin left-margin">ADDITIONAL INFORMATION</p>
@@ -655,9 +559,9 @@
                 <th>Installs</th>
               </tr>
               <tr>
-                <td class="table-data">29 March 2021</td>
-                <td class="table-data">184M</td>
-                <td class="table-data">10,000,000+</td>
+                <td class="table-data">#updated</td>
+                <td class="table-data">#size</td>
+                <td class="table-data">#installs</td>
               </tr>
               <tr>
                 <th>Current Version</th>
@@ -665,16 +569,14 @@
                 <th>Content rating</th>
               </tr>
               <tr>
-                <td>1.0.81</td>
-                <td>5.0 and up</td>
-                <td>Rated for 3+</td>
+                <td>#version</td>
+                <td>#requires</td>
+                <!-- <td><%= app.content.replace("Learn more", "") %></td> -->
               </tr>
               <tr>
                 <td></td>
                 <td></td>
-                <td class="table-data">
-                  <a href="#" class="btn-lnk green">Learn more</a>
-                </td>
+                <td class="table-data"></td>
               </tr>
               <tr>
                 <th>Interactive Elements</th>
@@ -682,13 +584,15 @@
                 <th>Permission</th>
               </tr>
               <tr>
-                <td>Users interact, In-game</td>
-                <td>LBP 1,750 – LBP 189,500</td>
-                <td><a href="#" class="btn-lnk green">View details</a></td>
+                <!-- <td><%= app.elements %></td>
+                <td><%= app.products %></td> -->
+                <td>
+                  <!-- <a href="#" class="btn-lnk green"><%= app.permission %></a> -->
+                </td>
               </tr>
               <tr>
-                <td class="table-data">purchases</td>
-                <td class="table-data">per item</td>
+                <td class="table-data"></td>
+                <td class="table-data"></td>
                 <td class="table-data"></td>
               </tr>
               <tr>
@@ -700,16 +604,11 @@
                 <td class="table-data-final">
                   <a href="#" class="btn-lnk green">Flag as inappropriate</a>
                 </td>
-                <td class="table-data-final">King</td>
-                <td class="table-data-final-right">
-                  <a href="#" class="btn-lnk green">Visit website</a>
-                  <a href="#" class="btn-lnk green">crash_support@king.com</a>
-                  <a href="#" class="btn-lnk green">Privacy Policy</a>
-                  <span>King.com Limited Aragon</span>
-                  <span>Business Centre, Level 4,</span>
-                  <span>Dragonara Road, St</span>
-                  <span>Julians STJ3140, Malta</span>
+                <td class="table-data-final">
+                  <!-- <%= app.offeredBy.replace("Flag as inappropriate",
+                  "Individually");%> -->
                 </td>
+                <!-- <td class="table-data-final-right"><%= app.developer %></td> -->
               </tr>
             </table>
           </div>
