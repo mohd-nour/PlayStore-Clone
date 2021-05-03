@@ -1,441 +1,544 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Google Play</title>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/fad6e48f21.js"
+      crossorigin="anonymous"
+    ></script>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Google Play</title>
-  <!-- Fontawesome -->
-  <script src="https://kit.fontawesome.com/fad6e48f21.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/categories.css" />
+  </head>
+  <%- include('partials/search.ejs') %>
 
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="css/categories.css" />
-</head>
-<%- include('partials/search.ejs') %>
-
-<body>
-  <!-- Listing Container 1 -->
-  <div class="category-container first-container">
-    <div class="title-header">
-      <div class="heading-title">
-        <h2 class="category-title">Top-Selling Movies</h2>
+  <body>
+    <!-- Listing Container 1 -->
+    <div class="category-container first-container">
+      <div class="title-header">
+        <div class="heading-title">
+          <h2 class="category-title">Top-Selling Movies</h2>
+        </div>
+        <div class="see-more">
+          <form action="/seemoremov/Top-Selling Movies" method="get">
+            <button class="see-more-btn" type="submit" name="button">
+              See more
+            </button>
+          </form>
+        </div>
       </div>
-      <div class="see-more">
-        <form action="/seemoremov/Top-Selling Movies" method="get">
-          <button class="see-more-btn" type="submit" name="button">
-            See more
-          </button>
-        </form>
-      </div>
-    </div>
 
-    <!-- Container Body -->
-    <div class="listing-body">
-      <!-- Loop over first 4 top cards -->
-      <!-- Card -->
-      <% for (i=0; i<4; i++) { %>
-      <div class="listing-card">
-        <div class="listing-top" style="background-image: url(<%= topMovies[i].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= topMovies[i].title %></a>
-          <p class="item-subtitle"><%= topMovies[i].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= topMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+      <!-- Container Body -->
+      <div class="listing-body">
+        <!-- Loop over first 4 top cards -->
+        <!-- Card -->
+        <% for (i=0; i<4; i++) { %>
+        <div class="listing-card">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= topMovies[i].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= topMovies[i].title %></a>
+            <p class="item-subtitle"><%= topMovies[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  topMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <% } %>
+        <% } %>
 
-      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
-      <!-- Card -->
-      <div class="listing-card card-5">
-        <div class="listing-top" style="background-image: url(<%= topMovies[5].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= topMovies[5].title %></a>
-          <p class="item-subtitle"><%= topMovies[5].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= topMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card card-6">
-        <div class="listing-top" style="background-image: url(<%= topMovies[6].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= topMovies[6].title %></a>
-          <p class="item-subtitle"><%= topMovies[6].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= topMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+        <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+        <!-- Card -->
+        <div class="listing-card card-5">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= topMovies[5].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= topMovies[5].title %></a>
+            <p class="item-subtitle"><%= topMovies[5].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  topMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card card-7">
-        <div class="listing-top" style="background-image: url(<%= topMovies[7].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= topMovies[7].title %></a>
-          <p class="item-subtitle"><%= topMovies[7].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= topMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Listing Container 2 -->
-  <div class="category-container">
-    <div class="title-header">
-      <div class="heading-title">
-        <h2 class="category-title">New rental movies</h2>
-      </div>
-      <div class="see-more">
-        <form action="/seemoremov/New rental movies" method="get">
-          <button class="see-more-btn" type="submit" name="button">
-            See more
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Container Body -->
-    <div class="listing-body">
-      <!-- Loop over first 4 top cards -->
-      <!-- Card -->
-      <% for (i=0; i<4; i++) { %>
-      <div class="listing-card">
-        <div class="listing-top" style="background-image: url(<%= newMovies[i].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= newMovies[i].title %></a>
-          <p class="item-subtitle"><%= newMovies[i].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= newMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+        <!-- Card -->
+        <div class="listing-card card-6">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= topMovies[6].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= topMovies[6].title %></a>
+            <p class="item-subtitle"><%= topMovies[6].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  topMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <% } %>
-
-      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
-      <!-- Card -->
-      <div class="listing-card card-5">
-        <div class="listing-top" style="background-image: url(<%= newMovies[5].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= newMovies[5].title %></a>
-          <p class="item-subtitle"><%= newMovies[5].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= newMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card card-6">
-        <div class="listing-top" style="background-image: url(<%= newMovies[6].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= newMovies[6].title %></a>
-          <p class="item-subtitle"><%= newMovies[6].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= newMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card card-7">
-        <div class="listing-top" style="background-image: url(<%= newMovies[7].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= newMovies[7].title %></a>
-          <p class="item-subtitle"><%= newMovies[7].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= newMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+        <!-- Card -->
+        <div class="listing-card card-7">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= topMovies[7].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= topMovies[7].title %></a>
+            <p class="item-subtitle"><%= topMovies[7].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  topMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Listing Container 3 -->
-  <div class="category-container">
-    <div class="title-header">
-      <div class="heading-title">
-        <h2 class="category-title">Recommended For You</h2>
+    <!-- Listing Container 2 -->
+    <div class="category-container">
+      <div class="title-header">
+        <div class="heading-title">
+          <h2 class="category-title">New rental movies</h2>
+        </div>
+        <div class="see-more">
+          <form action="/seemoremov/New rental movies" method="get">
+            <button class="see-more-btn" type="submit" name="button">
+              See more
+            </button>
+          </form>
+        </div>
       </div>
-      <div class="see-more">
-        <form action="/seemoremov/Recommended For You" method="get">
-          <button class="see-more-btn" type="submit" name="button">
-            See more
-          </button>
-        </form>
-      </div>
-    </div>
 
-    <!-- Container Body -->
-    <div class="listing-body">
-      <!-- Loop over first 4 top cards -->
-      <!-- Card -->
-      <% for (i=0; i<4; i++) { %>
-      <div class="listing-card">
-        <div class="listing-top" style="background-image: url(<%= recMovies[i].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" action="#" class="item-title"><%= recMovies[i].title %></a>
-          <p class="item-subtitle"><%= recMovies[i].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= recMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+      <!-- Container Body -->
+      <div class="listing-body">
+        <!-- Loop over first 4 top cards -->
+        <!-- Card -->
+        <% for (i=0; i<4; i++) { %>
+        <div class="listing-card">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= newMovies[i].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= newMovies[i].title %></a>
+            <p class="item-subtitle"><%= newMovies[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  newMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <% } %>
+        <% } %>
 
-      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
-      <!-- Card -->
-      <div class="listing-card card-5">
-        <div class="listing-top" style="background-image: url(<%= recMovies[5].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= recMovies[5].title %></a>
-          <p class="item-subtitle"><%= recMovies[5].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= recMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card card-6">
-        <div class="listing-top" style="background-image: url(<%= recMovies[6].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= recMovies[6].title %></a>
-          <p class="item-subtitle"><%= recMovies[6].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= recMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+        <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+        <!-- Card -->
+        <div class="listing-card card-5">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= newMovies[5].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= newMovies[5].title %></a>
+            <p class="item-subtitle"><%= newMovies[5].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  newMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card card-7">
-        <div class="listing-top" style="background-image: url(<%= recMovies[7].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= recMovies[7].title %></a>
-          <p class="item-subtitle"><%= recMovies[7].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= recMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Listing Container 4 -->
-  <div class="category-container">
-    <div class="title-header">
-      <div class="heading-title">
-        <h2 class="category-title">Superhero movies</h2>
-      </div>
-      <div class="see-more">
-        <form action="/seemoremov/Superhero movies" method="get">
-          <button class="see-more-btn" type="submit" name="button">
-            See more
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Container Body -->
-    <div class="listing-body">
-      <!-- Loop over first 4 top cards -->
-      <!-- Card -->
-      <% for (i=0; i<4; i++) { %>
-      <div class="listing-card">
-        <div class="listing-top" style="background-image: url(<%= actionMovies[i].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= actionMovies[i].title %></a>
-          <p class="item-subtitle"><%= actionMovies[i].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= actionMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+        <!-- Card -->
+        <div class="listing-card card-6">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= newMovies[6].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= newMovies[6].title %></a>
+            <p class="item-subtitle"><%= newMovies[6].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  newMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <% } %>
-
-      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
-      <!-- Card -->
-      <div class="listing-card card-5">
-        <div class="listing-top" style="background-image: url(<%= actionMovies[5].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= actionMovies[5].title %></a>
-          <p class="item-subtitle"><%= actionMovies[5].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= actionMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card card-6">
-        <div class="listing-top" style="background-image: url(<%= actionMovies[6].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= actionMovies[6].title %></a>
-          <p class="item-subtitle"><%= actionMovies[6].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= actionMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="listing-card card-7">
-        <div class="listing-top" style="background-image: url(<%= actionMovies[7].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= actionMovies[7].title %></a>
-          <p class="item-subtitle"><%= actionMovies[7].genre %></p>
-          <div class="item-info">
-            <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-            </div>
-            <div class="price">
-              <p>LBP <%= actionMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+        <!-- Card -->
+        <div class="listing-card card-7">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= newMovies[7].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= newMovies[7].title %></a>
+            <p class="item-subtitle"><%= newMovies[7].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  newMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-<%- include('partials/footer.ejs') %>
+
+    <!-- Listing Container 3 -->
+    <div class="category-container">
+      <div class="title-header">
+        <div class="heading-title">
+          <h2 class="category-title">Recommended For You</h2>
+        </div>
+        <div class="see-more">
+          <form action="/seemoremov/Recommended For You" method="get">
+            <button class="see-more-btn" type="submit" name="button">
+              See more
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Container Body -->
+      <div class="listing-body">
+        <!-- Loop over first 4 top cards -->
+        <!-- Card -->
+        <% for (i=0; i<4; i++) { %>
+        <div class="listing-card">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= recMovies[i].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" action="#" class="item-title"
+              ><%= recMovies[i].title %></a
+            >
+            <p class="item-subtitle"><%= recMovies[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  recMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+
+        <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+        <!-- Card -->
+        <div class="listing-card card-5">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= recMovies[5].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= recMovies[5].title %></a>
+            <p class="item-subtitle"><%= recMovies[5].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  recMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card -->
+        <div class="listing-card card-6">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= recMovies[6].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= recMovies[6].title %></a>
+            <p class="item-subtitle"><%= recMovies[6].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  recMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card -->
+        <div class="listing-card card-7">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= recMovies[7].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= recMovies[7].title %></a>
+            <p class="item-subtitle"><%= recMovies[7].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  recMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Listing Container 4 -->
+    <div class="category-container">
+      <div class="title-header">
+        <div class="heading-title">
+          <h2 class="category-title">Superhero movies</h2>
+        </div>
+        <div class="see-more">
+          <form action="/seemoremov/Superhero movies" method="get">
+            <button class="see-more-btn" type="submit" name="button">
+              See more
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Container Body -->
+      <div class="listing-body">
+        <!-- Loop over first 4 top cards -->
+        <!-- Card -->
+        <% for (i=0; i<4; i++) { %>
+        <div class="listing-card">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= actionMovies[i].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= actionMovies[i].title %></a>
+            <p class="item-subtitle"><%= actionMovies[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  actionMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+
+        <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+        <!-- Card -->
+        <div class="listing-card card-5">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= actionMovies[5].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= actionMovies[5].title %></a>
+            <p class="item-subtitle"><%= actionMovies[5].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  actionMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card -->
+        <div class="listing-card card-6">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= actionMovies[6].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= actionMovies[6].title %></a>
+            <p class="item-subtitle"><%= actionMovies[6].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  actionMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card -->
+        <div class="listing-card card-7">
+          <div
+            class="listing-top"
+            style="background-image: url(<%= actionMovies[7].mainImage %>)"
+          ></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= actionMovies[7].title %></a>
+            <p class="item-subtitle"><%= actionMovies[7].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+                <i class="star fas fa-star fa-xs"></i>
+              </div>
+              <div class="price">
+                <p>
+                  LBP <%=
+                  actionMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%- include('partials/footer.ejs') %>
 </html>
