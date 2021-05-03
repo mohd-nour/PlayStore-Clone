@@ -5,6 +5,7 @@ window.onload = function(){
     document.getElementById("profile_pic").addEventListener("mouseover", pic_display);
     document.getElementById("prof_sign").addEventListener("mouseover", pic_display);
     document.getElementById("prof_sign").addEventListener("mouseout", rem_display);
+    //document.getElementById("sendemail").addEventListener("click", SendEmail);
 };
 function pic_display(){
     document.getElementById("prof_sign").style.display = "block";

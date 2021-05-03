@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 const LocalStrategy = require("passport-local");
+const nodemailer = require('nodemailer');
 const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
@@ -158,7 +159,7 @@ const reviewSchema = {
 // app model with apps collection
 const Review = mongoose.model("Review", reviewSchema);
 
-app.get("/", async (req, res) => {
+app.get("/",  async (req, res) => {//isLoggedIn,
   const topMovies = await Movie.find({
     group: "Top-Selling Movies"
   })
@@ -324,6 +325,7 @@ app.post("/signup", (req, res) => {
     }
     passport.authenticate("local")(req, res, function() {
       res.redirect("/signin"); //
+      //var usern = req.body.username;
     })
   })
 });
@@ -333,7 +335,32 @@ app.get("/forgotpassword", (req, res) => {
 });
 app.get("/upload", (req, res)=>{
   res.render("upload");
-})
+});
+app.post("/sendemail", (req, res) => {
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'gpstore084@gmail.com',
+          pass: 'playstore@480'
+        }
+      });
+      
+      var mailOptions = {
+        from: 'gpstore084@gmail.com',
+        to: 'omarkammounii0612@gmail.com',//usern,
+        subject: 'News and Offers',
+        text: 'Starting from now, you will start receiving emails about new releases and offers related to our website. \nYou can stop us from sending such emails whenever you want'
+      };
+      
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+          res.redirect("/");
+        }
+      });
+});
 app.post("/logout", (req, res) => {
   req.session.destroy(function(err) {
     res.redirect("/signin");
