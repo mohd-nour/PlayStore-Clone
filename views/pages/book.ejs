@@ -44,15 +44,11 @@
       }
     </style>
   </head>
-
-  <body>
-    <!-- temp top -->
-    <div class="top"></div>
-    <!-- temp sections -->
-    <div class="flex-display">
-      <!-- temp side-bar -->
-      <div class="side-bar"></div>
-
+  <%- include('../partials/search.ejs') %>
+  <div class="d-flex flex-row">
+    <div style="width: 248px;">
+    </div>
+    <body>
       <div class="page">
         <div class="main container shadow">
           <div class="header">
@@ -589,4 +585,7 @@
       });
     </script>
   </body>
+  <%- include('../partials/footer.ejs') %>
+  </div>
+
 </html>
