@@ -1,0 +1,37 @@
+.movie-img {
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.movie-year {
+  font-size: 13px;
+  font-weight: bold;
+  color: grey;
+}
+
+.movie-genre {
+  font-size: 13px;
+  color: #a52714;
+  font-weight: bolder;
+}
+
+.movie-wishlist {
+  color: #a52714;
+}
+
+.movie-wishlist:hover {
+  color: red;
+}
+
+.movie-price {
+  background-color: #a52714;
+}
+
+.movie-price:hover {
+  background-color: red;
+}
+
+.movie-visual {
+  height: 100%;
+  width: 100%;
+}

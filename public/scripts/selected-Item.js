@@ -7,8 +7,12 @@ function pageLoad() {
   var readmore = document.getElementById("read-more");
   var showHidden = document.getElementsByClassName("showHidden")[0];
   var readMoreReviews = document.getElementById("read-more-reviews");
-  leftBtn.onclick = scrollLeft;
-  rightBtn.onclick = scrollRight;
+  if (leftBtn) {
+    leftBtn.onclick = scrollLeft;
+  }
+  if (rightBtn) {
+    rightBtn.onclick = scrollRight;
+  }
   readmore.onclick = readMore;
   showHidden.onclick = showContent;
   readMoreReviews.onclick = readAllReviews;

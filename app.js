@@ -6,11 +6,9 @@ const LocalStrategy = require("passport-local");
 const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
-const {
-  cwd
-} = require("process");
+const { cwd } = require("process");
 var ObjectId = require("mongodb").ObjectID;
-const User =  require("./models/user");
+const User = require("./models/user");
 
 //create an express app
 const app = express();
@@ -41,16 +39,18 @@ mongoose
 // });
 
 // The following code will be refactored into separate files after testing is completed
-app.use(require("express-session")({
-  secret:"Any normal Word",//decode or encode session
-      resave: false,          
-      saveUninitialized:false    
-  }));
+app.use(
+  require("express-session")({
+    secret: "Any normal Word", //decode or encode session
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
-  passport.serializeUser(User.serializeUser());       //session encoding
-  passport.deserializeUser(User.deserializeUser());   //session decoding
-  passport.use(new LocalStrategy(User.authenticate()));
-app.use(bodyParser.urlencoded({ extended:true }))
+passport.serializeUser(User.serializeUser()); //session encoding
+passport.deserializeUser(User.deserializeUser()); //session decoding
+passport.use(new LocalStrategy(User.authenticate()));
+app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -61,9 +61,11 @@ const movieSchema = {
   yearProduced: String,
   duration: String,
   price: String,
-  genre: [{
-    type: String,
-  }, ],
+  genre: [
+    {
+      type: String,
+    },
+  ],
   video: String,
   description: String,
   actors: String,
@@ -72,9 +74,11 @@ const movieSchema = {
   quality: String,
   audioLanguage: String,
   subtitles: String,
-  group: [{
-    type: String,
-  }, ],
+  group: [
+    {
+      type: String,
+    },
+  ],
 };
 
 // movie model with movies collection
@@ -86,9 +90,11 @@ const bookSchema = {
   mainImage: String,
   creator: String,
   date: String,
-  genre: [{
-    type: String,
-  }, ],
+  genre: [
+    {
+      type: String,
+    },
+  ],
   price: String,
   description: String,
   more: String,
@@ -109,13 +115,17 @@ const Book = mongoose.model("Book", bookSchema);
 const appSchema = {
   title: String,
   mainImage: String,
-  genre: [{
-    type: String,
-  }, ],
+  genre: [
+    {
+      type: String,
+    },
+  ],
   video: String,
-  images: [{
-    type: String,
-  }, ],
+  images: [
+    {
+      type: String,
+    },
+  ],
   description: String,
   more: String,
   updated: String,
@@ -129,9 +139,11 @@ const appSchema = {
   permission: String,
   offeredBy: String,
   developer: String,
-  group: [{
-    type: String,
-  }, ],
+  group: [
+    {
+      type: String,
+    },
+  ],
 };
 
 // app model with apps collection
@@ -148,100 +160,142 @@ const reviewSchema = {
   total: {
     type: "String",
   },
-  reviews: [{
-    type: mongoose.Schema.Types.Mixed,
-  }, ],
+  reviews: [
+    {
+      type: mongoose.Schema.Types.Mixed,
+    },
+  ],
 };
 
 // app model with apps collection
 const Review = mongoose.model("Review", reviewSchema);
 
 // the main page
-app.get("/",isLoggedIn, (req, res) => {
+app.get("/", isLoggedIn, (req, res) => {
   var topMovies;
   var newMovies;
   var recMovies;
   var actionMovies;
   // array of top-selling movies
-  Movie.find({
-    group: "Top-Selling Movies"
-  }, function(err, movies) {
-    if (err) {
-      console.log(err);
-    } else {
-      // In EJS, use found items array and tap into attributes to display in frontend
-      topMovies = movies;
+  Movie.find(
+    {
+      group: "Top-Selling Movies",
+    },
+    function (err, movies) {
+      if (err) {
+        console.log(err);
+      } else {
+        // In EJS, use found items array and tap into attributes to display in frontend
+        topMovies = movies;
+      }
     }
-  });
+  );
   // array of new movies
-  Movie.find({
-    group: "New rental movies"
-  }, function(err, movies) {
-    if (err) {
-      console.log(err);
-    } else {
-      // In EJS, use found items array and tap into attributes to display in frontend
-      newMovies = movies;
+  Movie.find(
+    {
+      group: "New rental movies",
+    },
+    function (err, movies) {
+      if (err) {
+        console.log(err);
+      } else {
+        // In EJS, use found items array and tap into attributes to display in frontend
+        newMovies = movies;
+      }
     }
-  });
+  );
   // array of recommended movies
-  Movie.find({
-    group: "Recommended For You"
-  }, function(err, movies) {
-    if (err) {
-      console.log(err);
-    } else {
-      // In EJS, use found items array and tap into attributes to display in frontend
-      recMovies = movies;
+  Movie.find(
+    {
+      group: "Recommended For You",
+    },
+    function (err, movies) {
+      if (err) {
+        console.log(err);
+      } else {
+        // In EJS, use found items array and tap into attributes to display in frontend
+        recMovies = movies;
+      }
     }
-  });
+  );
   // array of action/thrilling movies
-  Movie.find({
-    group: "Superhero movies"
-  }, function(err, movies) {
-    if (err) {
-      console.log(err);
-    } else {
-      // In EJS, use found items array and tap into attributes to display in frontend
-      actionMovies = movies;
-      res.render("categories", {
-        topMovies: topMovies,
-        newMovies: newMovies,
-        recMovies: recMovies,
-        actionMovies: actionMovies
-      });
+  Movie.find(
+    {
+      group: "Superhero movies",
+    },
+    function (err, movies) {
+      if (err) {
+        console.log(err);
+      } else {
+        // In EJS, use found items array and tap into attributes to display in frontend
+        actionMovies = movies;
+        res.render("categories", {
+          topMovies: topMovies,
+          newMovies: newMovies,
+          recMovies: recMovies,
+          actionMovies: actionMovies,
+        });
+      }
     }
-  });
+  );
 });
 
-app.get("/seemoremov/:listName", function(req, res) {
+app.get("/seemoremov/:listName", function (req, res) {
   const listName = req.params.listName;
   // finding all documents in movies collection
-  Movie.find({
-    group: listName
-  }, function(err, movies) {
-    // passing array of movies documents to seemoremov.ejs
-    res.render("seemoremov", {
-      listTitle: listName,
-      movies: movies
-    });
-  });
+  Movie.find(
+    {
+      group: listName,
+    },
+    function (err, movies) {
+      // passing array of movies documents to seemoremov.ejs
+      res.render("seemoremov", {
+        listTitle: listName,
+        movies: movies,
+      });
+    }
+  );
 });
 
 //get selected-app item
 app.get("/apps/:id", (req, res) => {
   const id = req.params.id;
   Application.findById({
-      _id: ObjectId(id)
-    })
+    _id: ObjectId(id),
+  })
     .then((result) => {
       Review.findOne({
-          type: "app"
-        })
+        type: "app",
+      })
         .then((appReview) => {
-          res.render("app", {
+          res.render("pages/app", {
             app: result,
-            review: appReview
+            review: appReview,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+//get selected movie
+app.get("/movies/:id", (req, res) => {
+  const id = req.params.id;
+  Movie.findById({
+    _id: ObjectId(id),
+  })
+    .then((result) => {
+      Review.findOne({
+        type: "movie",
+      })
+        .then((movReview) => {
+          res.render("pages/movie", {
+            movie: result,
+            review: movReview,
           });
         })
         .catch((err) => {
@@ -257,44 +311,48 @@ app.get("/signin", (req, res) => {
   res.render("signin");
 });
 
-app.post("/signin",passport.authenticate("local",{
-  successRedirect:"/",
-  failureRedirect:"/signin"
-}),
-  function (req, res){
+app.post(
+  "/signin",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/signin",
+  }),
+  function (req, res) {}
+);
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
+//
+app.post("/signup", (req, res) => {
+  User.register(
+    new User({ username: req.body.username }),
+    req.body.password,
+    function (err, user) {
+      if (err) {
+        console.log(err);
+        res.render("signup");
+      } else if (req.body.cpassword != req.body.password) {
+        res.render("signup");
+      }
+      passport.authenticate("local")(req, res, function () {
+        res.redirect("/signin"); //
+      });
+    }
+  );
+});
+
+app.get("/forgotpassword", (req, res) => {
+  res.render("forgotpassword");
+});
+
+app.post("/logout", (req, res) => {
+  req.session.destroy(function (err) {
+    res.redirect("/signin");
   });
-  app.get("/signup", (req, res) => {
-    res.render("signup");
-  });
-  //
-  app.post("/signup",(req,res)=>{
-      
-    User.register(new User({username: req.body.username}),req.body.password,function(err,user){
-        if(err){
-            console.log(err);
-            res.render("signup");
-        }
-        else if(req.body.cpassword != req.body.password){
-          res.render("signup");
-        }
-    passport.authenticate("local")(req,res,function(){
-        res.redirect("/signin");//
-    })    
-    })
-  });
-  
-  app.get("/forgotpassword", (req, res) => {
-    res.render("forgotpassword");
-  });
-  
-  app.post("/logout",(req,res)=>{
-    req.session.destroy(function (err) {
-      res.redirect("/signin");
-    });
-  });
-function isLoggedIn(req,res,next) {
-  if(req.isAuthenticated()){
-      return next();
+});
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
   }
   res.redirect("/signin");
 }

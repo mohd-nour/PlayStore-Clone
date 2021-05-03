@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>#Title</title>
+    <title><%= movie.title %></title>
     <!-- bootstrap -->
     <link
       rel="stylesheet"
@@ -29,14 +29,17 @@
     <link rel="stylesheet" href="../css/magnific-popup.css" />
     <!-- My CSS -->
     <link rel="stylesheet" href="../css/selected-item.css" />
+    <link rel="stylesheet" href="../css/movie.css" />
     <style>
       #headerPopup {
-        width: 75%;
+        width: 100%;
+        height: 400px;
         margin: 0 auto;
       }
 
       #headerPopup iframe {
         width: 100%;
+        height: 400px;
         margin: 0 auto;
       }
     </style>
@@ -54,16 +57,16 @@
         <div class="main container shadow">
           <div class="header">
             <img
-              src="https://play-lh.googleusercontent.com/TouR_TZ2_Gye7nIkwvhP6axS18By-uxrAcfT1EKkE-Fmy0AVuicsU8cXJno8j7qmCX79O9l_0cRndYS89w=w200-h300-rw"
-              class="rounded float-left app-img"
+              src="<%= movie.mainImage %>"
+              class="rounded float-left movie-img"
               alt="item image"
             />
             <div class="header-right">
-              <h1 class="item-name">#Title</h1>
-              <!-- <div class="row">
-                <a class="vert-cent" href="#">
-                  <% app.genre.forEach( element =>{ %> <%= element %> <% }) %>
-                </a>
+              <h1 class="item-name"><%= movie.title %></h1>
+              <div class="row">
+                <p class="vert-center movie-year">
+                  <%= movie.yearProduced %> <%= movie.duration %>
+                </p>
                 <div class="stars vert-cent">
                   <% let s = review.totalScore;%> <%let z = parseFloat(s);%>
                   <%for(var i=1; i <= 5; i++){%> <%if(z >= i){%>
@@ -76,84 +79,48 @@
                 </div>
                 <p class="reviewers vert-cent stext"><%= review.total %></p>
                 <i class="fas fa-user vert-cent"></i>
-              </div> -->
-              <img
-                class="three-plus"
-                src="https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=s14-rw"
-                alt=""
-              />
-              <p class="offers stext">Contains ads·Offers in-app purchases</p>
-              <div class="row">
-                <i class="fas fa-exclamation-circle"></i>
-                <p class="no-margin stext">
-                  This app is available for your device
-                </p>
               </div>
+
+              <p class="movie-genre">
+                <% movie.genre.forEach(element => { %> <%= element %> <% })%>
+              </p>
               <div class="row second-row">
-                <button type="button" class="btn btn-link stext">
+                <button type="button" class="btn btn-link stext movie-wishlist">
                   <i class="far fa-plus-square"></i>Add to wishlist
                 </button>
-                <button type="button" class="btn btn-success install">
-                  Install
+                <button
+                  type="button"
+                  class="btn btn-success install movie-price"
+                >
+                  <%= movie.price %>
                 </button>
               </div>
             </div>
           </div>
 
-          <div class="visual">
-            <div id="scrollLeft">
-              <i id="scroll-left" class="fas fa-chevron-left"></i>
-            </div>
-            <!-- <div class="slider-container">
-              <% for(var i=0; i < app.images.length; i++){ %> <% if(i == 0 &&
-              app.video != ""){%>
-              <a href="#headerPopup" id="headerVideoLink">
-                <div style="display: grid">
-                  <img
-                    class="slider-image"
-                    src="<%= app.images[i]%>"
-                    alt=""
-                    style="grid-column: 1; grid-row: 1"
-                  />
-                  <i class="far fa-play-circle"></i>
-                </div>
-              </a>
-              <div
-                id="headerPopup"
-                class="mfp-hide embed-responsive embed-responsive-21by9"
+          <div class="visual movie-visual">
+            <div id="headerPopup" class="embed-responsive">
+              <iframe
+                class="embed-responsive-item"
+                height="500"
+                width="500"
+                src="<%= movie.video.replace("autoplay=1", "autoplay=0") %>"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
               >
-                <iframe
-                  class="embed-responsive-item"
-                  width="854"
-                  height="480"
-                  src="<%= app.video %>"
-                  frameborder="0"
-                  allow="autoplay; encrypted-media"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <% } else { %>
-              <img
-                class="slider-image"
-                src="<%= app.images[i] %>"
-                alt="app image"
-              />
-              <%} } %>
-            </div> -->
-
-            <div id="scrollRight">
-              <i id="scroll-right" class="fas fa-chevron-right"></i>
+              </iframe>
             </div>
           </div>
 
           <div class="description">
-            <!-- <div class="description-text">
-              <% let x = app.description; %> <% let list = x.split(" "); %> <%
+            <div class="description-text">
+              <% let x = movie.description; %> <% let list = x.split(" "); %> <%
               for(var i=0; i < list.length; i++) {%> <%if(list[i].endsWith(".")
               || list[i].includes(".")){%> <%=list[i]%>
               <br />
               <%} else {%> <%=list[i]%> <%}%> <%}%>
-            </div> -->
+            </div>
 
             <div class="more-container">
               <div id="read-more" class="btn-link more">READ MORE</div>
@@ -174,7 +141,7 @@
               </button>
             </div>
             <div class="lrmargin flex-display review-bars">
-              <!-- <div class="left-side-review">
+                <div class="left-side-review">
                 <h1 class="point-review"><%= review.totalScore %></h1>
                 <div class="stars vert-cent new-stars">
                   <%let y = parseFloat(review.totalScore);%> <%for(var i=1; i <=
@@ -192,7 +159,7 @@
                     <%= review.total %>
                   </p>
                 </div>
-              </div> -->
+              </div>
               <div class="right-side-review">
                 <div class="review-bar">
                   <span class="review-nb">5</span>
@@ -552,65 +519,20 @@
           <hr class="lrmargin" />
           <div class="add-info">
             <p class="lrmargin left-margin">ADDITIONAL INFORMATION</p>
-            <table class="lrmargin left-margin more-info mtext">
-              <tr>
-                <th>Updated</th>
-                <th>Size</th>
-                <th>Installs</th>
-              </tr>
-              <tr>
-                <td class="table-data">#updated</td>
-                <td class="table-data">#size</td>
-                <td class="table-data">#installs</td>
-              </tr>
-              <tr>
-                <th>Current Version</th>
-                <th>Requires Android</th>
-                <th>Content rating</th>
-              </tr>
-              <tr>
-                <td>#version</td>
-                <td>#requires</td>
-                <!-- <td><%= app.content.replace("Learn more", "") %></td> -->
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td class="table-data"></td>
-              </tr>
-              <tr>
-                <th>Interactive Elements</th>
-                <th>In-app Products</th>
-                <th>Permission</th>
-              </tr>
-              <tr>
-                <!-- <td><%= app.elements %></td>
-                <td><%= app.products %></td> -->
-                <td>
-                  <!-- <a href="#" class="btn-lnk green"><%= app.permission %></a> -->
-                </td>
-              </tr>
-              <tr>
-                <td class="table-data"></td>
-                <td class="table-data"></td>
-                <td class="table-data"></td>
-              </tr>
-              <tr>
-                <th>Report</th>
-                <th>Offered By</th>
-                <th>Developer</th>
-              </tr>
-              <tr>
-                <td class="table-data-final">
-                  <a href="#" class="btn-lnk green">Flag as inappropriate</a>
-                </td>
-                <td class="table-data-final">
-                  <!-- <%= app.offeredBy.replace("Flag as inappropriate",
-                  "Individually");%> -->
-                </td>
-                <!-- <td class="table-data-final-right"><%= app.developer %></td> -->
-              </tr>
-            </table>
+            <div class="mtext d-flex justify-content-between">
+              <div class="w-100 ml-5">
+                <div class="font-weight-bold mb-3"> Rotten Tomatoes®</div>
+                <div><%= movie.quality%></div>
+              </div>
+              <div class="w-100 ml-5 mb-5">
+                <div class="font-weight-bold mb-4">Audio Language</div>
+                <div><%= movie.audioLanguage.replace(/\[5.1\]/g,"").replace(/\[5.1, AD\]/g,"")%></div>
+              </div>
+              <div class="w-100 ml-5 mr-5 mb-5">
+                <div class="font-weight-bold mb-4">Subtitles</div>
+                <div><%= movie.subtitles%></div> 
+              </div>
+            </div>
           </div>
         </div>
 
