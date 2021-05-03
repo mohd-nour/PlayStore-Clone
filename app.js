@@ -423,6 +423,18 @@ function isLoggedIn(req, res, next) {
   }
   res.redirect("/signin");
 }
+
+app.get("/uploadReview", () => {
+  let rawdata = fs.readFileSync(__dirname + "/data_files/reviews2.json");
+  let data = JSON.parse(rawdata);
+  console.log("started ...");
+  data.forEach((review) => {
+    let rev = Review(review);
+    rev.save();
+  });
+  console.log("Finished ...");
+});
+
 // listen on port 3000
 app.listen(3000, () => {
   console.log("listening on port 3000");

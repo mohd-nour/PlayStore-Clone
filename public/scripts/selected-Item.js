@@ -13,9 +13,15 @@ function pageLoad() {
   if (rightBtn) {
     rightBtn.onclick = scrollRight;
   }
-  readmore.onclick = readMore;
-  showHidden.onclick = showContent;
-  readMoreReviews.onclick = readAllReviews;
+  if (readmore) {
+    readmore.onclick = readMore;
+  }
+  if (showHidden) {
+    showHidden.onclick = showContent;
+  }
+  if (readMoreReviews) {
+    readMoreReviews.onclick = readAllReviews;
+  }
 }
 
 function scrollRight() {

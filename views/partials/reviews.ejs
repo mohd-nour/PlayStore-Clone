@@ -1,0 +1,55 @@
+<div class="review-list">
+  <% review.reviews.forEach(element => {%>
+  <div class="review-item">
+    <img src="<%= element.profile %>" alt="avatar" class="avatar" />
+    <div class="review-right">
+      <div class="review-right-upper">
+        <div class="review-right-up-left">
+          <span class="stext user-name"><%= element.name %></span>
+          <div class="stars vert-cent">
+            <%let z = element.stars%> <%for(var i=1; i <= 5; i++){%> <%if(z >=
+            i){%>
+            <i class="fas fa-star"></i>
+            <%}else if(z >= (parseFloat(i) - 0.5)){%>
+            <i class="fas fa-star-half-alt"></i>
+            <%}else{%>
+            <i class="far fa-star"></i>
+            <%}%> <%}%>
+            <span class="stext"><%= element.date %></span>
+          </div>
+        </div>
+        <div class="review-right-up-right">
+          <button type="button" name="thumbs" class="likeMore">
+            <i class="fas fa-thumbs-up thumb"></i>
+            <span class="stext"><%= element.likes %></span>
+          </button>
+          <button type="button" name="thumbs" class="likeMore">
+            <i class="fas fa-thumbs-down thumb"></i>
+            <span class="stext"><%= element.dislikes %></span>
+          </button>
+          <button type="button" name="button" class="likeMore dotsmore">
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+        </div>
+      </div>
+      <div class="review-right-lower">
+        <% if(element.review.length > 425){%>
+        <p class="mb-0">
+          <%= element.review.substring(0,425)%>
+          <button type="button" name="button" class="showHidden stext">
+            Full Review</button
+          ><span id="hidden1" class="mb-0"
+            ><%= element.review.substring(425)%>
+          </span>
+        </p>
+        <%} else {%>
+        <p class="mb-0"><%= element.review %></p>
+        <%}%>
+      </div>
+    </div>
+  </div>
+  <%if(element.reply){%>
+  <div id="triangle-up"></div>
+  <div id="rectangle"><%= element.reply %></div>
+  <%}%> <%})%>
+</div>
