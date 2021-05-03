@@ -359,12 +359,15 @@ a {
 }
 
 .entertain_item {
-  background-color: #444;
+  background-color: rgba(243, 243, 243, 0.945);/* #444;*/
   width: 200px;
   height: 48px;
   position: absolute;
 }
-
+.entertain_item:hover {
+  background-color: #444;
+  color: white;
+}
 .entertain_logo_cont {
   width: 65px;
   height: 48px;
@@ -386,7 +389,7 @@ a {
 }
 
 .entertain_name {
-  color: white;
+  color: #737373;
   display: table-cell;
   font-size: 18px;
   font-family: "Roboto", arial, sans-serif;
@@ -396,7 +399,9 @@ a {
   height: 48px;
   float: right;
 }
-
+.entertain_name:hover {
+  color: white;
+}
 .apps_item {
   background-color: rgba(243, 243, 243, 0.945);
   width: 200px;
