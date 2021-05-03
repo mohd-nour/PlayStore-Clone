@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const passport = require("passport");
 const bodyParser = require("body-parser");
+const LocalStrategy = require("passport-local");
 const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
@@ -8,6 +10,7 @@ const {
   cwd
 } = require("process");
 var ObjectId = require("mongodb").ObjectID;
+const User = require("./models/user");
 
 //create an express app
 const app = express();
@@ -38,7 +41,21 @@ mongoose
 // });
 
 // The following code will be refactored into separate files after testing is completed
+app.use(require("express-session")({
+  secret: "Any normal Word", //decode or encode session
+  resave: false,
+  saveUninitialized: false
+}));
 
+passport.serializeUser(User.serializeUser()); //session encoding
+passport.deserializeUser(User.deserializeUser()); //session decoding
+passport.use(new LocalStrategy(User.authenticate()));
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
+//app.use(cookieParser());
+app.use(passport.initialize());
+app.use(passport.session());
 // mongoose movie Schema
 const movieSchema = {
   title: String,
@@ -141,7 +158,6 @@ const reviewSchema = {
 // app model with apps collection
 const Review = mongoose.model("Review", reviewSchema);
 
-// the main page
 app.get("/", async (req, res) => {
   const topMovies = await Movie.find({
     group: "Top-Selling Movies"
@@ -153,7 +169,7 @@ app.get("/", async (req, res) => {
     group: "Recommended For You"
   })
   const actionMovies = await Movie.find({
-    group: "Thrilling movies"
+    group: "Superhero movies"
   })
 
 
@@ -204,7 +220,54 @@ app.get("/apps/:id", (req, res) => {
     });
 });
 
+app.get("/signin", (req, res) => {
+  res.render("signin");
+});
+
+app.post("/signin", passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/signin"
+  }),
+  function(req, res) {});
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
+//
+app.post("/signup", (req, res) => {
+
+  User.register(new User({
+    username: req.body.username
+  }), req.body.password, function(err, user) {
+    if (err) {
+      console.log(err);
+      res.render("signup");
+    } else if (req.body.cpassword != req.body.password) {
+      res.render("signup");
+    }
+    passport.authenticate("local")(req, res, function() {
+      res.redirect("/signin"); //
+    })
+  })
+});
+
+app.get("/forgotpassword", (req, res) => {
+  res.render("forgotpassword");
+});
+
+app.post("/logout", (req, res) => {
+  req.session.destroy(function(err) {
+    res.redirect("/signin");
+  });
+});
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect("/signin");
+}
 // listen on port 3000
 app.listen(3000, () => {
   console.log("listening on port 3000");
 });
+//dhsajsnsak

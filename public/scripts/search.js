@@ -64,6 +64,7 @@ window.onload = function(){
         hover_movies_afterclick();
         hover_apps_afterclick();
     });
+    document.getElementById("profile_pic").addEventListener("click", function(){document.getElementById("prof_sign").style.display = "block";})
     /* entertainment, apps, movies, books onclick ends */
 };
 /* home, top charts, new releases UI onclick begins*/
