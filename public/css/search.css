@@ -232,13 +232,8 @@ img {
   text-align: center;
 }
 
-.prof_sign2>div>input {
-  cursor: pointer;
-}
-
 .prof_sign3 {
   width: 100%;
-  cursor: pointer;
 }
 
 .prof_sign3:hover {
