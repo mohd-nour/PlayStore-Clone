@@ -181,7 +181,7 @@ app.get("/", async (req, res) => {
   });
 });
 
-app.get("/seemoremov/:listName", function(req, res) {
+app.get("/seemoremov/:listName", (req, res) => {
   const listName = req.params.listName;
   // finding all documents in movies collection
   Movie.find({
@@ -192,6 +192,66 @@ app.get("/seemoremov/:listName", function(req, res) {
       listTitle: listName,
       movies: movies
     });
+  });
+});
+
+app.get("/books", async (req, res) => {
+  const topBooks = await Book.find({
+    group: "Top-selling eBooks"
+  })
+  const bussBooks = await Book.find({
+    group: "Business & Investing"
+  })
+  const dealBooks = await Book.find({
+    group: "Deals on eBooks"
+  })
+  const litBooks = await Book.find({
+    group: "Fiction & Literature"
+  })
+
+
+  return res.render("bookCategories", {
+    topBooks: topBooks,
+    bussBooks: bussBooks,
+    dealBooks: dealBooks,
+    litBooks: litBooks
+  });
+});
+
+app.get("/seemorebooks/:listName", (req, res) => {
+  const listName = req.params.listName;
+  // finding all documents in movies collection
+  Book.find({
+    group: listName
+  }, function(err, books) {
+    // passing array of movies documents to seemoremov.ejs
+    res.render("seemorebooks", {
+      listTitle: listName,
+      books: books
+    });
+  });
+});
+
+app.get("/apps", async (req, res) => {
+  const newApps = await Application.find({
+    group: "New & Updated Games"
+  })
+  const recApps = await Application.find({
+    group: "Recommended For You"
+  })
+  const upApps = await Application.find({
+    group: "Just Updated"
+  })
+  const sciApps = await Application.find({
+    group: "Discover Science"
+  })
+
+
+  return res.render("appCategories", {
+    newApps: newApps,
+    recApps: recApps,
+    upApps: upApps,
+    sciApps: sciApps
   });
 });
 

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Apps on Google Play</title>
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/fad6e48f21.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/css/appCategories.css" />
+</head>
+<%- include('partials/search.ejs') %>
+
+<body>
+  <!-- Listing Container 1 -->
+  <div class="category-container first-container">
+    <div class="title-header">
+      <div class="heading-title">
+        <h2 class="category-title">New & Updated Games</h2>
+      </div>
+      <div class="see-more">
+        <form action="/seemoremov/New & Updated Games" method="get">
+          <button class="see-more-btn" type="submit" name="button">
+            See more
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Container Body -->
+    <div class="listing-body">
+      <!-- Loop over first 4 top cards -->
+      <!-- Card -->
+      <% for (i=0; i<4; i++) { %>
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= newApps[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= newApps[i].title %></a>
+          <p class="item-subtitle"><%= newApps[i].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+      <!-- Card -->
+      <div class="listing-card card-5">
+        <div class="listing-top" style="background-image: url(<%= newApps[5].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= newApps[5].title %></a>
+          <p class="item-subtitle"><%= newApps[5].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-6">
+        <div class="listing-top" style="background-image: url(<%= newApps[6].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= newApps[6].title %></a>
+          <p class="item-subtitle"><%= newApps[6].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-7">
+        <div class="listing-top" style="background-image: url(<%= newApps[7].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= newApps[7].title %></a>
+          <p class="item-subtitle"><%= newApps[7].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listing Container 2 -->
+  <div class="category-container">
+    <div class="title-header">
+      <div class="heading-title">
+        <h2 class="category-title">Recommended For You</h2>
+      </div>
+      <div class="see-more">
+        <form action="/seemoremov/Recommended For You" method="get">
+          <button class="see-more-btn" type="submit" name="button">
+            See more
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Container Body -->
+    <div class="listing-body">
+      <!-- Loop over first 4 top cards -->
+      <!-- Card -->
+      <% for (i=0; i<4; i++) { %>
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= recApps[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= recApps[i].title %></a>
+          <p class="item-subtitle"><%= recApps[i].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+      <!-- Card -->
+      <div class="listing-card card-5">
+        <div class="listing-top" style="background-image: url(<%= recApps[5].mainImage %>)"></div>
+        <div class="listing-bottom">
+          sciApps" class="item-title"><%= recApps[5].title %></a>
+          <p class="item-subtitle"><%= recApps[5].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-6">
+        <div class="listing-top" style="background-image: url(<%= recApps[6].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= recApps[6].title %></a>
+          <p class="item-subtitle"><%= recApps[6].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-7">
+        <div class="listing-top" style="background-image: url(<%= recApps[7].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= recApps[7].title %></a>
+          <p class="item-subtitle"><%= recApps[7].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listing Container 3 -->
+  <div class="category-container">
+    <div class="title-header">
+      <div class="heading-title">
+        <h2 class="category-title">Just Updated</h2>
+      </div>
+      <div class="see-more">
+        <form action="/seemoremov/Educational" method="get">
+          <button class="see-more-btn" type="submit" name="button">
+            See more
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Container Body -->
+    <div class="listing-body">
+      <!-- Loop over first 4 top cards -->
+      <!-- Card -->
+      <% for (i=0; i<4; i++) { %>
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= upApps[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" action="#" class="item-title"><%= upApps[i].title %></a>
+          <p class="item-subtitle"><%= upApps[i].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+      <!-- Card -->
+      <div class="listing-card card-5">
+        <div class="listing-top" style="background-image: url(<%= upApps[5].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= upApps[5].title %></a>
+          <p class="item-subtitle"><%= upApps[5].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-6">
+        <div class="listing-top" style="background-image: url(<%= upApps[6].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= upApps[6].title %></a>
+          <p class="item-subtitle"><%= upApps[6].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-7">
+        <div class="listing-top" style="background-image: url(<%= upApps[7].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= upApps[7].title %></a>
+          <p class="item-subtitle"><%= upApps[7].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listing Container 4 -->
+  <div class="category-container">
+    <div class="title-header">
+      <div class="heading-title">
+        <h2 class="category-title">Discover Science</h2>
+      </div>
+      <div class="see-more">
+        <form action="/seemoremov/Superhero movies" method="get">
+          <button class="see-more-btn" type="submit" name="button">
+            See more
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Container Body -->
+    <div class="listing-body">
+      <!-- Loop over first 4 top cards -->
+      <!-- Card -->
+      <% for (i=0; i<4; i++) { %>
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= sciApps[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= sciApps[i].title %></a>
+          <p class="item-subtitle"><%= sciApps[i].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+      <!-- Card -->
+      <div class="listing-card card-5">
+        <div class="listing-top" style="background-image: url(<%= sciApps[5].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= sciApps[5].title %></a>
+          <p class="item-subtitle"><%= sciApps[5].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-6">
+        <div class="listing-top" style="background-image: url(<%= sciApps[6].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= sciApps[6].title %></a>
+          <p class="item-subtitle"><%= sciApps[6].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-7">
+        <div class="listing-top" style="background-image: url(<%= sciApps[7].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= sciApps[7].title %></a>
+          <p class="item-subtitle"><%= sciApps[7].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

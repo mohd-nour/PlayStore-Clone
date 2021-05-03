@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Books on Google Play</title>
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/fad6e48f21.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="../css/categories.css" />
+</head>
+<%- include('partials/search.ejs') %>
+
+<body>
+  <!-- Listing Container 1 -->
+  <div class="category-container first-container">
+    <div class="title-header">
+      <div class="heading-title">
+        <h2 class="category-title"><%= listTitle %></h2>
+      </div>
+    </div>
+    <!-- Container Body -->
+    <div class="listing-body-seemore">
+      <% books.forEach(function(book) { %>
+      <!-- Card -->
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= book.mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a class="item-title"><%= book.title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= book.genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <!-- Match xxx,xxx,xxx from price string-->
+              <p> <% if (book.price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = book.price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+
+</html>

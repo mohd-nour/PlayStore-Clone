@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Books on Google Play</title>
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/fad6e48f21.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/css/categories.css" />
+</head>
+<%- include('partials/search.ejs') %>
+
+<body>
+  <!-- Listing Container 1 -->
+  <div class="category-container first-container">
+    <div class="title-header">
+      <div class="heading-title">
+        <h2 class="category-title">Top selling eBooks</h2>
+      </div>
+      <div class="see-more">
+        <form action="/seemorebooks/Top-selling eBooks" method="get">
+          <button class="see-more-btn" type="submit" name="button">
+            See more
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Container Body -->
+    <div class="listing-body">
+      <!-- Loop over first 4 top cards -->
+      <!-- Card -->
+      <% for (i=0; i<4; i++) { %>
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= topBooks[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= topBooks[i].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= topBooks[i].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (topBooks[i].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = topBooks[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+      <!-- Card -->
+      <div class="listing-card card-5">
+        <div class="listing-top" style="background-image: url(<%= topBooks[5].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= topBooks[5].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= topBooks[5].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (topBooks[5].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = topBooks[5].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-6">
+        <div class="listing-top" style="background-image: url(<%= topBooks[6].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= topBooks[6].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= topBooks[6].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (topBooks[6].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = topBooks[6].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-7">
+        <div class="listing-top" style="background-image: url(<%= topBooks[7].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= topBooks[7].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= topBooks[7].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (topBooks[7].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = topBooks[7].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listing Container 2 -->
+  <div class="category-container">
+    <div class="title-header">
+      <div class="heading-title">
+        <h2 class="category-title">Business & Investing</h2>
+      </div>
+      <div class="see-more">
+        <form action="/seemorebooks/Business & Investing" method="get">
+          <button class="see-more-btn" type="submit" name="button">
+            See more
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Container Body -->
+    <div class="listing-body">
+      <!-- Loop over first 4 top cards -->
+      <!-- Card -->
+      <% for (i=0; i<4; i++) { %>
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= bussBooks[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= bussBooks[i].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= bussBooks[i].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (bussBooks[i].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = bussBooks[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+      <!-- Card -->
+      <div class="listing-card card-5">
+        <div class="listing-top" style="background-image: url(<%= bussBooks[5].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= bussBooks[5].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= bussBooks[5].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (bussBooks[5].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = bussBooks[5].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-6">
+        <div class="listing-top" style="background-image: url(<%= bussBooks[6].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= bussBooks[6].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= bussBooks[6].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (bussBooks[6].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = bussBooks[6].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-7">
+        <div class="listing-top" style="background-image: url(<%= bussBooks[7].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= bussBooks[7].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= bussBooks[7].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (bussBooks[7].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = bussBooks[7].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listing Container 3 -->
+  <div class="category-container">
+    <div class="title-header">
+      <div class="heading-title">
+        <h2 class="category-title">Deals on eBooks</h2>
+      </div>
+      <div class="see-more">
+        <form action="/seemorebooks/Deals on eBooks" method="get">
+          <button class="see-more-btn" type="submit" name="button">
+            See more
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Container Body -->
+    <div class="listing-body">
+      <!-- Loop over first 4 top cards -->
+      <!-- Card -->
+      <% for (i=0; i<4; i++) { %>
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= dealBooks[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" action="#" class="item-title"><%= dealBooks[i].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= dealBooks[i].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (dealBooks[i].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = dealBooks[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+      <!-- Card -->
+      <div class="listing-card card-5">
+        <div class="listing-top" style="background-image: url(<%= dealBooks[5].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= dealBooks[5].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= dealBooks[5].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (dealBooks[5].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = dealBooks[5].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-6">
+        <div class="listing-top" style="background-image: url(<%= dealBooks[6].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= dealBooks[6].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= dealBooks[6].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (dealBooks[6].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = dealBooks[6].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-7">
+        <div class="listing-top" style="background-image: url(<%= dealBooks[7].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= dealBooks[7].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= dealBooks[7].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <% if (dealBooks[7].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = dealBooks[7].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listing Container 4 -->
+  <div class="category-container">
+    <div class="title-header">
+      <div class="heading-title">
+        <h2 class="category-title">Fiction & Literature</h2>
+      </div>
+      <div class="see-more">
+        <form action="/seemorebooks/Fiction & Literature" method="get">
+          <button class="see-more-btn" type="submit" name="button">
+            See more
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Container Body -->
+    <div class="listing-body">
+      <!-- Loop over first 4 top cards -->
+      <!-- Card -->
+      <% for (i=0; i<4; i++) { %>
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= litBooks[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= litBooks[i].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= litBooks[i].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p> <% if (litBooks[i].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = litBooks[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
+      <!-- Card -->
+      <div class="listing-card card-5">
+        <div class="listing-top" style="background-image: url(<%= litBooks[5].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= litBooks[5].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= litBooks[5].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p> <% if (litBooks[5].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = litBooks[5].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-6">
+        <div class="listing-top" style="background-image: url(<%= litBooks[6].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= litBooks[6].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= litBooks[6].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p> <% if (litBooks[6].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = litBooks[6].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="listing-card card-7">
+        <div class="listing-top" style="background-image: url(<%= litBooks[7].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= litBooks[7].title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= litBooks[7].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+              <i class="star fas fa-star fa-xs"></i>
+            </div>
+            <div class="price">
+              <p> <% if (litBooks[7].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = litBooks[7].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
