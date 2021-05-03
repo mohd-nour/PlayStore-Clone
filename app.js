@@ -6,7 +6,7 @@ const LocalStrategy = require("passport-local");
 const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
-const { cwd } = require("process");
+const { cwd, resourceUsage } = require("process");
 var ObjectId = require("mongodb").ObjectID;
 const User = require("./models/user");
 
@@ -408,7 +408,9 @@ app.post("/signup", (req, res) => {
 app.get("/forgotpassword", (req, res) => {
   res.render("forgotpassword");
 });
-
+app.get("/upload", (req, res) => {
+  res.render("upload");
+});
 app.post("/logout", (req, res) => {
   req.session.destroy(function (err) {
     res.redirect("/signin");

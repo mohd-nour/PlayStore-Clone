@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>search</title>
   <link rel="stylesheet" href="/css/search.css">
-  <script src="scripts/search.js" type="text/javascript"></script>
+  <script src="/scripts/search.js" type="text/javascript"></script>
 </head>
 <div id="search_bar">
   <div class="logo_container">
@@ -40,8 +40,8 @@
             <div class="prof_sign" id="prof_sign">
               <div class="prof_sign1" id="prof_sign1">
                 <div class="prof_sign2" id="prof_sign2">
-                  <img src="https://icon-library.com/images/google-user-icon/google-user-icon-16.jpg" alt="prof_pic">
-                  <form action="/change" method="POST" class="prof_sign3" id="prof_sign3">
+                  <img id="prof_img" src="https://icon-library.com/images/google-user-icon/google-user-icon-16.jpg" alt="prof_pic">
+                  <form action="/upload" method="GET" class="prof_sign3" id="prof_sign3">
                     <div><input type="submit" name="change" id="change" value="Upload image"></div>
                   </form>
                   <form action="/logout" method="POST" class="prof_sign3" id="prof_sign_4">
@@ -59,7 +59,7 @@
 <div id="divtwo">
   <ul class="left_category">
     <li class="entertainment_li" id="entertainment_li">
-      <a href="" class="entertain_a" id="entertain_a">
+      <a href="/" class="entertain_a" id="entertain_a">
         <span class="entertain_item" id="entertain_item">
           <span class="entertain_logo_cont">
             <span class="entertain_logo"></span>
@@ -144,7 +144,7 @@
       </div>
     </div>
 
-    <div class="help_settings_container">
+    <!--<div class="help_settings_container">
       <div class="h_s_cont">
         <div class="help_container">
           <button class="help" id="help">
@@ -156,19 +156,19 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
   </div>
 
   <div class="left_bottom_categ">
     <ul class="settings_category">
-      <li class="account_settings">
+      <!--<li class="account_settings">
         <a href="" class="account_a">
           <span></span>
           <span class="acc">Account</span>
         </a>
-      </li>
+      </li>-->
       <li class="account_settings">
-        <a href="" class="account_a">
+        <a href="/test" class="account_a">
           <span></span>
           <span class="acc">My wishlist</span>
         </a>
@@ -179,6 +179,14 @@
           <span class="acc">Last visited</span>
         </a>
       </li>
+      <form action="/sendemail" method="POST">
+        <li class="account_settings">
+          <a class="account_a">
+            <span></span>
+            <span class="acc">Receive news and offers</span>
+          </a>
+        </li>
+    </form>
     </ul>
   </div>
 </div>

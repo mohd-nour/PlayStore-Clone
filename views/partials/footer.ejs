@@ -1,4 +1,11 @@
 <link rel="stylesheet" href="/css/footer.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
+        var text = ` | Location: ${data.countryName}`
+        $(".mypanel").html(text);
+    });
+    </script>
 <footer>
     <div class="fcont">
         <div class="fcont1">
@@ -6,7 +13,7 @@
                 ©2021 Google
                 <a href="https://play.google.com/about/play-terms/emea/index.html">Terms of Service</a>
                 <a href="https://support.google.com/googleplay/answer/6034670?p=about_play&visit_id=637555885183948914-3156008530&rd=1">About the website</a>
-                | Location: Lebanon
+                <div class="mypanel"></div>
             </div>
         </div>
     </div>

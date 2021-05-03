@@ -6,23 +6,23 @@ footer{
     font-size: 14px;
 }
 .fcont{
-    background: #eee;
     width: 100%;
 }
 .fcont1{
-    background: #eee;
     color: #555;
     font-weight: 400;
     width: 100%;
 }
 .footer_cont{
     padding: 28px 5px;
-    margin-left: 460px;
+    margin-left: 420px;
+    display:flex;
 }
 .footer_cont > a{
     color: #15c;
     margin-left: 5px;
+    margin-right: 5px;
 }
-footer > div > a:hover{
+.footer_cont > a:hover{
     text-decoration: underline;
 }
