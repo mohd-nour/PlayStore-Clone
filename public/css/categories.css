@@ -80,6 +80,7 @@ body {
   box-sizing: border-box;
   height: 100px;
   width: 160px;
+  background-color: white;
 }
 
 .item-title {

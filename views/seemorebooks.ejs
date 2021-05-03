@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Movies on Google Play</title>
+  <title>Books on Google Play</title>
   <!-- Fontawesome -->
   <script src="https://kit.fontawesome.com/fad6e48f21.js" crossorigin="anonymous"></script>
 
@@ -26,13 +26,14 @@
     </div>
     <!-- Container Body -->
     <div class="listing-body-seemore">
-      <% movies.forEach(function(movie) { %>
+      <% books.forEach(function(book) { %>
       <!-- Card -->
       <div class="listing-card">
-        <div class="listing-top" style="background-image: url(<%= movie.mainImage %>)"></div>
+        <div class="listing-top" style="background-image: url(<%= book.mainImage %>)"></div>
         <div class="listing-bottom">
-          <a class="item-title"><%= movie.title %></a>
-          <p class="item-subtitle"><%= movie.genre %></p>
+          <a class="item-title"><%= book.title %></a>
+          <!-- spaces between author names -->
+          <p class="item-subtitle"><%= book.genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
               <i class="star fas fa-star fa-xs"></i>
@@ -43,9 +44,12 @@
             </div>
             <div class="price">
               <!-- Match xxx,xxx,xxx from price string-->
-              <p>
-                LBP <%= movie.price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %>
-              </p>
+              <p> <% if (book.price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = book.price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
             </div>
           </div>
         </div>

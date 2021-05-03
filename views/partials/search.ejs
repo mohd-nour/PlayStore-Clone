@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>search</title>
   <link rel="stylesheet" href="/css/search.css">
-  <script src="search.js" type="text/javascript"></script>
+  <script src="scripts/search.js" type="text/javascript"></script>
 </head>
 <div id="search_bar">
   <div class="logo_container">
@@ -41,8 +41,12 @@
               <div class="prof_sign1" id="prof_sign1">
                 <div class="prof_sign2" id="prof_sign2">
                   <img src="https://icon-library.com/images/google-user-icon/google-user-icon-16.jpg" alt="prof_pic">
-                  <form action="/change" method="POST" class="prof_sign3" id="prof_sign3"><div><input type="submit" name="change" id="change" value="Upload image"></div></form>
-                  <form action="/logout" method="POST" class="prof_sign3" id="prof_sign_4"><div><input type="submit" name="logout" id="logout" value="Log out"></div></form>
+                  <form action="/change" method="POST" class="prof_sign3" id="prof_sign3">
+                    <div><input type="submit" name="change" id="change" value="Upload image"></div>
+                  </form>
+                  <form action="/logout" method="POST" class="prof_sign3" id="prof_sign_4">
+                    <div><input type="submit" name="logout" id="logout" value="Log out"></div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -65,8 +69,9 @@
       </a>
     </li>
 
+
     <li class="apps_li" id="apps_li">
-      <a href="" class="entertain_a" id="apps_a">
+      <a href="/apps" class="entertain_a" id="apps_a">
         <span class="apps_item" id="apps_item">
           <span class="apps_logo_cont">
             <span class="apps_logo"></span>
@@ -77,7 +82,7 @@
     </li>
 
     <li class="movies_li" id="movies_li">
-      <a href="" class="entertain_a" id="movies_a">
+      <a href="/" class="entertain_a" id="movies_a">
         <span class="movies_item" id="movies_item">
           <span class="movies_logo_cont">
             <span class="movies_logo"></span>
@@ -88,7 +93,7 @@
     </li>
 
     <li class="books_li" id="books_li">
-      <a href="" class="entertain_a" id="books_a">
+      <a href="/books" class="entertain_a" id="books_a">
         <span class="books_item" id="books_item">
           <span class="books_logo_cont">
             <span class="books_logo"></span>

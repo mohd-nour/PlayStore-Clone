@@ -1,0 +1,38 @@
+.book-genre {
+  color: #01579b;
+  font-size: 13px;
+  font-weight: bolder;
+  width: auto;
+  margin-bottom: 0;
+}
+
+.stext {
+  font-size: 13px;
+}
+
+.book-wishlist {
+  color: #01579b;
+}
+
+.book-wishlist:hover {
+  color: blue;
+}
+
+.book-price {
+  background-color: #039be5;
+}
+
+.book-price:hover {
+  background-color: blue;
+}
+
+.book-table {
+  margin-bottom: 20px;
+}
+.book-table th {
+  width: 33%;
+}
+
+.book-table td {
+  width: 25%;
+}

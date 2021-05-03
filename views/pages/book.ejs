@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= book.title %></title>
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Calibri:400,300,700"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+    />
+    <!-- Magnific PopUp Css -->
+    <link rel="stylesheet" href="../css/magnific-popup.css" />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../css/selected-item.css" />
+    <link rel="stylesheet" href="../css/book.css" />
+    <style>
+      #headerPopup {
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+      }
+
+      #headerPopup iframe {
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- temp top -->
+    <div class="top"></div>
+    <!-- temp sections -->
+    <div class="flex-display">
+      <!-- temp side-bar -->
+      <div class="side-bar"></div>
+
+      <div class="page">
+        <div class="main container shadow">
+          <div class="header">
+            <img
+              src="<%= book.mainImage %>"
+              class="rounded float-left movie-img"
+              alt="item image"
+            />
+            <div class="header-right">
+              <h1 class="item-name"><%= book.title %></h1>
+              <div class="d-flex justify-content-between">
+                <p class="book-genre">
+                  <% book.genre.forEach(element => { %> <%= element %> <% })%>
+                </p>
+                <p class="mb-0 stext"><%= book.date %></p>
+              </div>
+              <p class="stext"><%= book.publisher %></p>
+              <div class="row second-row">
+                <button type="button" class="btn btn-link stext book-wishlist">
+                  <i class="far fa-plus-square"></i>Add to wishlist
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-success install book-price"
+                >
+                  <% if (book.price.match(/Free ebook/,'')) { %> Free <% } else
+                  { %> <% const match =
+                  book.price.match(/\$\d{0,3}\.\d{0,3}/g,'') %> <%=
+                  match[match.length - 1] %> Buy <% } %>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="description">
+            <div class="description-text">
+              <% let x = book.description; %> <% let list = x.split(" "); %> <%
+              for(var i=0; i < list.length; i++) {%> <%if(list[i].endsWith(".")
+              || list[i].includes(".")){%> <%=list[i]%>
+              <br />
+              <%} else {%> <%=list[i]%> <%}%> <%}%>
+            </div>
+
+            <div class="more-container">
+              <div id="read-more" class="btn-link more">READ MORE</div>
+            </div>
+          </div>
+
+          <div class="reviews">
+            <hr class="lrmargin" />
+            <div class="lrmargin flex-display">
+              <p class="vert-cent review-word">REVIEWS</p>
+              <button class="review-btn" type="button" name="button">
+                <i class="fas fa-exclamation-circle review-ex-mark"></i>
+                Review policy and info
+              </button>
+            </div>
+            <div class="lrmargin flex-display review-bars">
+              <div class="left-side-review">
+                <h1 class="point-review"><%= review.totalScore %></h1>
+                <div class="stars vert-cent new-stars">
+                  <%let y = parseFloat(review.totalScore);%> <%for(var i=1; i <=
+                  5; i++){%> <%if(y >= i){%>
+                  <i class="fas fa-star size-fourteen"></i>
+                  <%}else if(y >= (parseFloat(i) - 0.5)){%>
+                  <i class="fas fa-star-half-alt size-fourteen"></i>
+                  <%}else{%>
+                  <i class="far fa-star size-fourteen"></i>
+                  <%}%> <%}%>
+                </div>
+                <div class="row">
+                  <i class="fas fa-user vert-cent size-fourteen"></i>
+                  <p class="reviewers vert-cent stext size-fourteen">
+                    <%= review.total %>
+                  </p>
+                </div>
+              </div>
+              <div class="right-side-review">
+                <div class="review-bar">
+                  <span class="review-nb">5</span>
+                  <span class="bar-shape" id="bar5"></span>
+                </div>
+                <div class="review-bar">
+                  <span class="review-nb">4</span>
+                  <span class="bar-shape" id="bar4"></span>
+                </div>
+                <div class="review-bar">
+                  <span class="review-nb">3</span>
+                  <span class="bar-shape" id="bar3"></span>
+                </div>
+                <div class="review-bar">
+                  <span class="review-nb">2</span>
+                  <span class="bar-shape" id="bar2"></span>
+                </div>
+                <div class="review-bar">
+                  <span class="review-nb">1</span>
+                  <span class="bar-shape" id="bar1"></span>
+                </div>
+              </div>
+            </div>
+            <div class="review-list">
+              <div class="review-item">
+                <img
+                  src="https://play-lh.googleusercontent.com/-KDuVu8XZkvY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucm0WOCIoX1g05puczO-Qyq_oLf8Aw/w48-h48-n-rw/photo.jpg"
+                  alt="avatar"
+                  class="avatar"
+                />
+                <div class="review-right">
+                  <div class="review-right-upper">
+                    <div class="review-right-up-left">
+                      <span class="stext user-name">Bernie Rose</span>
+                      <div class="stars vert-cent">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="stext">6 April 2021</span>
+                      </div>
+                    </div>
+                    <div class="review-right-up-right">
+                      <button type="button" name="thumbs" class="likeMore">
+                        <i class="fas fa-thumbs-up thumb"></i>
+                        <span class="stext">239</span>
+                      </button>
+                      <button
+                        type="button"
+                        name="button"
+                        class="likeMore dotsmore"
+                      >
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="review-right-lower">
+                    <p>
+                      Its pretty fun, I didn't experience any lagging. The
+                      animation is nostalgic and colorful, the classic run game
+                      style is perfect for a crash bandicoot game because that
+                      was about how the original game was anyway. So if you are
+                      looking for an easy nostalgia game this works for that.
+                      The only con I hav<button
+                        type="button"
+                        name="button"
+                        class="showHidden stext"
+                      >
+                        Full Review</button
+                      ><span id="hidden1"
+                        >e is that it isn't super challenging. Otherwise it's
+                        not bad.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <img
+                  src="https://play-lh.googleusercontent.com/-KDuVu8XZkvY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucm0WOCIoX1g05puczO-Qyq_oLf8Aw/w48-h48-n-rw/photo.jpg"
+                  alt="avatar"
+                  class="avatar"
+                />
+                <div class="review-right">
+                  <div class="review-right-upper">
+                    <div class="review-right-up-left">
+                      <span class="stext user-name">Bernie Rose</span>
+                      <div class="stars vert-cent">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="stext">6 April 2021</span>
+                      </div>
+                    </div>
+                    <div class="review-right-up-right">
+                      <button type="button" name="thumbs" class="likeMore">
+                        <i class="fas fa-thumbs-up thumb"></i>
+                        <span class="stext">239</span>
+                      </button>
+                      <button
+                        type="button"
+                        name="button"
+                        class="likeMore dotsmore"
+                      >
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="review-right-lower">
+                    <p>
+                      Its pretty fun, I didn't experience any lagging. The
+                      animation is nostalgic and colorful, the classic run game
+                      style is perfect for a crash bandicoot game because that
+                      was about how the original game was anyway. So if you are
+                      looking for an easy nostalgia game this works for that.
+                      The only con I hav<button
+                        type="button"
+                        name="button"
+                        class="showHidden stext"
+                      >
+                        Full Review</button
+                      ><span id="hidden1"
+                        >e is that it isn't super challenging. Otherwise it's
+                        not bad.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <img
+                  src="https://play-lh.googleusercontent.com/-KDuVu8XZkvY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucm0WOCIoX1g05puczO-Qyq_oLf8Aw/w48-h48-n-rw/photo.jpg"
+                  alt="avatar"
+                  class="avatar"
+                />
+                <div class="review-right">
+                  <div class="review-right-upper">
+                    <div class="review-right-up-left">
+                      <span class="stext user-name">Bernie Rose</span>
+                      <div class="stars vert-cent">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="stext">6 April 2021</span>
+                      </div>
+                    </div>
+                    <div class="review-right-up-right">
+                      <button type="button" name="thumbs" class="likeMore">
+                        <i class="fas fa-thumbs-up thumb"></i>
+                        <span class="stext">239</span>
+                      </button>
+                      <button
+                        type="button"
+                        name="button"
+                        class="likeMore dotsmore"
+                      >
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="review-right-lower">
+                    <p>
+                      Its pretty fun, I didn't experience any lagging. The
+                      animation is nostalgic and colorful, the classic run game
+                      style is perfect for a crash bandicoot game because that
+                      was about how the original game was anyway. So if you are
+                      looking for an easy nostalgia game this works for that.
+                      The only con I hav<button
+                        type="button"
+                        name="button"
+                        class="showHidden stext"
+                      >
+                        Full Review</button
+                      ><span id="hidden1"
+                        >e is that it isn't super challenging. Otherwise it's
+                        not bad.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <img
+                  src="https://play-lh.googleusercontent.com/-KDuVu8XZkvY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucm0WOCIoX1g05puczO-Qyq_oLf8Aw/w48-h48-n-rw/photo.jpg"
+                  alt="avatar"
+                  class="avatar"
+                />
+                <div class="review-right">
+                  <div class="review-right-upper">
+                    <div class="review-right-up-left">
+                      <span class="stext user-name">Bernie Rose</span>
+                      <div class="stars vert-cent">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="stext">6 April 2021</span>
+                      </div>
+                    </div>
+                    <div class="review-right-up-right">
+                      <button type="button" name="thumbs" class="likeMore">
+                        <i class="fas fa-thumbs-up thumb"></i>
+                        <span class="stext">239</span>
+                      </button>
+                      <button
+                        type="button"
+                        name="button"
+                        class="likeMore dotsmore"
+                      >
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="review-right-lower">
+                    <p>
+                      Its pretty fun, I didn't experience any lagging. The
+                      animation is nostalgic and colorful, the classic run game
+                      style is perfect for a crash bandicoot game because that
+                      was about how the original game was anyway. So if you are
+                      looking for an easy nostalgia game this works for that.
+                      The only con I hav<button
+                        type="button"
+                        name="button"
+                        class="showHidden stext"
+                      >
+                        Full Review</button
+                      ><span id="hidden1"
+                        >e is that it isn't super challenging. Otherwise it's
+                        not bad.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <img
+                  src="https://play-lh.googleusercontent.com/-KDuVu8XZkvY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucm0WOCIoX1g05puczO-Qyq_oLf8Aw/w48-h48-n-rw/photo.jpg"
+                  alt="avatar"
+                  class="avatar"
+                />
+                <div class="review-right">
+                  <div class="review-right-upper">
+                    <div class="review-right-up-left">
+                      <span class="stext user-name">Bernie Rose</span>
+                      <div class="stars vert-cent">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="stext">6 April 2021</span>
+                      </div>
+                    </div>
+                    <div class="review-right-up-right">
+                      <button type="button" name="thumbs" class="likeMore">
+                        <i class="fas fa-thumbs-up thumb"></i>
+                        <span class="stext">239</span>
+                      </button>
+                      <button
+                        type="button"
+                        name="button"
+                        class="likeMore dotsmore"
+                      >
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="review-right-lower">
+                    <p>
+                      Its pretty fun, I didn't experience any lagging. The
+                      animation is nostalgic and colorful, the classic run game
+                      style is perfect for a crash bandicoot game because that
+                      was about how the original game was anyway. So if you are
+                      looking for an easy nostalgia game this works for that.
+                      The only con I hav<button
+                        type="button"
+                        name="button"
+                        class="showHidden stext"
+                      >
+                        Full Review</button
+                      ><span id="hidden1"
+                        >e is that it isn't super challenging. Otherwise it's
+                        not bad.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <img
+                  src="https://play-lh.googleusercontent.com/-KDuVu8XZkvY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucm0WOCIoX1g05puczO-Qyq_oLf8Aw/w48-h48-n-rw/photo.jpg"
+                  alt="avatar"
+                  class="avatar"
+                />
+                <div class="review-right">
+                  <div class="review-right-upper">
+                    <div class="review-right-up-left">
+                      <span class="stext user-name">The hidden one</span>
+                      <div class="stars vert-cent">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="stext">6 April 2021</span>
+                      </div>
+                    </div>
+                    <div class="review-right-up-right">
+                      <button type="button" name="thumbs" class="likeMore">
+                        <i class="fas fa-thumbs-up thumb"></i>
+                        <span class="stext">239</span>
+                      </button>
+                      <button
+                        type="button"
+                        name="button"
+                        class="likeMore dotsmore"
+                      >
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="review-right-lower">
+                    <p>
+                      Its pretty fun, I didn't experience any lagging. The
+                      animation is nostalgic and colorful, the classic run game
+                      style is perfect for a crash bandicoot game because that
+                      was about how the original game was anyway. So if you are
+                      looking for an easy nostalgia game this works for that.
+                      The only con I hav<button
+                        type="button"
+                        name="button"
+                        class="showHidden stext"
+                      >
+                        Full Review</button
+                      ><span id="hidden1"
+                        >e is that it isn't super challenging. Otherwise it's
+                        not bad.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="read-all-reviews">
+              <div id="read-more-reviews" class="btn-link moreReviews">
+                READ ALL REVIEWS
+              </div>
+            </div>
+          </div>
+
+          <hr class="lrmargin" />
+          <div class="add-info">
+            <p class="lrmargin left-margin">ADDITIONAL INFORMATION</p>
+            <table class="left-margin mtext book-table">
+              <tr>
+                <th>Publisher</th>
+                <th>Published on</th>
+                <th>Pages</th>
+              </tr>
+              <tr>
+                <td class="table-data"><%= book.publisher %></td>
+                <td class="table-data"><%= book.pubOn %></td>
+                <td class="table-data"><%= book.pages %></td>
+              </tr>
+              <tr>
+                <th>ISBN</th>
+                <th>Features</th>
+                <th>Best For</th>
+              </tr>
+              <tr>
+                <td><%= book.isbn %></td>
+                <td><%= book.features %></td>
+                <td><%= book.bestfor %></td>
+              </tr>
+              <tr>
+                <th>Language</th>
+                <th>Genres</th>
+                <th>Content protection</th>
+              </tr>
+              <tr>
+                <td><%= book.language %></td>
+                <td>
+                  <% book.genre.forEach(element => { %> <%= element %> <% })%>
+                </td>
+                <td>This content is DRM protected.</td>
+              </tr>
+            </table>
+          </div>
+
+          <hr class="lrmargin" />
+          <div class="add-info">
+            <p class="lrmargin left-margin">READING INFORMATION</p>
+            <div class="lrmargin left-margin">
+                <p class="">
+                <p class=" font-weight-bold">SmartPhones and Tablets</p>
+                <%= book.more.replace("Smartphones and Tablets", "") %>
+            </p>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="similar-items">
+          <div class="title">
+            <h5 class="similar-tag">Similar</h5>
+            <button type="button" class="btn btn-success see-more">
+              See more
+            </button>
+          </div>
+          <div class="sim-item shadow"></div>
+          <div class="sim-item shadow"></div>
+          <div class="sim-item shadow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/7adaf242b0.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="../scripts/selected-Item.js"></script>
+    <!-- Magnific PopUp JS-->
+    <script src="../scripts/jquery.magnific-popup.min.js"></script>
+    <script src="../scripts/jquery.magnific-popup.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#headerVideoLink").magnificPopup({
+          type: "inline",
+          midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        });
+      });
+    </script>
+  </body>
+</html>

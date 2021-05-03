@@ -5,6 +5,7 @@ window.onload = function(){
     /* entertainment, apps, movies, books onclick begins */
     document.getElementById("entertain_a").addEventListener("click", function(e){
         e.preventDefault();
+        window.location.href = "/";
         document.getElementById("entertain_item").style.backgroundColor = "#444";
         document.getElementById("entertain_name").style.color = "white";//those 2 lines changes clicked button style
         document.getElementById("entertain_name").addEventListener("mouseout", function(){
@@ -18,9 +19,13 @@ window.onload = function(){
         hover_movies_afterclick();
         hover_books_afterclick();
     });
-
     document.getElementById("apps_a").addEventListener("click", function(e){
         e.preventDefault();
+        //location.replace("/apps");
+        //var apps_link = document.getElementById("apps_a");
+        //window.open(apps_link.href,"_blank");
+        //apps_link.setAttribute('href', "/apps", "_top");
+        window.location.href = "/apps";
         document.getElementById("apps_item").style.backgroundColor = "#689f38";
         document.getElementById("apps_name").style.color = "white";//those 2 lines changes clicked button style
         document.getElementById("apps_name").addEventListener("mouseout", function(){
@@ -36,6 +41,7 @@ window.onload = function(){
     });
     document.getElementById("movies_a").addEventListener("click", function(e){
         e.preventDefault();
+        window.location.href = "/movies";
         document.getElementById("movies_item").style.backgroundColor = "#ed3b3b";
         document.getElementById("movies_name").style.color = "white";
         document.getElementById("movies_name").addEventListener("mouseout", function(){
@@ -51,6 +57,7 @@ window.onload = function(){
     });
     document.getElementById("books_a").addEventListener("click", function(e){
         e.preventDefault();
+        window.location.href = "/books";
         document.getElementById("books_item").style.backgroundColor = "#039be5";
         document.getElementById("books_name").style.color = "white";
         document.getElementById("books_name").addEventListener("mouseout", function(){

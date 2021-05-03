@@ -1,0 +1,28 @@
+footer{
+    display: table-row;
+    height: 1px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 14px;
+}
+.fcont{
+    background: #eee;
+    width: 100%;
+}
+.fcont1{
+    background: #eee;
+    color: #555;
+    font-weight: 400;
+    width: 100%;
+}
+.footer_cont{
+    padding: 28px 5px;
+    margin-left: 460px;
+}
+.footer_cont > a{
+    color: #15c;
+    margin-left: 5px;
+}
+footer > div > a:hover{
+    text-decoration: underline;
+}
