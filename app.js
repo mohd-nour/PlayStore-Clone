@@ -255,6 +255,24 @@ app.get("/apps", async (req, res) => {
   });
 });
 
+app.get("/seemoreapps/:listName", (req, res) => {
+  const listName = req.params.listName;
+  // finding all documents in movies collection
+  Application.find({
+    group: listName
+  }, function(err, apps) {
+    // passing array of movies documents to seemoremov.ejs
+    res.render("seemoreapps", {
+      listTitle: listName,
+      books: apps
+    });
+  });
+});
+
+app.get("/test", (req, res) => {
+  res.render("wishlist");
+});
+
 //get selected-app item
 app.get("/apps/:id", (req, res) => {
   const id = req.params.id;

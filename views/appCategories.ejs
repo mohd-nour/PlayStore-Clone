@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
 
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="/css/appCategories.css" />
+  <link rel="stylesheet" href="css/appCategories.css" />
 </head>
 <%- include('partials/search.ejs') %>
 
@@ -24,7 +24,7 @@
         <h2 class="category-title">New & Updated Games</h2>
       </div>
       <div class="see-more">
-        <form action="/seemoremov/New & Updated Games" method="get">
+        <form action="/seemoreapps/New & Updated Games" method="get">
           <button class="see-more-btn" type="submit" name="button">
             See more
           </button>
@@ -129,7 +129,7 @@
         <h2 class="category-title">Recommended For You</h2>
       </div>
       <div class="see-more">
-        <form action="/seemoremov/Recommended For You" method="get">
+        <form action="/seemoreapps/Recommended For You" method="get">
           <button class="see-more-btn" type="submit" name="button">
             See more
           </button>
@@ -168,7 +168,7 @@
       <div class="listing-card card-5">
         <div class="listing-top" style="background-image: url(<%= recApps[5].mainImage %>)"></div>
         <div class="listing-bottom">
-          sciApps" class="item-title"><%= recApps[5].title %></a>
+          <a href="#" class="item-title"><%= recApps[5].title %></a>
           <p class="item-subtitle"><%= recApps[5].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
@@ -234,7 +234,7 @@
         <h2 class="category-title">Just Updated</h2>
       </div>
       <div class="see-more">
-        <form action="/seemoremov/Educational" method="get">
+        <form action="/seemoreapps/Just Updated" method="get">
           <button class="see-more-btn" type="submit" name="button">
             See more
           </button>
@@ -339,7 +339,7 @@
         <h2 class="category-title">Discover Science</h2>
       </div>
       <div class="see-more">
-        <form action="/seemoremov/Superhero movies" method="get">
+        <form action="/seemoreapps/Discover Science" method="get">
           <button class="see-more-btn" type="submit" name="button">
             See more
           </button>
