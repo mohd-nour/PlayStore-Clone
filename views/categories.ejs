@@ -17,6 +17,8 @@
 </head>
 <!-- including search bar and passing strings to query for genre -->
 <%- include('partials/search.ejs', {linkArr: linkArr, linkType: linkType}) %>
+<!-- star rating system -->
+<%- include('starFunction.ejs') %>
 
 <body>
   <!-- Listing Container 1 -->
@@ -45,17 +47,9 @@
           <a href="#" class="item-title"><%= topMovies[i].title %></a>
           <p class="item-subtitle"><%= topMovies[i].genre %></p>
           <div class="item-info">
-            <% var rating = topMovies[i].rating %>
-
-            <% var starsTotal = 5; %>
-
-            <% var starPercentage = (rating / starsTotal) * 100; %>
-
-            <% var starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
-
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(topMovies[i].rating) %>" ;"></div>
               </div>
             </div>
             <div class="price">
@@ -74,14 +68,9 @@
           <a href="#" class="item-title"><%= topMovies[5].title %></a>
           <p class="item-subtitle"><%= topMovies[5].genre %></p>
           <div class="item-info">
-            <% rating = topMovies[5].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(topMovies[5].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -97,14 +86,9 @@
           <a href="#" class="item-title"><%= topMovies[6].title %></a>
           <p class="item-subtitle"><%= topMovies[6].genre %></p>
           <div class="item-info">
-            <% rating = topMovies[6].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(topMovies[6].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -120,14 +104,9 @@
           <a href="#" class="item-title"><%= topMovies[7].title %></a>
           <p class="item-subtitle"><%= topMovies[7].genre %></p>
           <div class="item-info">
-            <% rating = topMovies[7].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(topMovies[7].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -166,14 +145,9 @@
           <a href="#" class="item-title"><%= newMovies[i].title %></a>
           <p class="item-subtitle"><%= newMovies[i].genre %></p>
           <div class="item-info">
-            <% rating = newMovies[i].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(newMovies[i].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -192,14 +166,9 @@
           <a href="#" class="item-title"><%= newMovies[5].title %></a>
           <p class="item-subtitle"><%= newMovies[5].genre %></p>
           <div class="item-info">
-            <% rating = newMovies[5].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(newMovies[5].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -215,14 +184,9 @@
           <a href="#" class="item-title"><%= newMovies[6].title %></a>
           <p class="item-subtitle"><%= newMovies[6].genre %></p>
           <div class="item-info">
-            <% rating = newMovies[6].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(newMovies[6].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -238,14 +202,9 @@
           <a href="#" class="item-title"><%= newMovies[7].title %></a>
           <p class="item-subtitle"><%= newMovies[7].genre %></p>
           <div class="item-info">
-            <% rating = newMovies[7].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(newMovies[i].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -283,14 +242,9 @@
           <a href="#" class="item-title"><%= recMovies[i].title %></a>
           <p class="item-subtitle"><%= newMovies[i].genre %></p>
           <div class="item-info">
-            <% rating = recMovies[i].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(recMovies[i].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -309,14 +263,9 @@
           <a href="#" class="item-title"><%= recMovies[5].title %></a>
           <p class="item-subtitle"><%= recMovies[5].genre %></p>
           <div class="item-info">
-            <% rating = recMovies[5].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(recMovies[5].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -332,14 +281,9 @@
           <a href="#" class="item-title"><%= recMovies[6].title %></a>
           <p class="item-subtitle"><%= recMovies[6].genre %></p>
           <div class="item-info">
-            <% rating = recMovies[6].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(recMovies[6].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -355,14 +299,9 @@
           <a href="#" class="item-title"><%= recMovies[7].title %></a>
           <p class="item-subtitle"><%= newMovies[7].genre %></p>
           <div class="item-info">
-            <% rating = recMovies[7].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(recMovies[7].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -400,14 +339,9 @@
           <a href="#" class="item-title"><%= actionMovies[i].title %></a>
           <p class="item-subtitle"><%= actionMovies[i].genre %></p>
           <div class="item-info">
-            <% rating = actionMovies[i].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(actionMovies[i].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -426,14 +360,9 @@
           <a href="#" class="item-title"><%= actionMovies[5].title %></a>
           <p class="item-subtitle"><%= actionMovies[5].genre %></p>
           <div class="item-info">
-            <% rating = actionMovies[5].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(actionMovies[5].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -449,14 +378,9 @@
           <a href="#" class="item-title"><%= actionMovies[6].title %></a>
           <p class="item-subtitle"><%= actionMovies[6].genre %></p>
           <div class="item-info">
-            <% rating = actionMovies[6].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(actionMovies[6].rating) %>"></div>
               </div>
             </div>
             <div class="price">
@@ -472,14 +396,9 @@
           <a href="#" class="item-title"><%= actionMovies[7].title %></a>
           <p class="item-subtitle"><%= actionMovies[7].genre %></p>
           <div class="item-info">
-            <% rating = actionMovies[7].rating %>
-
-            <% starPercentage = (rating / starsTotal) * 100; %>
-
-            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+                <div class="stars-inner" style="width: <%= getRating(actionMovies[7].rating) %>"></div>
               </div>
             </div>
             <div class="price">
