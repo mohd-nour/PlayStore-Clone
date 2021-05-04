@@ -30,6 +30,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="../css/selected-item.css" />
     <link rel="stylesheet" href="../css/review.css" />
+    <!-- <link rel="stylesheet" href="../css/appCategories.css" /> -->
     <style>
       #headerPopup {
         width: 75%;
@@ -293,7 +294,25 @@
                 See more
               </button>
             </div>
-            
+            <div class="listing-card card-7">
+              <div class="listing-top" style="background-image: url(<%= similar[1].mainImage %>)"></div>
+              <div class="listing-bottom">
+                <a href="#" class="item-title"><%= similar[1].title %></a>
+                <p class="item-subtitle"><%= similar[1].genre.join(', ') %></p>
+                <div class="item-info">
+                  <div class="rating">
+                    <i class="star fas fa-star fa-xs"></i>
+                    <i class="star fas fa-star fa-xs"></i>
+                    <i class="star fas fa-star fa-xs"></i>
+                    <i class="star fas fa-star fa-xs"></i>
+                    <i class="star fas fa-star fa-xs"></i>
+                  </div>
+                  <div class="price">
+                    <p>&#8203</p>
+                  </div>
+                </div>
+              </div>
+              </div>
             <div class="sim-item shadow"></div>
             <div class="sim-item shadow"></div>
           </div>

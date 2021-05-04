@@ -306,10 +306,17 @@ app.get("/apps/:id", (req, res) => {
         type: "app",
       })
         .then((appReview) => {
-          res.render("pages/app", {
-            app: result,
-            review: appReview,
-          });
+          Application.find({ group: result.group[0] })
+            .then((finalRes) => {
+              res.render("pages/app", {
+                app: result,
+                review: appReview,
+                similar: finalRes,
+              });
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         })
         .catch((err) => {
           console.log(err);
