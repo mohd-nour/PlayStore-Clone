@@ -90,6 +90,7 @@ const Movie = mongoose.model("Movie", movieSchema);
 const bookSchema = {
   title: String,
   mainImage: String,
+  rating: Number,
   creator: String,
   date: String,
   genre: [{
@@ -115,6 +116,7 @@ const Book = mongoose.model("Book", bookSchema);
 const appSchema = {
   title: String,
   mainImage: String,
+  rating: Number,
   genre: [{
     type: String,
   }, ],
@@ -191,17 +193,6 @@ app.get("/", async (req, res) => { //isLoggedIn,
     linkType: linkType
   });
 });
-
-Movie.update({
-    title: "GREENLAND"
-  }, {
-    rating: 4.5
-  },
-  function(err, foundItem) {
-    if (!err) {
-      console.log("Successfully Updated");
-    }
-  });
 
 app.get("/seemoremov/:listName", (req, res) => {
   const listName = req.params.listName;

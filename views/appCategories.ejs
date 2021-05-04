@@ -13,6 +13,7 @@
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/appCategories.css" />
+  <link rel="stylesheet" href="css/stars.css" />
 </head>
 <!-- including search bar and passing strings to query for genre -->
 <%- include('partials/search.ejs', {linkArr: linkArr}) %>
@@ -44,12 +45,18 @@
           <a href="#" class="item-title"><%= newApps[i].title %></a>
           <p class="item-subtitle"><%= newApps[i].genre.join(', ') %></p>
           <div class="item-info">
+            <% var rating = newApps[i].rating %>
+
+            <% var starsTotal = 5; %>
+
+            <% var starPercentage = (rating / starsTotal) * 100; %>
+
+            <% var starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
+
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -67,12 +74,15 @@
           <a href="#" class="item-title"><%= newApps[5].title %></a>
           <p class="item-subtitle"><%= newApps[5].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = newApps[5].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -87,12 +97,15 @@
           <a href="#" class="item-title"><%= newApps[6].title %></a>
           <p class="item-subtitle"><%= newApps[6].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = newApps[6].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -107,12 +120,15 @@
           <a href="#" class="item-title"><%= newApps[7].title %></a>
           <p class="item-subtitle"><%= newApps[7].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = newApps[7].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -149,12 +165,15 @@
           <a href="#" class="item-title"><%= recApps[i].title %></a>
           <p class="item-subtitle"><%= recApps[i].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = recApps[i].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -172,12 +191,15 @@
           <a href="#" class="item-title"><%= recApps[5].title %></a>
           <p class="item-subtitle"><%= recApps[5].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = recApps[5].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -192,12 +214,15 @@
           <a href="#" class="item-title"><%= recApps[6].title %></a>
           <p class="item-subtitle"><%= recApps[6].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = recApps[6].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -212,12 +237,15 @@
           <a href="#" class="item-title"><%= recApps[7].title %></a>
           <p class="item-subtitle"><%= recApps[7].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = recApps[7].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -254,12 +282,15 @@
           <a href="#" action="#" class="item-title"><%= upApps[i].title %></a>
           <p class="item-subtitle"><%= upApps[i].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = upApps[i].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -277,12 +308,15 @@
           <a href="#" class="item-title"><%= upApps[5].title %></a>
           <p class="item-subtitle"><%= upApps[5].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = upApps[5].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -297,12 +331,15 @@
           <a href="#" class="item-title"><%= upApps[6].title %></a>
           <p class="item-subtitle"><%= upApps[6].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = upApps[6].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -317,12 +354,15 @@
           <a href="#" class="item-title"><%= upApps[7].title %></a>
           <p class="item-subtitle"><%= upApps[7].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = upApps[7].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -359,12 +399,15 @@
           <a href="#" class="item-title"><%= sciApps[i].title %></a>
           <p class="item-subtitle"><%= sciApps[i].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = sciApps[i].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -382,12 +425,15 @@
           <a href="#" class="item-title"><%= sciApps[5].title %></a>
           <p class="item-subtitle"><%= sciApps[5].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = sciApps[5].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -402,12 +448,15 @@
           <a href="#" class="item-title"><%= sciApps[6].title %></a>
           <p class="item-subtitle"><%= sciApps[6].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = sciApps[6].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -422,12 +471,15 @@
           <a href="#" class="item-title"><%= sciApps[7].title %></a>
           <p class="item-subtitle"><%= sciApps[7].genre.join(', ') %></p>
           <div class="item-info">
+            <% rating = sciApps[7].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
