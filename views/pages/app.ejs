@@ -30,7 +30,8 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="../css/selected-item.css" />
     <link rel="stylesheet" href="../css/review.css" />
-    <!-- <link rel="stylesheet" href="../css/appCategories.css" /> -->
+    <link rel="stylesheet" href="../css/appCategories.css" />
+    <link rel="stylesheet" href="../css/stars.css" />
     <style>
       #headerPopup {
         width: 75%;
@@ -43,7 +44,9 @@
       }
     </style>
   </head>
-  <%- include('../partials/search.ejs') %>
+  <%- include('../partials/postSearch.ejs') %>
+  <!-- star rating system -->
+  <%- include('../partials/starFunction.ejs') %>
   <div class="d-flex flex-row">
     <div style="width: 248px"></div>
     <body>
@@ -291,30 +294,10 @@
             <div class="title">
               <h5 class="similar-tag">Similar</h5>
               <button type="button" class="btn btn-success see-more">
-                See more
+                <a class="text-white text-decoration-none" href="/apps">See more</a>
               </button>
             </div>
-            <div class="listing-card card-7">
-              <div class="listing-top" style="background-image: url(<%= similar[1].mainImage %>)"></div>
-              <div class="listing-bottom">
-                <a href="#" class="item-title"><%= similar[1].title %></a>
-                <p class="item-subtitle"><%= similar[1].genre.join(', ') %></p>
-                <div class="item-info">
-                  <div class="rating">
-                    <i class="star fas fa-star fa-xs"></i>
-                    <i class="star fas fa-star fa-xs"></i>
-                    <i class="star fas fa-star fa-xs"></i>
-                    <i class="star fas fa-star fa-xs"></i>
-                    <i class="star fas fa-star fa-xs"></i>
-                  </div>
-                  <div class="price">
-                    <p>&#8203</p>
-                  </div>
-                </div>
-              </div>
-              </div>
-            <div class="sim-item shadow"></div>
-            <div class="sim-item shadow"></div>
+            <%- include("../partials/similar.ejs", {title : app.title})%>
           </div>
         </div>
       </div>

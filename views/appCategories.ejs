@@ -13,8 +13,13 @@
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/appCategories.css" />
+  <link rel="stylesheet" href="css/stars.css" />
 </head>
-<%- include('partials/search.ejs') %>
+<!-- including search bar and passing strings to query for genre -->
+<%- include('partials/search.ejs', {linkArr: linkArr}) %>
+
+<!-- star rating system -->
+<%- include('partials/starFunction.ejs') %>
 
 <body>
   <!-- Listing Container 1 -->
@@ -44,11 +49,9 @@
           <p class="item-subtitle"><%= newApps[i].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(newApps[i].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -67,11 +70,9 @@
           <p class="item-subtitle"><%= newApps[5].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(newApps[5].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -87,11 +88,9 @@
           <p class="item-subtitle"><%= newApps[6].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(newApps[6].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -107,11 +106,9 @@
           <p class="item-subtitle"><%= newApps[7].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(newApps[7].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -149,11 +146,9 @@
           <p class="item-subtitle"><%= recApps[i].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(recApps[i].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -172,11 +167,9 @@
           <p class="item-subtitle"><%= recApps[5].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(recApps[5].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -192,11 +185,9 @@
           <p class="item-subtitle"><%= recApps[6].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(recApps[6].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -212,11 +203,9 @@
           <p class="item-subtitle"><%= recApps[7].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(recApps[7].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -254,11 +243,9 @@
           <p class="item-subtitle"><%= upApps[i].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(upApps[i].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -277,11 +264,9 @@
           <p class="item-subtitle"><%= upApps[5].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(upApps[5].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -297,11 +282,9 @@
           <p class="item-subtitle"><%= upApps[6].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(upApps[6].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -317,11 +300,9 @@
           <p class="item-subtitle"><%= upApps[7].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(upApps[7].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -359,11 +340,9 @@
           <p class="item-subtitle"><%= sciApps[i].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(sciApps[i].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -382,11 +361,9 @@
           <p class="item-subtitle"><%= sciApps[5].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(sciApps[5].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -402,11 +379,9 @@
           <p class="item-subtitle"><%= sciApps[6].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(sciApps[i].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -422,11 +397,9 @@
           <p class="item-subtitle"><%= sciApps[7].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(sciApps[i].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p>&#8203</p>
@@ -438,4 +411,5 @@
   </div>
 </body>
 <%- include('partials/footer.ejs') %>
+
 </html>

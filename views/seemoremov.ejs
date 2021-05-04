@@ -13,8 +13,12 @@
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="../css/categories.css" />
+  <link rel="stylesheet" href="../css/stars.css" />
 </head>
-<%- include('partials/search.ejs') %>
+<%- include('partials/postSearch.ejs') %>
+
+<!-- star rating system -->
+<%- include('partials/starFunction.ejs') %>
 
 <body>
   <!-- Listing Container 1 -->
@@ -35,11 +39,9 @@
           <p class="item-subtitle"><%= movie.genre %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(movie.rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <!-- Match xxx,xxx,xxx from price string-->
@@ -55,4 +57,5 @@
   </div>
 </body>
 <%- include('partials/footer.ejs') %>
+
 </html>

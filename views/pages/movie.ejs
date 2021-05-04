@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="../css/selected-item.css" />
     <link rel="stylesheet" href="../css/movie.css" />
     <link rel="stylesheet" href="../css/review.css" />
+    <link rel="stylesheet" href="../css/appCategories.css" />
+    <link rel="stylesheet" href="../css/stars.css" />
     <style>
       #headerPopup {
         width: 100%;
@@ -45,7 +47,9 @@
       }
     </style>
   </head>
-  <%- include('../partials/search.ejs') %>
+  <%- include('../partials/postSearch.ejs') %>
+  <!-- star rating system -->
+  <%- include('../partials/starFunction.ejs') %>
   <div class="d-flex flex-row">
     <div style="width: 248px;">
     </div>
@@ -229,13 +233,11 @@
         <div class="similar-items">
           <div class="title">
             <h5 class="similar-tag">Similar</h5>
-            <button type="button" class="btn btn-success see-more">
-              See more
+            <button type="button" class="btn btn-success see-more" style="background-color: #a52714;">
+              <a class="text-white text-decoration-none" href="/movies"> See more</a> 
             </button>
           </div>
-          <div class="sim-item shadow"></div>
-          <div class="sim-item shadow"></div>
-          <div class="sim-item shadow"></div>
+          <%- include("../partials/similar.ejs", {title: movie.title})%>
         </div>
       </div>
 
