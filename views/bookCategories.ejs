@@ -13,9 +13,13 @@
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/categories.css" />
+  <link rel="stylesheet" href="css/stars.css" />
 </head>
 <!-- including search bar and passing strings to query for genre -->
 <%- include('partials/search.ejs', {linkArr: linkArr}) %>
+
+<!-- star rating system -->
+<%- include('starFunction.ejs') %>
 
 <body>
   <!-- Listing Container 1 -->
@@ -46,11 +50,9 @@
           <p class="item-subtitle"><%= topBooks[i].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(topBooks[i].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (topBooks[i].price.match(/Free ebook/,'')) { %>
@@ -75,11 +77,9 @@
           <p class="item-subtitle"><%= topBooks[5].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(topBooks[5].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (topBooks[5].price.match(/Free ebook/,'')) { %>
@@ -101,11 +101,9 @@
           <p class="item-subtitle"><%= topBooks[6].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(topBooks[6].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (topBooks[6].price.match(/Free ebook/,'')) { %>
@@ -127,11 +125,9 @@
           <p class="item-subtitle"><%= topBooks[7].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(topBooks[7].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (topBooks[7].price.match(/Free ebook/,'')) { %>
@@ -175,11 +171,9 @@
           <p class="item-subtitle"><%= bussBooks[i].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(bussBooks[i].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (bussBooks[i].price.match(/Free ebook/,'')) { %>
@@ -204,11 +198,9 @@
           <p class="item-subtitle"><%= bussBooks[5].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(bussBooks[5].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (bussBooks[5].price.match(/Free ebook/,'')) { %>
@@ -230,11 +222,9 @@
           <p class="item-subtitle"><%= bussBooks[6].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(bussBooks[6].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (bussBooks[6].price.match(/Free ebook/,'')) { %>
@@ -256,11 +246,9 @@
           <p class="item-subtitle"><%= bussBooks[7].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(bussBooks[7].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (bussBooks[7].price.match(/Free ebook/,'')) { %>
@@ -304,11 +292,9 @@
           <p class="item-subtitle"><%= dealBooks[i].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(dealBooks[i].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (dealBooks[i].price.match(/Free ebook/,'')) { %>
@@ -333,11 +319,9 @@
           <p class="item-subtitle"><%= dealBooks[5].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(dealBooks[5].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (dealBooks[5].price.match(/Free ebook/,'')) { %>
@@ -359,11 +343,9 @@
           <p class="item-subtitle"><%= dealBooks[6].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(dealBooks[6].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (dealBooks[6].price.match(/Free ebook/,'')) { %>
@@ -385,11 +367,9 @@
           <p class="item-subtitle"><%= dealBooks[7].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(dealBooks[7].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <% if (dealBooks[7].price.match(/Free ebook/,'')) { %>
@@ -433,11 +413,9 @@
           <p class="item-subtitle"><%= litBooks[i].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(litBooks[i].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p> <% if (litBooks[i].price.match(/Free ebook/,'')) { %>
@@ -462,11 +440,9 @@
           <p class="item-subtitle"><%= litBooks[5].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(litBooks[5].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p> <% if (litBooks[5].price.match(/Free ebook/,'')) { %>
@@ -488,11 +464,9 @@
           <p class="item-subtitle"><%= litBooks[6].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(litBooks[6].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p> <% if (litBooks[6].price.match(/Free ebook/,'')) { %>
@@ -514,11 +488,9 @@
           <p class="item-subtitle"><%= litBooks[7].genre.join(', ') %></p>
           <div class="item-info">
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(litBooks[7].rating) %>"></div>
+              </div>
             </div>
             <div class="price">
               <p> <% if (litBooks[7].price.match(/Free ebook/,'')) { %>

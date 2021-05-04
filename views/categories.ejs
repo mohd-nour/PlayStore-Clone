@@ -17,6 +17,7 @@
 </head>
 <!-- including search bar and passing strings to query for genre -->
 <%- include('partials/search.ejs', {linkArr: linkArr, linkType: linkType}) %>
+
 <!-- star rating system -->
 <%- include('starFunction.ejs') %>
 
@@ -49,7 +50,7 @@
           <div class="item-info">
             <div class="rating">
               <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(topMovies[i].rating) %>" ;"></div>
+                <div class="stars-inner" style="width: <%= getRating(topMovies[i].rating) %>"></div>
               </div>
             </div>
             <div class="price">
