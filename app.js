@@ -8,7 +8,8 @@ const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
 const {
-  cwd, resourceUsage
+  cwd,
+  resourceUsage
 } = require("process");
 var ObjectId = require("mongodb").ObjectID;
 const User = require("./models/user");
@@ -159,7 +160,7 @@ const reviewSchema = {
 // app model with apps collection
 const Review = mongoose.model("Review", reviewSchema);
 
-app.get("/",  async (req, res) => {//isLoggedIn,
+app.get("/", async (req, res) => { //isLoggedIn,
   const topMovies = await Movie.find({
     group: "Top-Selling Movies"
   })
@@ -215,7 +216,11 @@ app.get("/books", async (req, res) => {
     topBooks: topBooks,
     bussBooks: bussBooks,
     dealBooks: dealBooks,
-    litBooks: litBooks
+    litBooks: litBooks,
+    topStr: "Top-selling eBooks",
+    bussStr: "Business & Investing",
+    dealStr: "Deals on eBooks",
+    litStr: "Fiction & Literature"
   });
 });
 
@@ -333,33 +338,33 @@ app.post("/signup", (req, res) => {
 app.get("/forgotpassword", (req, res) => {
   res.render("forgotpassword");
 });
-app.get("/upload", (req, res)=>{
+app.get("/upload", (req, res) => {
   res.render("upload");
 });
 app.post("/sendemail", (req, res) => {
-    var transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: 'gpstore084@gmail.com',
-          pass: 'playstore@480'
-        }
-      });
-      
-      var mailOptions = {
-        from: 'gpstore084@gmail.com',
-        to: 'omarkammounii0612@gmail.com',//usern,
-        subject: 'News and Offers',
-        text: 'Starting from now, you will start receiving emails about new releases and offers related to our website. \nYou can stop us from sending such emails whenever you want'
-      };
-      
-      transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-          res.redirect("/");
-        }
-      });
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'gpstore084@gmail.com',
+      pass: 'playstore@480'
+    }
+  });
+
+  var mailOptions = {
+    from: 'gpstore084@gmail.com',
+    to: 'omarkammounii0612@gmail.com', //usern,
+    subject: 'News and Offers',
+    text: 'Starting from now, you will start receiving emails about new releases and offers related to our website. \nYou can stop us from sending such emails whenever you want'
+  };
+
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.redirect("/");
+    }
+  });
 });
 app.post("/logout", (req, res) => {
   req.session.destroy(function(err) {
