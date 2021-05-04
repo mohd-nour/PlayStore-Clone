@@ -79,7 +79,7 @@ const movieSchema = {
   subtitles: String,
   group: [{
     type: String,
-  }, ],
+  }, ]
 };
 
 // movie model with movies collection
@@ -106,7 +106,7 @@ const bookSchema = {
   features: String,
   bestFor: String,
   language: String,
-  group: String,
+  group: String
 };
 
 // book model with books collection
@@ -166,7 +166,36 @@ const Review = mongoose.model("Review", reviewSchema);
 
 app.get("/", async (req, res) => { //isLoggedIn,
 
+  const linkArr = ["Top-Selling Movies", "Business & Investing", "Top-selling eBooks", "Superhero movies"];
+
+  const topMovies = await Movie.find({
+    group: "Top-Selling Movies"
+  })
+  const bussBooks = await Book.find({
+    group: "Business & Investing"
+  })
+  const topBooks = await Book.find({
+    group: "Top-selling eBooks"
+  })
+  const actionMovies = await Movie.find({
+    group: "Superhero movies"
+  })
+
+
+  return res.render("entertainment", {
+    topMovies: topMovies,
+    bussBooks: bussBooks,
+    topBooks: topBooks,
+    actionMovies: actionMovies,
+    linkArr: linkArr,
+  });
+});
+
+app.get("/movies", async (req, res) => { //isLoggedIn,
+
   const linkArr = ["Top-Selling Movies", "New rental movies", "Recommended For You", "Superhero movies"];
+
+  const linkArr2 = ["Top charts", "New releases"]
 
   const linkType = "seemoremov";
 
@@ -184,13 +213,14 @@ app.get("/", async (req, res) => { //isLoggedIn,
   })
 
 
-  return res.render("categories", {
+  return res.render("movieCategories", {
     topMovies: topMovies,
     newMovies: newMovies,
     recMovies: recMovies,
     actionMovies: actionMovies,
     linkArr: linkArr,
-    linkType: linkType
+    linkType: linkType,
+    linkArr2: linkArr2
   });
 });
 
@@ -211,6 +241,8 @@ app.get("/seemoremov/:listName", (req, res) => {
 app.get("/books", async (req, res) => {
 
   const linkArr = ["Top-selling eBooks", "Business & Investing", "Deals on eBooks", "Fiction & Literature"];
+
+  const linkArr2 = ["Top charts", "New releases"];
 
   const linkType = "seemorebooks";
 
@@ -234,7 +266,8 @@ app.get("/books", async (req, res) => {
     dealBooks: dealBooks,
     litBooks: litBooks,
     linkArr: linkArr,
-    linkType: linkType
+    linkType: linkType,
+    linkArr2: linkArr2
   });
 });
 
@@ -255,6 +288,8 @@ app.get("/seemorebooks/:listName", (req, res) => {
 app.get("/apps", async (req, res) => {
 
   const linkArr = ["New & Updated Games", "Recommended For You", "Just Updated", "Discover Science"];
+
+  const linkArr2 = ["Top charts", "New releases"]
 
   const linkType = "seemoreapps";
 
@@ -278,7 +313,8 @@ app.get("/apps", async (req, res) => {
     upApps: upApps,
     sciApps: sciApps,
     linkArr: linkArr,
-    linkType: linkType
+    linkType: linkType,
+    linkArr2: linkArr2
   });
 });
 
