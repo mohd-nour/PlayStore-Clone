@@ -166,12 +166,15 @@
           <a href="#" class="item-title"><%= newMovies[i].title %></a>
           <p class="item-subtitle"><%= newMovies[i].genre %></p>
           <div class="item-info">
+            <% rating = newMovies[i].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= newMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
@@ -189,12 +192,15 @@
           <a href="#" class="item-title"><%= newMovies[5].title %></a>
           <p class="item-subtitle"><%= newMovies[5].genre %></p>
           <div class="item-info">
+            <% rating = newMovies[5].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= newMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
@@ -209,12 +215,15 @@
           <a href="#" class="item-title"><%= newMovies[6].title %></a>
           <p class="item-subtitle"><%= newMovies[6].genre %></p>
           <div class="item-info">
+            <% rating = newMovies[6].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= newMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
@@ -229,12 +238,15 @@
           <a href="#" class="item-title"><%= newMovies[7].title %></a>
           <p class="item-subtitle"><%= newMovies[7].genre %></p>
           <div class="item-info">
+            <% rating = newMovies[7].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= newMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
@@ -245,7 +257,7 @@
     </div>
   </div>
 
-  <!-- Listing Container 3 -->
+  <!-- Listing Container 2 -->
   <div class="category-container">
     <div class="title-header">
       <div class="heading-title">
@@ -268,15 +280,18 @@
       <div class="listing-card">
         <div class="listing-top" style="background-image: url(<%= recMovies[i].mainImage %>)"></div>
         <div class="listing-bottom">
-          <a href="#" action="#" class="item-title"><%= recMovies[i].title %></a>
-          <p class="item-subtitle"><%= recMovies[i].genre %></p>
+          <a href="#" class="item-title"><%= recMovies[i].title %></a>
+          <p class="item-subtitle"><%= newMovies[i].genre %></p>
           <div class="item-info">
+            <% rating = recMovies[i].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= recMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
@@ -294,12 +309,15 @@
           <a href="#" class="item-title"><%= recMovies[5].title %></a>
           <p class="item-subtitle"><%= recMovies[5].genre %></p>
           <div class="item-info">
+            <% rating = recMovies[5].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= recMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
@@ -314,12 +332,15 @@
           <a href="#" class="item-title"><%= recMovies[6].title %></a>
           <p class="item-subtitle"><%= recMovies[6].genre %></p>
           <div class="item-info">
+            <% rating = recMovies[6].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= recMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
@@ -332,17 +353,20 @@
         <div class="listing-top" style="background-image: url(<%= recMovies[7].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= recMovies[7].title %></a>
-          <p class="item-subtitle"><%= recMovies[7].genre %></p>
+          <p class="item-subtitle"><%= newMovies[7].genre %></p>
           <div class="item-info">
+            <% rating = recMovies[7].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
-              <p>LBP <%= recMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+              <p>LBP <%= newMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
             </div>
           </div>
         </div>
@@ -376,12 +400,15 @@
           <a href="#" class="item-title"><%= actionMovies[i].title %></a>
           <p class="item-subtitle"><%= actionMovies[i].genre %></p>
           <div class="item-info">
+            <% rating = actionMovies[i].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= actionMovies[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
@@ -399,12 +426,15 @@
           <a href="#" class="item-title"><%= actionMovies[5].title %></a>
           <p class="item-subtitle"><%= actionMovies[5].genre %></p>
           <div class="item-info">
+            <% rating = actionMovies[5].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= actionMovies[5].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
@@ -419,12 +449,15 @@
           <a href="#" class="item-title"><%= actionMovies[6].title %></a>
           <p class="item-subtitle"><%= actionMovies[6].genre %></p>
           <div class="item-info">
+            <% rating = actionMovies[6].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= actionMovies[6].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
@@ -439,12 +472,15 @@
           <a href="#" class="item-title"><%= actionMovies[7].title %></a>
           <p class="item-subtitle"><%= actionMovies[7].genre %></p>
           <div class="item-info">
+            <% rating = actionMovies[7].rating %>
+
+            <% starPercentage = (rating / starsTotal) * 100; %>
+
+            <% starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; %>
             <div class="rating">
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
-              <i class="star fas fa-star fa-xs"></i>
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= starPercentageRounded %>;"></div>
+              </div>
             </div>
             <div class="price">
               <p>LBP <%= actionMovies[7].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
