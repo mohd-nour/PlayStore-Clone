@@ -61,6 +61,7 @@ app.use(passport.session());
 // mongoose movie Schema
 const movieSchema = {
   title: String,
+  rating: Number,
   mainImage: String,
   yearProduced: String,
   duration: String,
@@ -83,6 +84,7 @@ const movieSchema = {
 
 // movie model with movies collection
 const Movie = mongoose.model("Movie", movieSchema);
+
 
 // mongoose book Schema
 const bookSchema = {
@@ -189,6 +191,17 @@ app.get("/", async (req, res) => { //isLoggedIn,
     linkType: linkType
   });
 });
+
+Movie.update({
+    title: "GREENLAND"
+  }, {
+    rating: 4.5
+  },
+  function(err, foundItem) {
+    if (!err) {
+      console.log("Successfully Updated");
+    }
+  });
 
 app.get("/seemoremov/:listName", (req, res) => {
   const listName = req.params.listName;
