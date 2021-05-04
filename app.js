@@ -161,6 +161,11 @@ const reviewSchema = {
 const Review = mongoose.model("Review", reviewSchema);
 
 app.get("/", async (req, res) => { //isLoggedIn,
+
+  const linkArr = ["Top-Selling Movies", "New rental movies", "Recommended For You", "Superhero movies"];
+
+  const linkType = "seemoremov";
+
   const topMovies = await Movie.find({
     group: "Top-Selling Movies"
   })
@@ -179,7 +184,9 @@ app.get("/", async (req, res) => { //isLoggedIn,
     topMovies: topMovies,
     newMovies: newMovies,
     recMovies: recMovies,
-    actionMovies: actionMovies
+    actionMovies: actionMovies,
+    linkArr: linkArr,
+    linkType: linkType
   });
 });
 
@@ -198,6 +205,11 @@ app.get("/seemoremov/:listName", (req, res) => {
 });
 
 app.get("/books", async (req, res) => {
+
+  const linkArr = ["Top-selling eBooks", "Business & Investing", "Deals on eBooks", "Fiction & Literature"];
+
+  const linkType = "seemorebooks";
+
   const topBooks = await Book.find({
     group: "Top-selling eBooks"
   })
@@ -217,10 +229,8 @@ app.get("/books", async (req, res) => {
     bussBooks: bussBooks,
     dealBooks: dealBooks,
     litBooks: litBooks,
-    topStr: "Top-selling eBooks",
-    bussStr: "Business & Investing",
-    dealStr: "Deals on eBooks",
-    litStr: "Fiction & Literature"
+    linkArr: linkArr,
+    linkType: linkType
   });
 });
 
@@ -239,6 +249,11 @@ app.get("/seemorebooks/:listName", (req, res) => {
 });
 
 app.get("/apps", async (req, res) => {
+
+  const linkArr = ["New & Updated Games", "Recommended For You", "Just Updated", "Discover Science"];
+
+  const linkType = "seemoreapps";
+
   const newApps = await Application.find({
     group: "New & Updated Games"
   })
@@ -257,7 +272,9 @@ app.get("/apps", async (req, res) => {
     newApps: newApps,
     recApps: recApps,
     upApps: upApps,
-    sciApps: sciApps
+    sciApps: sciApps,
+    linkArr: linkArr,
+    linkType: linkType
   });
 });
 

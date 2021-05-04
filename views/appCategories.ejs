@@ -14,7 +14,8 @@
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/appCategories.css" />
 </head>
-<%- include('partials/search.ejs') %>
+<!-- including search bar and passing strings to query for genre -->
+<%- include('partials/search.ejs', {linkArr: linkArr}) %>
 
 <body>
   <!-- Listing Container 1 -->
@@ -438,4 +439,5 @@
   </div>
 </body>
 <%- include('partials/footer.ejs') %>
+
 </html>
