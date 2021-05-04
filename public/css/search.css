@@ -326,6 +326,7 @@ img {
   height: 48px;
   width: 100%;
   min-width: 1030px;
+  z-index: 10;
 }
 
 ul {

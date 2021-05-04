@@ -1,4 +1,11 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 footer {
+  margin-top: auto;
   height: 1px;
   text-align: center;
   font-size: 14px;

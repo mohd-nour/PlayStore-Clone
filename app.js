@@ -291,7 +291,7 @@ app.get("/seemoreapps/:listName", (req, res) => {
     // passing array of movies documents to seemoremov.ejs
     res.render("seemoreapps", {
       listTitle: listName,
-      books: apps
+      apps: apps
     });
   });
 });
