@@ -7,11 +7,21 @@ function pageLoad() {
   var readmore = document.getElementById("read-more");
   var showHidden = document.getElementsByClassName("showHidden")[0];
   var readMoreReviews = document.getElementById("read-more-reviews");
-  leftBtn.onclick = scrollLeft;
-  rightBtn.onclick = scrollRight;
-  readmore.onclick = readMore;
-  showHidden.onclick = showContent;
-  readMoreReviews.onclick = readAllReviews;
+  if (leftBtn) {
+    leftBtn.onclick = scrollLeft;
+  }
+  if (rightBtn) {
+    rightBtn.onclick = scrollRight;
+  }
+  if (readmore) {
+    readmore.onclick = readMore;
+  }
+  if (showHidden) {
+    showHidden.onclick = showContent;
+  }
+  if (readMoreReviews) {
+    readMoreReviews.onclick = readAllReviews;
+  }
 }
 
 function scrollRight() {

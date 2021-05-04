@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= movie.title %></title>
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Calibri:400,300,700"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+    />
+    <!-- Magnific PopUp Css -->
+    <link rel="stylesheet" href="../css/magnific-popup.css" />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../css/selected-item.css" />
+    <link rel="stylesheet" href="../css/movie.css" />
+    <link rel="stylesheet" href="../css/review.css" />
+    <link rel="stylesheet" href="../css/appCategories.css" />
+    <link rel="stylesheet" href="../css/stars.css" />
+    <style>
+      #headerPopup {
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+      }
+
+      #headerPopup iframe {
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <%- include('../partials/postSearch.ejs') %>
+  <!-- star rating system -->
+  <%- include('../partials/starFunction.ejs') %>
+  <div class="d-flex flex-row">
+    <div style="width: 248px;">
+    </div>
+  <body>
+      <div class="page">
+        <div class="main container shadow">
+          <div class="header">
+            <img
+              src="<%= movie.mainImage %>"
+              class="rounded float-left movie-img"
+              alt="item image"
+            />
+            <div class="header-right">
+              <h1 class="item-name"><%= movie.title %></h1>
+              <div class="row">
+                <p class="vert-center movie-year">
+                  <%= movie.yearProduced %> <%= movie.duration %>
+                </p>
+                <div class="stars vert-cent">
+                  <% let s = review.totalScore;%> <%let z = parseFloat(s);%>
+                  <%for(var i=1; i <= 5; i++){%> <%if(z >= i){%>
+                  <i class="fas fa-star"></i>
+                  <%}else if(z >= (parseFloat(i) - 0.5)){%>
+                  <i class="fas fa-star-half-alt"></i>
+                  <%}else{%>
+                  <i class="far fa-star"></i>
+                  <%}%> <%}%>
+                </div>
+                <p class="reviewers vert-cent stext"><%= review.total %></p>
+                <i class="fas fa-user vert-cent"></i>
+              </div>
+
+              <p class="movie-genre">
+                <% movie.genre.forEach(element => { %> <%= element %> <% })%>
+              </p>
+              <div class="row second-row">
+                <button type="button" class="btn btn-link stext movie-wishlist">
+                  <i class="far fa-plus-square"></i>Add to wishlist
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-success install movie-price"
+                >
+                  <%= movie.price %>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="visual movie-visual">
+            <div id="headerPopup">
+              <iframe
+                class="embed-responsive-item"
+                height="500"
+                width="500"
+                src="<%= movie.video.replace("autoplay=1", "autoplay=0") %>"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <div class="description">
+            <div class="description-text">
+              <% let x = movie.description; %> <% let list = x.split(" "); %> <%
+              for(var i=0; i < list.length; i++) {%> <%if(list[i].endsWith(".")
+              || list[i].includes(".")){%> <%=list[i]%>
+              <br />
+              <%} else {%> <%=list[i]%> <%}%> <%}%>
+            </div>
+
+            <div class="more-container">
+              <div id="read-more" class="btn-link more">READ MORE</div>
+            </div>
+          </div>
+
+          <hr class="lrmargin">
+
+          <div class="cast-credits">
+            <div class="add-info">
+            <p class="lrmargin left-margin">CAST AND CREDITS</p>
+            <div class="mtext d-flex justify-content-between">
+              <div class="w-100 ml-5">
+                <div class="mb-3"> Actors</div>
+                <div class="credits"><%= movie.actors %></div>
+              </div>
+              <div class="w-100 ml-5 mb-5">
+                <div class="mb-4">Producers</div>
+                <div class="credits"><%= movie.producers %></div>
+              </div>
+              <div class="w-100 ml-5 mr-5 mb-5">
+                <div class="mb-4">Directors</div>
+                <div class="credits"><%= movie.director %></div> 
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="reviews">
+            <hr class="lrmargin" />
+            <div class="lrmargin flex-display">
+              <p class="vert-cent review-word">REVIEWS</p>
+              <button class="review-btn" type="button" name="button">
+                <i class="fas fa-exclamation-circle review-ex-mark"></i>
+                Review policy and info
+              </button>
+            </div>
+            <div class="lrmargin flex-display review-bars">
+                <div class="left-side-review">
+                <h1 class="point-review"><%= review.totalScore %></h1>
+                <div class="stars vert-cent new-stars">
+                  <%let y = parseFloat(review.totalScore);%> <%for(var i=1; i <=
+                  5; i++){%> <%if(y >= i){%>
+                  <i class="fas fa-star size-fourteen"></i>
+                  <%}else if(y >= (parseFloat(i) - 0.5)){%>
+                  <i class="fas fa-star-half-alt size-fourteen"></i>
+                  <%}else{%>
+                  <i class="far fa-star size-fourteen"></i>
+                  <%}%> <%}%>
+                </div>
+                <div class="row">
+                  <i class="fas fa-user vert-cent size-fourteen"></i>
+                  <p class="reviewers vert-cent stext size-fourteen">
+                    <%= review.total %>
+                  </p>
+                </div>
+              </div>
+              <div class="right-side-review">
+                <div class="review-bar">
+                  <span class="review-nb">5</span>
+                  <span class="bar-shape" id="bar5"></span>
+                </div>
+                <div class="review-bar">
+                  <span class="review-nb">4</span>
+                  <span class="bar-shape" id="bar4"></span>
+                </div>
+                <div class="review-bar">
+                  <span class="review-nb">3</span>
+                  <span class="bar-shape" id="bar3"></span>
+                </div>
+                <div class="review-bar">
+                  <span class="review-nb">2</span>
+                  <span class="bar-shape" id="bar2"></span>
+                </div>
+                <div class="review-bar">
+                  <span class="review-nb">1</span>
+                  <span class="bar-shape" id="bar1"></span>
+                </div>
+              </div>
+            </div>
+            <%- include("../partials/reviews.ejs", {review:review})%>
+            <div class="read-all-reviews">
+              <div id="read-more-reviews" class="btn-link moreReviews">
+                READ ALL REVIEWS
+              </div>
+            </div>
+          </div>
+
+          <hr class="lrmargin" />
+          <div class="add-info">
+            <p class="lrmargin left-margin">ADDITIONAL INFORMATION</p>
+            <div class="mtext d-flex justify-content-between">
+              <div class="w-100 ml-5">
+                <div class="font-weight-bold mb-3"> Rotten Tomatoes®</div>
+                <div><%= movie.quality%></div>
+              </div>
+              <div class="w-100 ml-5 mb-5">
+                <div class="font-weight-bold mb-4">Audio Language</div>
+                <div><%= movie.audioLanguage.replace(/\[5.1\]/g,"").replace(/\[5.1, AD\]/g,"")%></div>
+              </div>
+              <div class="w-100 ml-5 mr-5 mb-5">
+                <div class="font-weight-bold mb-4">Subtitles</div>
+                <div><%= movie.subtitles%></div> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="similar-items">
+          <div class="title">
+            <h5 class="similar-tag">Similar</h5>
+            <button type="button" class="btn btn-success see-more" style="background-color: #a52714;">
+              <a class="text-white text-decoration-none" href="/movies"> See more</a> 
+            </button>
+          </div>
+          <%- include("../partials/similar.ejs", {title: movie.title})%>
+        </div>
+      </div>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/7adaf242b0.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="../scripts/selected-Item.js"></script>
+    <!-- Magnific PopUp JS-->
+    <script src="../scripts/jquery.magnific-popup.min.js"></script>
+    <script src="../scripts/jquery.magnific-popup.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#headerVideoLink").magnificPopup({
+          type: "inline",
+          midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        });
+      });
+    </script>
+  </body>
+</div>
+<%- include('../partials/footer.ejs') %>
+</html>

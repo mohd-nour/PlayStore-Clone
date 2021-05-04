@@ -1,0 +1,25 @@
+<%var items = 0; var i = 0; %>
+<%while(items < 3){%>
+    <%if(similar[i].title == title){%>
+        <% i++;%>
+    <%}else{%>
+        <div class="listing-card card-6 pt-1" style="width: 90%;">
+            <div class="listing-top" style="background-image: url(<%= similar[i].mainImage %>)"></div>
+              <div class="listing-bottom">
+                <a href="#" class="item-title"><%= similar[i].title %></a>
+                <p class="item-subtitle"><%= similar[i].genre.join(', ') %></p>
+                <div class="item-info">
+                  <div class="rating">
+                    <div class="stars-outer">
+                      <div class="stars-inner" style="width: <%= getRating(similar[i].rating) %>"></div>
+                    </div>
+                  </div>
+                  <div class="price">
+                    <p>&#8203</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <% i++; items++;%>
+    <%}%>
+  <%}%>

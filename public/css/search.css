@@ -100,14 +100,14 @@ div {
   font: 13px/27px Arial, sans-serif;
 }
 
-.logo>a>img {
+.logo > a > img {
   width: 183px;
   height: 39px;
   border: 0;
   vertical-align: middle;
 }
 
-.logo>a {
+.logo > a {
   display: inline-block;
   outline: none;
   vertical-align: middle;
@@ -171,7 +171,7 @@ button {
 }
 
 .s_icon {
-  background-image: url('https://ssl.gstatic.com/gb/images/v2_a885c30e.png');
+  background-image: url("https://ssl.gstatic.com/gb/images/v2_a885c30e.png");
   background-size: 92px 3564px;
   background-position: 0 -3051px;
   display: inline-block;
@@ -187,7 +187,7 @@ button {
   padding-left: 8px;
   padding-right: 8px;
   border: 1.3px solid #ccc;
-  box-shadow: 0 0 1.5px rgba(0, 0, 0, 0.5)inset;
+  box-shadow: 0 0 1.5px rgba(0, 0, 0, 0.5) inset;
   border-right: none;
   vertical-align: top;
   width: 100%;
@@ -208,7 +208,7 @@ body {
 }
 
 img {
-  width: 60px;
+  width: auto;
   margin: 0;
   padding: 0;
 }
@@ -247,7 +247,7 @@ img {
   margin-left: 12px;
   background: #fff;
   border: 1px solid #ccc;
-  border-color: rgba(0, 0, 0, .2);
+  border-color: rgba(0, 0, 0, 0.2);
   color: #000;
   position: absolute;
   right: 0;
@@ -279,7 +279,7 @@ img {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.prof_sign3>div>input {
+.prof_sign3 > div > input {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -298,7 +298,7 @@ img {
   position: relative;
 }
 
-.profile>a {
+.profile > a {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -591,6 +591,7 @@ a {
   font-size: 13px;
   color: #333;
   background-attachment: fixed;
+  width: 200px;
 }
 
 .acc {
