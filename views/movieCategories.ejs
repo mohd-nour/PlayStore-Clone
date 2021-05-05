@@ -42,6 +42,7 @@
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
       <% for (i=0; i<4; i++) { %>
+      <a href="movies/<%= topMovies[i]._id %>">
       <div class="listing-card">
         <div class="listing-top" style="background-image: url(<%= topMovies[i].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -58,11 +59,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <% } %>
 
       <!-- Cards 5 to 7 have custom mediaquery applied to them -->
       <!-- Card -->
+      <a href="movies/<%= topMovies[5]._id %>">
       <div class="listing-card card-5">
         <div class="listing-top" style="background-image: url(<%= topMovies[5].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -79,8 +81,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <!-- Card -->
+      <a href="movies/<%= topMovies[6]._id %>">
       <div class="listing-card card-6">
         <div class="listing-top" style="background-image: url(<%= topMovies[6].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -97,8 +100,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <!-- Card -->
+      <a href="movies/<%= topMovies[7]._id %>">
       <div class="listing-card card-7">
         <div class="listing-top" style="background-image: url(<%= topMovies[7].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -115,7 +119,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
     </div>
   </div>
   </div>
@@ -140,6 +144,7 @@
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
       <% for (i=0; i<4; i++) { %>
+      <a href="movies/<%= newMovies[i]._id %>">
       <div class="listing-card">
         <div class="listing-top" style="background-image: url(<%= newMovies[i].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -156,11 +161,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <% } %>
 
       <!-- Cards 5 to 7 have custom mediaquery applied to them -->
       <!-- Card -->
+      <a href="movies/<%= newMovies[5]._id %>">
       <div class="listing-card card-5">
         <div class="listing-top" style="background-image: url(<%= newMovies[5].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -177,8 +183,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <!-- Card -->
+      <a href="movies/<%= newMovies[6]._id %>">
       <div class="listing-card card-6">
         <div class="listing-top" style="background-image: url(<%= newMovies[6].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -195,8 +202,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <!-- Card -->
+      <a href="movies/<%= newMovies[7]._id %>">
       <div class="listing-card card-7">
         <div class="listing-top" style="background-image: url(<%= newMovies[7].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -213,7 +221,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
     </div>
   </div>
 
@@ -237,6 +245,7 @@
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
       <% for (i=0; i<4; i++) { %>
+      <a href="movies/<%= recMovies[i]._id %>">
       <div class="listing-card">
         <div class="listing-top" style="background-image: url(<%= recMovies[i].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -253,11 +262,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <% } %>
 
       <!-- Cards 5 to 7 have custom mediaquery applied to them -->
       <!-- Card -->
+      <a href="movies/<%= recMovies[5]._id %>">
       <div class="listing-card card-5">
         <div class="listing-top" style="background-image: url(<%= recMovies[5].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -274,8 +284,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <!-- Card -->
+      <a href="movies/<%= recMovies[6]._id %>">
       <div class="listing-card card-6">
         <div class="listing-top" style="background-image: url(<%= recMovies[6].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -292,13 +303,15 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
+
       <!-- Card -->
+      <a href="movies/<%= recMovies[7]._id %>">
       <div class="listing-card card-7">
         <div class="listing-top" style="background-image: url(<%= recMovies[7].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= recMovies[7].title %></a>
-          <p class="item-subtitle"><%= newMovies[7].genre %></p>
+          <p class="item-subtitle"><%= recMovies[7].genre %></p>
           <div class="item-info">
             <div class="rating">
               <div class="stars-outer">
@@ -311,6 +324,7 @@
           </div>
         </div>
       </div>
+    </a>
     </div>
   </div>
 
@@ -334,6 +348,7 @@
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
       <% for (i=0; i<4; i++) { %>
+      <a href="movies/<%= actionMovies[i]._id %>">
       <div class="listing-card">
         <div class="listing-top" style="background-image: url(<%= actionMovies[i].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -350,11 +365,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <% } %>
 
       <!-- Cards 5 to 7 have custom mediaquery applied to them -->
       <!-- Card -->
+      <a href="movies/<%= actionMovies[5]._id %>">
       <div class="listing-card card-5">
         <div class="listing-top" style="background-image: url(<%= actionMovies[5].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -371,8 +387,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <!-- Card -->
+      <a href="movies/<%= actionMovies[6]._id %>">
       <div class="listing-card card-6">
         <div class="listing-top" style="background-image: url(<%= actionMovies[6].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -389,8 +406,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <!-- Card -->
+      <a href="movies/<%= actionMovies[7]._id %>">
       <div class="listing-card card-7">
         <div class="listing-top" style="background-image: url(<%= actionMovies[7].mainImage %>)"></div>
         <div class="listing-bottom">
@@ -407,7 +425,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
     </div>
   </div>
   <script src="../scripts/stars.js" charset="utf-8"></script>

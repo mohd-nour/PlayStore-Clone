@@ -34,6 +34,7 @@
       <!-- Card -->
       <% apps.forEach(function(app) { %>
       <!-- Card -->
+      <a href="../apps/<%= app._id%>">
       <div class="listing-card">
         <div class="listing-top" style="background-image: url(<%= app.mainImage %>)"></div>
         <div class="listing-bottom">
@@ -51,7 +52,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></a>
       <% }) %>
     </div>
   </div>
