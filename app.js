@@ -348,14 +348,16 @@ app.get("/test", (req, res) => {
   res.render("wishlist");
 });
 
+// Fuzzy search functionality
 app.get("/search", async (req, res) => {
   const searchStr = req.query.searchStr;
 
-  const linkArr = ["Movies", "Books", "Apps"];
+  const regex = new RegExp(escapeRegex(searchStr), 'gi');
 
-  const appSearch = await Application.find({})
-  const bookSearch = await Book.find({})
-  const movieSearch = await Movie.find({})
+  const linkArr = ["Movies", "Books", "Apps"];
+  const appSearch = await Application.find({title: regex})
+  const bookSearch = await Book.find({title: regex})
+  const movieSearch = await Movie.find({title: regex})
 
   return res.render("searchResults", {
     appSearch: appSearch,
@@ -554,7 +556,7 @@ function isLoggedIn(req, res, next) {
 // });
 
 function escapeRegex(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
 
 // listen on port 3000
