@@ -41,86 +41,54 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
-      <% for (i=0; i<4; i++) { %>
-      <a href="apps/<%=newApps[i]._id %>">
-      <div class="listing-card">
-        <div class="listing-top-app" style="background-image: url(<%= newApps[i].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= newApps[i].title %></a>
-          <p class="item-subtitle"><%= newApps[i].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(newApps[i].rating) %>"></div>
+      <a href="apps/<%= newApps[i]._id %>">
+        <% if (newApps.length != 0) { %>
+        <% for (i=0; i<newApps.length && i<7; i++) { %>
+        <% if (i>3) { %>
+        <% var card = "card-" + (i + 1)%>
+        <div class="listing-card <%= card %>">
+          <div class="listing-top-app" style="background-image: url(<%= newApps[i].mainImage %>)"></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= newApps[i].title %></a>
+            <p class="item-subtitle"><%= newApps[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <div class="stars-outer">
+                  <div class="stars-inner" style="width: <%= getRating(newApps[i].rating) %>"></div>
+                </div>
               </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
+              <div class="price">
+                <p>&#8203</p>
+              </div>
             </div>
           </div>
         </div>
-      </div></a>
-      <% } %>
-
-      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
-      <!-- Card -->
-      <a href="apps/<%=newApps[5]._id %>">
-      <div class="listing-card card-5">
-        <div class="listing-top-app" style="background-image: url(<%= newApps[5].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= newApps[5].title %></a>
-          <p class="item-subtitle"><%= newApps[5].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(newApps[5].rating) %>"></div>
+        <% }  else { %>
+        <div class="listing-card">
+          <div class="listing-top-app" style="background-image: url(<%= newApps[i].mainImage %>)"></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= newApps[i].title %></a>
+            <p class="item-subtitle"><%= newApps[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <div class="stars-outer">
+                  <div class="stars-inner" style="width: <%= getRating(newApps[i].rating) %>"></div>
+                </div>
               </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
+              <div class="price">
+                <p>&#8203</p>
+              </div>
             </div>
           </div>
         </div>
-      </div></a>
-      <!-- Card -->
-      <a href="apps/<%=newApps[6]._id %>">
-      <div class="listing-card card-6">
-        <div class="listing-top-app" style="background-image: url(<%= newApps[6].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= newApps[6].title %></a>
-          <p class="item-subtitle"><%= newApps[6].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(newApps[6].rating) %>"></div>
-              </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
-            </div>
-          </div>
-        </div>
-      </div></a>
-      <!-- Card -->
-      <a href="apps/<%=newApps[7]._id %>">
-      <div class="listing-card card-7">
-        <div class="listing-top-app" style="background-image: url(<%= newApps[7].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= newApps[7].title %></a>
-          <p class="item-subtitle"><%= newApps[7].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(newApps[7].rating) %>"></div>
-              </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
-            </div>
-          </div>
-        </div>
-      </div></a>
+        <% } %>
+        <% } %>
+        <% } else { %>
+        <h3> No related results </h3>
+        <% } %>
+      </a>
     </div>
+  </div>
   </div>
 
   <!-- Listing Container 2 -->
@@ -142,86 +110,54 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
-      <% for (i=0; i<4; i++) { %>
-        <a href="apps/<%=recApps[i]._id %>">
-      <div class="listing-card">
-        <div class="listing-top-app" style="background-image: url(<%= recApps[i].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= recApps[i].title %></a>
-          <p class="item-subtitle"><%= recApps[i].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(recApps[i].rating) %>"></div>
+      <a href="apps/<%= recApps[i]._id %>">
+        <% if (recApps.length != 0) { %>
+        <% for (i=0; i<recApps.length && i<7; i++) { %>
+        <% if (i>3) { %>
+        <% var card = "card-" + (i + 1)%>
+        <div class="listing-card <%= card %>">
+          <div class="listing-top-app" style="background-image: url(<%= recApps[i].mainImage %>)"></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= recApps[i].title %></a>
+            <p class="item-subtitle"><%= recApps[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <div class="stars-outer">
+                  <div class="stars-inner" style="width: <%= getRating(recApps[i].rating) %>"></div>
+                </div>
               </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
+              <div class="price">
+                <p>&#8203</p>
+              </div>
             </div>
           </div>
         </div>
-      </div></a>
-      <% } %>
-
-      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
-      <!-- Card -->
-      <a href="apps/<%=recApps[5]._id %>">
-      <div class="listing-card card-5">
-        <div class="listing-top-app" style="background-image: url(<%= recApps[5].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= recApps[5].title %></a>
-          <p class="item-subtitle"><%= recApps[5].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(recApps[5].rating) %>"></div>
+        <% }  else { %>
+        <div class="listing-card">
+          <div class="listing-top-app" style="background-image: url(<%= recApps[i].mainImage %>)"></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= recApps[i].title %></a>
+            <p class="item-subtitle"><%= recApps[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <div class="stars-outer">
+                  <div class="stars-inner" style="width: <%= getRating(recApps[i].rating) %>"></div>
+                </div>
               </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
+              <div class="price">
+                <p>&#8203</p>
+              </div>
             </div>
           </div>
         </div>
-      </div></a>
-      <!-- Card -->
-      <a href="apps/<%=recApps[6]._id %>">
-      <div class="listing-card card-6">
-        <div class="listing-top-app" style="background-image: url(<%= recApps[6].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= recApps[6].title %></a>
-          <p class="item-subtitle"><%= recApps[6].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(recApps[6].rating) %>"></div>
-              </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
-            </div>
-          </div>
-        </div>
-      </div></a>
-      <!-- Card -->
-      <a href="apps/<%=recApps[7]._id %>">
-      <div class="listing-card card-7">
-        <div class="listing-top-app" style="background-image: url(<%= recApps[7].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= recApps[7].title %></a>
-          <p class="item-subtitle"><%= recApps[7].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(recApps[7].rating) %>"></div>
-              </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
-            </div>
-          </div>
-        </div>
-      </div></a>
+        <% } %>
+        <% } %>
+        <% } else { %>
+        <h3> No related results </h3>
+        <% } %>
+      </a>
     </div>
+  </div>
   </div>
 
   <!-- Listing Container 3 -->
@@ -243,96 +179,64 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
-      <% for (i=0; i<4; i++) { %>
-      <a href="apps/<%=upApps[i]._id %>">
-      <div class="listing-card">
-        <div class="listing-top-app" style="background-image: url(<%= upApps[i].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" action="#" class="item-title"><%= upApps[i].title %></a>
-          <p class="item-subtitle"><%= upApps[i].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(upApps[i].rating) %>"></div>
+      <a href="apps/<%= upApps[i]._id %>">
+        <% if (upApps.length != 0) { %>
+        <% for (i=0; i<upApps.length && i<7; i++) { %>
+        <% if (i>3) { %>
+        <% var card = "card-" + (i + 1)%>
+        <div class="listing-card <%= card %>">
+          <div class="listing-top-app" style="background-image: url(<%= upApps[i].mainImage %>)"></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= upApps[i].title %></a>
+            <p class="item-subtitle"><%= upApps[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <div class="stars-outer">
+                  <div class="stars-inner" style="width: <%= getRating(upApps[i].rating) %>"></div>
+                </div>
               </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
+              <div class="price">
+                <p>&#8203</p>
+              </div>
             </div>
           </div>
         </div>
-      </div></a>
-      <% } %>
-
-      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
-      <!-- Card -->
-      <a href="apps/<%=upApps[5]._id %>">
-      <div class="listing-card card-5">
-        <div class="listing-top-app" style="background-image: url(<%= upApps[5].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= upApps[5].title %></a>
-          <p class="item-subtitle"><%= upApps[5].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(upApps[5].rating) %>"></div>
+        <% }  else { %>
+        <div class="listing-card">
+          <div class="listing-top-app" style="background-image: url(<%= upApps[i].mainImage %>)"></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= upApps[i].title %></a>
+            <p class="item-subtitle"><%= upApps[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <div class="stars-outer">
+                  <div class="stars-inner" style="width: <%= getRating(upApps[i].rating) %>"></div>
+                </div>
               </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
+              <div class="price">
+                <p>&#8203</p>
+              </div>
             </div>
           </div>
         </div>
-      </div></a>
-      <!-- Card -->
-      <a href="apps/<%=upApps[6]._id %>">
-      <div class="listing-card card-6">
-        <div class="listing-top-app" style="background-image: url(<%= upApps[6].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= upApps[6].title %></a>
-          <p class="item-subtitle"><%= upApps[6].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(upApps[6].rating) %>"></div>
-              </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
-            </div>
-          </div>
-        </div>
-      </div></a>
-      <!-- Card -->
-      <a href="apps/<%=upApps[7]._id %>">
-      <div class="listing-card card-7">
-        <div class="listing-top-app" style="background-image: url(<%= upApps[7].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= upApps[7].title %></a>
-          <p class="item-subtitle"><%= upApps[7].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(upApps[7].rating) %>"></div>
-              </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
-            </div>
-          </div>
-        </div>
-      </div></a>
+        <% } %>
+        <% } %>
+        <% } else { %>
+        <h3> No related results </h3>
+        <% } %>
+      </a>
     </div>
+  </div>
   </div>
 
   <!-- Listing Container 4 -->
   <div class="category-container">
     <div class="title-header">
       <div class="heading-title">
-        <h2 class="category-title">Discover Science</h2>
+        <h2 class="category-title">Discover sciAppsence</h2>
       </div>
       <div class="see-more">
-        <form action="/seemoreapps/Discover Science" method="get">
+        <form action="/seemoreapps/Discover sciAppsence" method="get">
           <button class="see-more-btn" type="submit" name="button">
             See more
           </button>
@@ -344,85 +248,53 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
-      <% for (i=0; i<4; i++) { %>
-      <a href="apps/<%=sciApps[i]._id %>">
-      <div class="listing-card">
-        <div class="listing-top-app" style="background-image: url(<%= sciApps[i].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= sciApps[i].title %></a>
-          <p class="item-subtitle"><%= sciApps[i].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(sciApps[i].rating) %>"></div>
+      <a href="apps/<%= sciApps[i]._id %>">
+        <% if (sciApps.length != 0) { %>
+        <% for (i=0; i<sciApps.length && i<7; i++) { %>
+        <% if (i>3) { %>
+        <% var card = "card-" + (i + 1)%>
+        <div class="listing-card <%= card %>">
+          <div class="listing-top-app" style="background-image: url(<%= sciApps[i].mainImage %>)"></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= sciApps[i].title %></a>
+            <p class="item-subtitle"><%= sciApps[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <div class="stars-outer">
+                  <div class="stars-inner" style="width: <%= getRating(sciApps[i].rating) %>"></div>
+                </div>
               </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
+              <div class="price">
+                <p>&#8203</p>
+              </div>
             </div>
           </div>
         </div>
-      </div></a>
-      <% } %>
-
-      <!-- Cards 5 to 7 have custom mediaquery applied to them -->
-      <!-- Card -->
-      <a href="apps/<%=sciApps[5]._id %>">
-      <div class="listing-card card-5">
-        <div class="listing-top-app" style="background-image: url(<%= sciApps[5].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= sciApps[5].title %></a>
-          <p class="item-subtitle"><%= sciApps[5].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(sciApps[5].rating) %>"></div>
+        <% }  else { %>
+        <div class="listing-card">
+          <div class="listing-top-app" style="background-image: url(<%= sciApps[i].mainImage %>)"></div>
+          <div class="listing-bottom">
+            <a href="#" class="item-title"><%= sciApps[i].title %></a>
+            <p class="item-subtitle"><%= sciApps[i].genre %></p>
+            <div class="item-info">
+              <div class="rating">
+                <div class="stars-outer">
+                  <div class="stars-inner" style="width: <%= getRating(sciApps[i].rating) %>"></div>
+                </div>
               </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
+              <div class="price">
+                <p>&#8203</p>
+              </div>
             </div>
           </div>
         </div>
-      </div></a>
-      <!-- Card -->
-      <a href="apps/<%=sciApps[6]._id %>">
-      <div class="listing-card card-6">
-        <div class="listing-top-app" style="background-image: url(<%= sciApps[6].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= sciApps[6].title %></a>
-          <p class="item-subtitle"><%= sciApps[6].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(sciApps[i].rating) %>"></div>
-              </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
-            </div>
-          </div>
-        </div>
-      </div></a>
-      <!-- Card -->
-      <a href="apps/<%=sciApps[7]._id %>">
-      <div class="listing-card card-7">
-        <div class="listing-top-app" style="background-image: url(<%= sciApps[7].mainImage %>)"></div>
-        <div class="listing-bottom">
-          <a href="#" class="item-title"><%= sciApps[7].title %></a>
-          <p class="item-subtitle"><%= sciApps[7].genre.join(', ') %></p>
-          <div class="item-info">
-            <div class="rating">
-              <div class="stars-outer">
-                <div class="stars-inner" style="width: <%= getRating(sciApps[i].rating) %>"></div>
-              </div>
-            </div>
-            <div class="price">
-              <p>&#8203</p>
-            </div>
-          </div>
-        </div>
-      </div></a>
+        <% } %>
+        <% } %>
+        <% } else { %>
+        <h3> No related results </h3>
+        <% } %>
+      </a>
+    </div>
     </div>
   </div>
 </body>
