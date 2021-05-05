@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Apps on Google Play</title>
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/fad6e48f21.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/categories.css" />
+  <link rel="stylesheet" href="css/stars.css" />
+</head>
+<!-- including search bar and passing strings to query for genre -->
+<%- include('partials/postResult.ejs', {searchStr: searchStr}) %>
+
+<!-- star rating system -->
+<%- include('partials/starFunction.ejs') %>
+
+
+<!-- Listing Container 1 -->
+<div class="category-container first-container">
+  <div class="title-header">
+    <div class="heading-title">
+      <h2 class="category-title"><%= linkArr[0] %></h2>
+    </div>
+  </div>
+
+  <!-- Container Body -->
+  <div class="listing-body flex-wrap">
+    <% if (movieSearch.length != 0) { %>
+    <% for (i=0; i<movieSearch.length; i++) { %>
+    <div class="listing-card">
+      <div class="listing-top" style="background-image: url(<%= movieSearch[i].mainImage %>)"></div>
+      <div class="listing-bottom">
+        <a href="#" class="item-title"><%= movieSearch[i].title %></a>
+        <p class="item-subtitle"><%= movieSearch[i].genre %></p>
+        <div class="item-info">
+          <div class="rating">
+            <div class="stars-outer">
+              <div class="stars-inner" style="width: <%= getRating(movieSearch[i].rating) %>"></div>
+            </div>
+          </div>
+          <div class="price">
+            <p>LBP <%= movieSearch[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    <% } else { %>
+    <h3> No related results </h3>
+    <% } %>
+  </div>
+</div>
+
+<!-- Listing Container 2 -->
+<div class="category-container">
+  <div class="title-header">
+    <div class="heading-title">
+      <h2 class="category-title"><%= linkArr[1] %></h2>
+    </div>
+  </div>
+
+  <!-- Container Body -->
+  <div class="listing-body flex-wrap">
+    <% if (bookSearch.length != 0) { %>
+    <% for (i=0; i<bookSearch.length; i++) { %>
+    <div class="listing-card">
+      <div class="listing-top" style="background-image: url(<%= bookSearch[i].mainImage %>)"></div>
+      <div class="listing-bottom">
+        <a href="#" class="item-title"><%= bookSearch[i].title %></a>
+        <p class="item-subtitle"><%= bookSearch[i].genre %></p>
+        <div class="item-info">
+          <div class="rating">
+            <div class="stars-outer">
+              <div class="stars-inner" style="width: <%= getRating(bookSearch[i].rating) %>"></div>
+            </div>
+          </div>
+          <div class="price">
+            <% if (bookSearch[i].price.match(/Free ebook/,'')) { %>
+            <p>Free</p>
+            <%    } else { %>
+            <%  const match = bookSearch[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+            <p><%= match[match.length - 1] %></p>
+            <%  } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    <% } else { %>
+    <h3> No related results </h3>
+    <% } %>
+  </div>
+</div>
+
+<!-- Listing Container 3 -->
+<div class="category-container">
+  <div class="title-header">
+    <div class="heading-title">
+      <h2 class="category-title"><%= linkArr[2] %></h2>
+    </div>
+  </div>
+
+  <!-- Container Body -->
+  <div class="listing-body flex-wrap">
+    <% if (appSearch.length != 0) { %>
+    <% for (i=0; i<appSearch.length; i++) { %>
+    <div class="listing-card">
+      <div class="listing-top-app" style="background-image: url(<%= appSearch[i].mainImage %>)"></div>
+      <div class="listing-bottom">
+        <a href="#" class="item-title"><%= appSearch[i].title %></a>
+        <p class="item-subtitle"><%= appSearch[i].genre %></p>
+        <div class="item-info">
+          <div class="rating">
+            <div class="stars-outer">
+              <div class="stars-inner" style="width: <%= getRating(appSearch[i].rating) %>"></div>
+            </div>
+          </div>
+          <div class="price">
+            <p>&#8203</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    <% } else { %>
+    <h3> No related results </h3>
+    <% } %>
+  </div>
+</div>

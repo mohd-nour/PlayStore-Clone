@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
 
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="css/appCategories.css" />
+  <link rel="stylesheet" href="css/categories.css" />
   <link rel="stylesheet" href="css/stars.css" />
 </head>
 <!-- including search bar and passing strings to query for genre -->
@@ -44,7 +44,7 @@
       <% for (i=0; i<4; i++) { %>
       <a href="apps/<%=newApps[i]._id %>">
       <div class="listing-card">
-        <div class="listing-top" style="background-image: url(<%= newApps[i].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= newApps[i].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= newApps[i].title %></a>
           <p class="item-subtitle"><%= newApps[i].genre.join(', ') %></p>
@@ -66,7 +66,7 @@
       <!-- Card -->
       <a href="apps/<%=newApps[5]._id %>">
       <div class="listing-card card-5">
-        <div class="listing-top" style="background-image: url(<%= newApps[5].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= newApps[5].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= newApps[5].title %></a>
           <p class="item-subtitle"><%= newApps[5].genre.join(', ') %></p>
@@ -85,7 +85,7 @@
       <!-- Card -->
       <a href="apps/<%=newApps[6]._id %>">
       <div class="listing-card card-6">
-        <div class="listing-top" style="background-image: url(<%= newApps[6].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= newApps[6].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= newApps[6].title %></a>
           <p class="item-subtitle"><%= newApps[6].genre.join(', ') %></p>
@@ -104,7 +104,7 @@
       <!-- Card -->
       <a href="apps/<%=newApps[7]._id %>">
       <div class="listing-card card-7">
-        <div class="listing-top" style="background-image: url(<%= newApps[7].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= newApps[7].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= newApps[7].title %></a>
           <p class="item-subtitle"><%= newApps[7].genre.join(', ') %></p>
@@ -145,7 +145,7 @@
       <% for (i=0; i<4; i++) { %>
         <a href="apps/<%=recApps[i]._id %>">
       <div class="listing-card">
-        <div class="listing-top" style="background-image: url(<%= recApps[i].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= recApps[i].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= recApps[i].title %></a>
           <p class="item-subtitle"><%= recApps[i].genre.join(', ') %></p>
@@ -167,7 +167,7 @@
       <!-- Card -->
       <a href="apps/<%=recApps[5]._id %>">
       <div class="listing-card card-5">
-        <div class="listing-top" style="background-image: url(<%= recApps[5].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= recApps[5].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= recApps[5].title %></a>
           <p class="item-subtitle"><%= recApps[5].genre.join(', ') %></p>
@@ -186,7 +186,7 @@
       <!-- Card -->
       <a href="apps/<%=recApps[6]._id %>">
       <div class="listing-card card-6">
-        <div class="listing-top" style="background-image: url(<%= recApps[6].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= recApps[6].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= recApps[6].title %></a>
           <p class="item-subtitle"><%= recApps[6].genre.join(', ') %></p>
@@ -205,7 +205,7 @@
       <!-- Card -->
       <a href="apps/<%=recApps[7]._id %>">
       <div class="listing-card card-7">
-        <div class="listing-top" style="background-image: url(<%= recApps[7].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= recApps[7].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= recApps[7].title %></a>
           <p class="item-subtitle"><%= recApps[7].genre.join(', ') %></p>
@@ -246,7 +246,7 @@
       <% for (i=0; i<4; i++) { %>
       <a href="apps/<%=upApps[i]._id %>">
       <div class="listing-card">
-        <div class="listing-top" style="background-image: url(<%= upApps[i].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= upApps[i].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" action="#" class="item-title"><%= upApps[i].title %></a>
           <p class="item-subtitle"><%= upApps[i].genre.join(', ') %></p>
@@ -268,7 +268,7 @@
       <!-- Card -->
       <a href="apps/<%=upApps[5]._id %>">
       <div class="listing-card card-5">
-        <div class="listing-top" style="background-image: url(<%= upApps[5].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= upApps[5].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= upApps[5].title %></a>
           <p class="item-subtitle"><%= upApps[5].genre.join(', ') %></p>
@@ -287,7 +287,7 @@
       <!-- Card -->
       <a href="apps/<%=upApps[6]._id %>">
       <div class="listing-card card-6">
-        <div class="listing-top" style="background-image: url(<%= upApps[6].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= upApps[6].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= upApps[6].title %></a>
           <p class="item-subtitle"><%= upApps[6].genre.join(', ') %></p>
@@ -306,7 +306,7 @@
       <!-- Card -->
       <a href="apps/<%=upApps[7]._id %>">
       <div class="listing-card card-7">
-        <div class="listing-top" style="background-image: url(<%= upApps[7].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= upApps[7].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= upApps[7].title %></a>
           <p class="item-subtitle"><%= upApps[7].genre.join(', ') %></p>
@@ -347,7 +347,7 @@
       <% for (i=0; i<4; i++) { %>
       <a href="apps/<%=sciApps[i]._id %>">
       <div class="listing-card">
-        <div class="listing-top" style="background-image: url(<%= sciApps[i].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= sciApps[i].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= sciApps[i].title %></a>
           <p class="item-subtitle"><%= sciApps[i].genre.join(', ') %></p>
@@ -369,7 +369,7 @@
       <!-- Card -->
       <a href="apps/<%=sciApps[5]._id %>">
       <div class="listing-card card-5">
-        <div class="listing-top" style="background-image: url(<%= sciApps[5].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= sciApps[5].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= sciApps[5].title %></a>
           <p class="item-subtitle"><%= sciApps[5].genre.join(', ') %></p>
@@ -388,7 +388,7 @@
       <!-- Card -->
       <a href="apps/<%=sciApps[6]._id %>">
       <div class="listing-card card-6">
-        <div class="listing-top" style="background-image: url(<%= sciApps[6].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= sciApps[6].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= sciApps[6].title %></a>
           <p class="item-subtitle"><%= sciApps[6].genre.join(', ') %></p>
@@ -407,7 +407,7 @@
       <!-- Card -->
       <a href="apps/<%=sciApps[7]._id %>">
       <div class="listing-card card-7">
-        <div class="listing-top" style="background-image: url(<%= sciApps[7].mainImage %>)"></div>
+        <div class="listing-top-app" style="background-image: url(<%= sciApps[7].mainImage %>)"></div>
         <div class="listing-bottom">
           <a href="#" class="item-title"><%= sciApps[7].title %></a>
           <p class="item-subtitle"><%= sciApps[7].genre.join(', ') %></p>

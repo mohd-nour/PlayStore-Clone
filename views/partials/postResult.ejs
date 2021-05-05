@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>search</title>
-  <link rel="shortcut icon" href="../images/favicon.ico">
+  <link rel="shortcut icon" href="images/favicon.ico">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/scripts/search.js" type="text/javascript"></script>
 </head>
@@ -13,7 +13,7 @@
     <div class="logo_cont">
       <div class="logo_inner">
         <div class="logo">
-          <a href="/">
+          <a href="/" href="file:///C:/Users/student/CMPS278/google-play%20project/search.html">
             <img src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png" alt="goog-play-logo">
           </a>
         </div>
@@ -21,7 +21,7 @@
       <div class="search_container">
         <div class="search_cont" id="search_cont">
           <form class="sform" action="/search" id="sform" method="GET">
-            <input type="text" placeholder="Search" name="searchStr" class="search" id="Search">
+            <input type="text" placeholder="Search" name="searchStr" class="search" id="Search" value="<%= searchStr%>">
             <div class="search_icon" id="search_icon">
               <button type="submit" class="search_btn" id="search_btn">
                 <span class="s_icon"></span>
@@ -108,7 +108,32 @@
   <div class="filter_settings">
 
     <div class="filter_cont">
+      <div class="categories">
+        <div class="dropdown">
+          <button class="dropbtn">
+            <div class="categories_write">
+              <a class="categories_btn" id="categories_btn">
+                <span class="categories_span">Categories</span>
+                <span class="dropdown-icon"></span>
+              </a>
+            </div>
+          </button>
+          <div class="dropdown-content">
+          </div>
+        </div>
+      </div>
 
+      <div>
+        <div class="separate"></div>
+      </div>
+
+      <div class="categ_home">
+        <div class="categ_home_write" id="categ_home_write">
+          <a href="/" class="home_btn" id="home_btn">
+            <span class="categories_span" id="home_span">Home</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!--<div class="help_settings_container">

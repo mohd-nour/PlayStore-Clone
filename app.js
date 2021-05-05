@@ -348,6 +348,27 @@ app.get("/test", (req, res) => {
   res.render("wishlist");
 });
 
+// Fuzzy search functionality
+app.get("/search", async (req, res) => {
+  const searchStr = req.query.searchStr;
+
+  const regex = new RegExp(escapeRegex(searchStr), 'gi');
+
+  const linkArr = ["Movies", "Books", "Apps"];
+  const appSearch = await Application.find({title: regex})
+  const bookSearch = await Book.find({title: regex})
+  const movieSearch = await Movie.find({title: regex})
+
+  return res.render("searchResults", {
+    appSearch: appSearch,
+    bookSearch: bookSearch,
+    movieSearch: movieSearch,
+    searchStr: searchStr,
+    linkArr: linkArr
+  });
+
+});
+
 //get selected-app item
 app.get("/apps/:id", (req, res) => {
   const id = req.params.id;
@@ -491,7 +512,7 @@ app.get("/forgotpassword", (req, res) => {
 app.get("/upload", (req, res) => {
   res.render("upload");
 });
-app.post("/sendemail", (req, res) => {
+app.post("/sendemail", isLoggedIn, (req, res) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -502,14 +523,41 @@ app.post("/sendemail", (req, res) => {
 
   var mailOptions = {
     from: "gpstore084@gmail.com",
-    to: "omarkammounii0612@gmail.com", //usern,
-    subject: "News and Offers",
+    to: req.user.username,
+    subject: "Cloned Playstore News and Offers",
     text: "Starting from now, you will start receiving emails about new releases and offers related to our website. \nYou can stop us from sending such emails whenever you want",
   };
 
   transporter.sendMail(mailOptions, function(error, info) {
     if (error) {
       console.log(error);
+      res.redirect("/");
+    } else {
+      console.log("Email sent: " + info.response);
+      res.redirect("/");
+    }
+  });
+});
+app.post("/stopsendemail", isLoggedIn, (req, res) => {
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "gpstore084@gmail.com",
+      pass: "playstore@480",
+    },
+  });
+
+  var mailOptions = {
+    from: "gpstore084@gmail.com",
+    to: req.user.username,
+    subject: "Cloned Playstore News and Offers",
+    text: "You will no longer receive emails about new releases and offers related to our website. \nThe feature has been stopped.",
+  };
+
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      console.log(error);
+      res.redirect("/");
     } else {
       console.log("Email sent: " + info.response);
       res.redirect("/");
@@ -534,8 +582,11 @@ function isLoggedIn(req, res, next) {
 //   console.log("Finished ...");
 // });
 
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
 // listen on port 3000
 app.listen(3000, () => {
   console.log("listening on port 3000");
 });
-//dhsajsnsak
