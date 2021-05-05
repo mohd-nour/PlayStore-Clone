@@ -13,11 +13,6 @@ body {
   margin: 15px auto auto 248px;
 }
 
-.flex-wrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
 .category-title {
   font-weight: 400;
@@ -73,7 +68,7 @@ body {
 .listing-top {
   height: 230px;
   width: 160px;
-  background-color: white;
+  background-color: #919191;
   background-size: cover;
 }
 
