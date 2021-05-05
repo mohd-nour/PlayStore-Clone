@@ -576,7 +576,7 @@ app.get("/forgotpassword", (req, res) => {
 app.get("/upload", (req, res) => {
   res.render("upload");
 });
-app.post("/sendemail", (req, res) => {
+app.post("/sendemail", isLoggedIn, (req, res) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -587,14 +587,41 @@ app.post("/sendemail", (req, res) => {
 
   var mailOptions = {
     from: "gpstore084@gmail.com",
-    to: "omarkammounii0612@gmail.com", //usern,
-    subject: "News and Offers",
+    to: req.user.username,
+    subject: "Cloned Playstore News and Offers",
     text: "Starting from now, you will start receiving emails about new releases and offers related to our website. \nYou can stop us from sending such emails whenever you want",
   };
 
   transporter.sendMail(mailOptions, function(error, info) {
     if (error) {
       console.log(error);
+      res.redirect("/");
+    } else {
+      console.log("Email sent: " + info.response);
+      res.redirect("/");
+    }
+  });
+});
+app.post("/stopsendemail", isLoggedIn, (req, res) => {
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "gpstore084@gmail.com",
+      pass: "playstore@480",
+    },
+  });
+
+  var mailOptions = {
+    from: "gpstore084@gmail.com",
+    to: req.user.username,
+    subject: "Cloned Playstore News and Offers",
+    text: "You will no longer receive emails about new releases and offers related to our website. \nThe feature has been stopped.",
+  };
+
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      console.log(error);
+      res.redirect("/");
     } else {
       console.log("Email sent: " + info.response);
       res.redirect("/");

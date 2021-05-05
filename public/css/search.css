@@ -765,6 +765,15 @@ a {
   margin-top: 17px;
 }
 
+.currency{
+  margin-top: 15px;
+}
+.currency_label{
+    color: #737373;
+    font-family: "Roboto", arial, sans-serif;
+    font-size: 15px;
+    width: 100px;
+}
 .help_settings_container {
   float: right;
   width: 370px;

@@ -154,6 +154,17 @@
       </div>
     </div>
 
+    <div class="help_settings_container">
+      <div class="h_s_cont">
+        <form action="" class="currency">
+          <label class="currency_label" for="currency">Currency: </label>
+          <select style="border-color: gray;" name="currency" id="currency">
+            <option style="color: gray;" value="LBP" id="LBP">LBP</option>
+            <option style="color: gray;" value="USD" id="USD">USD</option>
+        </select>
+        </form>
+      </div>
+    </div>
     <!--<div class="help_settings_container">
       <div class="h_s_cont">
         <div class="help_container">
@@ -192,6 +203,11 @@
       <form action="/sendemail" method="POST">
         <li class="account_settings">
           <input value="Receive news and offers" type="submit" class="account_a" id="sendemail">
+        </li>
+      </form>
+      <form action="/stopsendemail" method="POST">
+        <li class="account_settings">
+          <input value="Stop receiving news" type="submit" class="account_a" id="stopsendemail">
         </li>
       </form>
     </ul>
