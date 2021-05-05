@@ -785,9 +785,12 @@ a {
 }
 
 .h_s_cont {
-  position: relative;
+  position: absolute;
   float: right;
   margin-right: 20px;
+  margin-left: 1100px;
+  margin-top: -47px;
+  z-index: 10;
 }
 
 .help_container {
