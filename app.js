@@ -295,6 +295,44 @@ app.get("/seemorebooks/:listName", (req, res) => {
   );
 });
 
+app.get("/searchmoreMovies/:searchStr", (req, res) => {
+  const searchStr = req.params.searchStr;
+
+  const regex = new RegExp(escapeRegex(searchStr), 'gi');
+
+  // finding all documents in movies collection
+  Movie.find({
+      title: regex,
+    },
+    function(err, movies) {
+      // passing array of movies documents to seemoremov.ejs
+      res.render("seemoremov", {
+        listTitle: "Movies",
+        movies: movies
+      });
+    }
+  );
+});
+
+app.get("/searchmoreBooks/:searchStr", (req, res) => {
+  const searchStr = req.params.searchStr;
+
+  const regex = new RegExp(escapeRegex(searchStr), 'gi');
+
+  // finding all documents in movies collection
+  Book.find({
+      title: regex,
+    },
+    function(err, books) {
+      // passing array of movies documents to seemoremov.ejs
+      res.render("seemorebooks", {
+        listTitle: "Books",
+        books: books
+      });
+    }
+  );
+});
+
 app.get("/apps", async (req, res) => {
 
   const linkArr = ["New & Updated Games", "Recommended For You", "Just Updated", "Discover Science"];
@@ -328,7 +366,7 @@ app.get("/apps", async (req, res) => {
   });
 });
 
-app.get("/seemoreapps/:listName", (req, res) => {
+app.get("/seemoreApps/:listName", (req, res) => {
   const listName = req.params.listName;
   // finding all documents in movies collection
   Application.find({
@@ -338,7 +376,26 @@ app.get("/seemoreapps/:listName", (req, res) => {
       // passing array of movies documents to seemoremov.ejs
       res.render("seemoreapps", {
         listTitle: listName,
-        apps: apps,
+        apps: apps
+      });
+    }
+  );
+});
+
+app.get("/searchmoreapps/:searchStr", (req, res) => {
+  const searchStr = req.params.searchStr;
+
+  const regex = new RegExp(escapeRegex(searchStr), 'gi');
+
+  // finding all documents in movies collection
+  Application.find({
+      title: regex,
+    },
+    function(err, apps) {
+      // passing array of movies documents to seemoremov.ejs
+      res.render("seemoreapps", {
+        listTitle: "Apps",
+        apps: apps
       });
     }
   );
@@ -355,9 +412,16 @@ app.get("/search", async (req, res) => {
   const regex = new RegExp(escapeRegex(searchStr), 'gi');
 
   const linkArr = ["Movies", "Books", "Apps"];
-  const appSearch = await Application.find({title: regex})
-  const bookSearch = await Book.find({title: regex})
-  const movieSearch = await Movie.find({title: regex})
+
+  const appSearch = await Application.find({
+    title: regex
+  })
+  const bookSearch = await Book.find({
+    title: regex
+  })
+  const movieSearch = await Movie.find({
+    title: regex
+  })
 
   return res.render("searchResults", {
     appSearch: appSearch,

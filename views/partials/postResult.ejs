@@ -119,6 +119,9 @@
             </div>
           </button>
           <div class="dropdown-content">
+            <% linkArr.forEach(function(link) { %>
+            <a href="/searchmore<%= link %>/<%= searchStr %>"><%= link %></a>
+            <% }) %>
           </div>
         </div>
       </div>
