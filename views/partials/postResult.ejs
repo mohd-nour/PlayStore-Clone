@@ -21,7 +21,7 @@
       <div class="search_container">
         <div class="search_cont" id="search_cont">
           <form class="sform" action="/search" id="sform" method="GET">
-            <input type="text" placeholder="Search" name="searchStr" class="search" id="Search">
+            <input type="text" placeholder="Search" name="searchStr" class="search" id="Search" value="<%= searchStr%>">
             <div class="search_icon" id="search_icon">
               <button type="submit" class="search_btn" id="search_btn">
                 <span class="s_icon"></span>
@@ -119,9 +119,6 @@
             </div>
           </button>
           <div class="dropdown-content">
-            <% linkArr.forEach(function(link) { %>
-            <a href="/<%= linkType %>/<%= link %>"><%= link %></a>
-            <% }) %>
           </div>
         </div>
       </div>
@@ -134,21 +131,6 @@
         <div class="categ_home_write" id="categ_home_write">
           <a href="/" class="home_btn" id="home_btn">
             <span class="categories_span" id="home_span">Home</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="categ_top">
-        <div class="categ_top_write" id="categ_top_write">
-          <a href="/<%= linkType %>/<%= linkArr2[0] %>" class="top_btn" id="top_btn">
-            <span class="categories_span" id="top_span">Top charts</span>
-          </a>
-        </div>
-      </div>
-      <div class="categ_new">
-        <div class="categ_new_write" id="categ_new_write">
-          <a href="/<%= linkType %>/<%= linkArr2[1] %>" class="new_btn" id="new_btn">
-            <span class="new_span" id="new_span">New releases</span>
           </a>
         </div>
       </div>

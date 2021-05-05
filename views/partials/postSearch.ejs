@@ -20,10 +20,10 @@
       </div>
       <div class="search_container">
         <div class="search_cont" id="search_cont">
-          <form class="sform" action="" id="sform">
-            <input type="text" placeholder="Search" class="search" id="Search">
+          <form class="sform" action="/search" id="sform" method="GET">
+            <input type="text" placeholder="Search" name="searchStr" class="search" id="Search">
             <div class="search_icon" id="search_icon">
-              <button class="search_btn" id="search_btn">
+              <button type="submit" class="search_btn" id="search_btn">
                 <span class="s_icon"></span>
               </button>
             </div>

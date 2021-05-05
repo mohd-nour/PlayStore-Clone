@@ -348,6 +348,25 @@ app.get("/test", (req, res) => {
   res.render("wishlist");
 });
 
+app.get("/search", async (req, res) => {
+  const searchStr = req.query.searchStr;
+
+  const linkArr = ["Movies", "Books", "Apps"];
+
+  const appSearch = await Application.find({})
+  const bookSearch = await Book.find({})
+  const movieSearch = await Movie.find({})
+
+  return res.render("searchResults", {
+    appSearch: appSearch,
+    bookSearch: bookSearch,
+    movieSearch: movieSearch,
+    searchStr: searchStr,
+    linkArr: linkArr
+  });
+
+});
+
 //get selected-app item
 app.get("/apps/:id", (req, res) => {
   const id = req.params.id;
@@ -534,8 +553,11 @@ function isLoggedIn(req, res, next) {
 //   console.log("Finished ...");
 // });
 
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
 // listen on port 3000
 app.listen(3000, () => {
   console.log("listening on port 3000");
 });
-//dhsajsnsak
