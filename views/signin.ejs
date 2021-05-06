@@ -1,52 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign in - Google Accounts</title>
 
-<head>
-  <meta charset="utf-8">
-  <title>Sign in - Google Accounts</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/signin.css" />
 
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="../css/signin.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
 
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-</head>
-
-<body>
-  <div class="main-container">
-    <div class="form-container">
-      <img class="google-logo" src="https://www.logo.wine/a/logo/Google/Google-Logo.wine.svg" alt="google-logo">
-      <span class="sign-in">Sign In</span>
-      <span class="google-acct-text">Use your google account</span>
-      <form action="/signin" method="POST" class="form-wrapper-outer">
-        <div class="field-wrapper">
-          <input type="email" name="username" id="">
-          <div class="field-placeholder"><span>Enter your email</span></div>
-        </div>
-        <div class="field-wrapper">
-          <input type="password" name="password" id="">
-          <div class="field-placeholder"><span>Enter your password</span></div>
-        </div>
-        <div class="forgot-pass">
-          <a href="forgotpassword">Forgot password?</a>
-          <div style="display:inline-flex"><span class="remember">Remember me</span>
-            <input type="checkbox" name="remember_me" id="rememberme"></div>
-        </div>
-        <div class="not-computer">
-          Not your computer? Use Guest mode to sign in privately. <a href="https://support.google.com/chrome/answer/6130773?hl=en"><span class="learn-more">Learn more</span></a>
-        </div>
-        <div class="create-account-container">
-          <a href="signup">Create account</a>
-          <button type="submit" class="btn">Next</button>
-        </div>
-      </form>
+  <body>
+    <div class="main-container">
+      <div class="form-container">
+        <img
+          class="google-logo"
+          src="https://www.logo.wine/a/logo/Google/Google-Logo.wine.svg"
+          alt="google-logo"
+        />
+        <span class="sign-in">Sign In</span>
+        <span class="google-acct-text">Use your google account</span>
+        <form action="/signin" method="POST" class="form-wrapper-outer">
+          <div class="field-wrapper">
+            <input
+              type="email"
+              name="username"
+              id=""
+              value="<%= username %>"
+              placeholder="Enter your Email"
+            />
+          </div>
+          <div class="field-wrapper">
+            <input
+              type="password"
+              name="password"
+              id=""
+              value="<%= password %>"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div class="forgot-pass">
+            <a href="forgotpassword">Forgot password?</a>
+            <div style="display: inline-flex">
+              <span class="remember">Remember me</span>
+              <input type="checkbox" name="remember_me" id="rememberme" />
+            </div>
+          </div>
+          <div class="not-computer">
+            Not your computer? Use Guest mode to sign in privately.
+            <a href="https://support.google.com/chrome/answer/6130773?hl=en"
+              ><span class="learn-more">Learn more</span></a
+            >
+          </div>
+          <div class="create-account-container">
+            <a href="signup">Create account</a>
+            <button type="submit" class="btn">Next</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-  <script src="../scripts/signin.js" charset="utf-8"></script>
-</body>
-
+    <script src="../scripts/signin.js" charset="utf-8"></script>
+  </body>
 </html>

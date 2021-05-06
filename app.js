@@ -1,4 +1,5 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const bodyParser = require("body-parser");
@@ -13,6 +14,8 @@ const User = require("./models/user");
 
 //create an express app
 const app = express();
+
+app.use(cookieParser());
 
 //to be able to use css and js files
 app.use(express.static("public"));
@@ -453,10 +456,6 @@ app.get("/searchmoreapps/:searchStr", (req, res) => {
   );
 });
 
-app.get("/test", (req, res) => {
-  res.render("wishlist");
-});
-
 // Fuzzy search functionality
 app.get("/search", async (req, res) => {
   const searchStr = req.query.searchStr;
@@ -651,17 +650,44 @@ app.get("/books/:id", isLoggedIn, (req, res) => {
     });
 });
 
+function rememberMeInfo(req) {
+  const { cookies } = req;
+  return [cookies.RememberMe, cookies.username, cookies.password];
+}
+
 app.get("/signin", (req, res) => {
-  res.render("signin");
+  var cookies = rememberMeInfo(req);
+  if (cookies[0]) {
+    res.render("signin", { username: cookies[1], password: cookies[2] });
+  } else {
+    res.render("signin", { username: "", password: "" });
+  }
 });
 
 app.post(
   "/signin",
   passport.authenticate("local", {
-    successRedirect: "/",
     failureRedirect: "/signin",
   }),
-  function (req, res) {}
+  function (req, res) {
+    if (req.body.remember_me) {
+      console.log("remember me");
+      res.cookie("RememberMe", true);
+      res.cookie("username", req.body.username);
+      console.log(req.body.username);
+      res.cookie("password", req.body.password);
+      console.log(req.body.password);
+    } else {
+      res.cookie("RememberMe", false);
+      console.log("don't remember me");
+      res.cookie("username", "");
+      console.log(req.body.username);
+      res.cookie("password", "");
+      console.log(req.body.password);
+    }
+    console.log("Saved!");
+    res.redirect("/");
+  }
 );
 
 app.get("/signup", (req, res) => {
@@ -827,11 +853,6 @@ app.get("/wishlist", isLoggedIn, async (req, res) => {
       console.log(err);
     });
 });
-
-// app.get("/uploadReview", () => {
-//   console.log("started ...");
-//   console.log("Finished ...");
-// });
 
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
