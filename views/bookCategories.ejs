@@ -52,16 +52,16 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
+      <% if (topBooks.length != 0) { %>
+      <% for (i=0; i<topBooks.length && i<7; i++) { %>
+      <% if (i>3) { %>
       <a href="books/<%= topBooks[i]._id %>">
-        <% if (topBooks.length != 0) { %>
-        <% for (i=0; i<topBooks.length && i<7; i++) { %>
-        <% if (i>3) { %>
         <% var card = "card-" + (i + 1)%>
         <div class="listing-card <%= card %>">
           <div class="listing-top" style="background-image: url(<%= topBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
             <a href="#" class="item-title"><%= topBooks[i].title %></a>
-            <p class="item-subtitle"><%= topBooks[i].genre %></p>
+            <p class="item-subtitle"><%= topBooks[i].genre.join(', ') %></p>
             <div class="item-info">
               <div class="rating">
                 <div class="stars-outer">
@@ -79,12 +79,14 @@
             </div>
           </div>
         </div>
-        <% }  else { %>
+      </a>
+      <% }  else { %>
+      <a href="books/<%= topBooks[i]._id %>">
         <div class="listing-card">
           <div class="listing-top" style="background-image: url(<%= topBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
             <a href="#" class="item-title"><%= topBooks[i].title %></a>
-            <p class="item-subtitle"><%= topBooks[i].genre %></p>
+            <p class="item-subtitle"><%= topBooks[i].genre.join(', ') %></p>
             <div class="item-info">
               <div class="rating">
                 <div class="stars-outer">
@@ -102,12 +104,12 @@
             </div>
           </div>
         </div>
-        <% } %>
-        <% } %>
-        <% } else { %>
-        <h3> No related results </h3>
-        <% } %>
       </a>
+      <% } %>
+      <% } %>
+      <% } else { %>
+      <h3> No related results </h3>
+      <% } %>
     </div>
   </div>
 
@@ -130,16 +132,16 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
+      <% if (bussBooks.length != 0) { %>
+      <% for (i=0; i<bussBooks.length && i<7; i++) { %>
+      <% if (i>3) { %>
       <a href="books/<%= bussBooks[i]._id %>">
-        <% if (bussBooks.length != 0) { %>
-        <% for (i=0; i<bussBooks.length && i<7; i++) { %>
-        <% if (i>3) { %>
         <% var card = "card-" + (i + 1)%>
         <div class="listing-card <%= card %>">
           <div class="listing-top" style="background-image: url(<%= bussBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
             <a href="#" class="item-title"><%= bussBooks[i].title %></a>
-            <p class="item-subtitle"><%= bussBooks[i].genre %></p>
+            <p class="item-subtitle"><%= bussBooks[i].genre.join(', ') %></p>
             <div class="item-info">
               <div class="rating">
                 <div class="stars-outer">
@@ -157,12 +159,14 @@
             </div>
           </div>
         </div>
-        <% }  else { %>
+      </a>
+      <% }  else { %>
+      <a href="books/<%= bussBooks[i]._id %>">
         <div class="listing-card">
           <div class="listing-top" style="background-image: url(<%= bussBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
             <a href="#" class="item-title"><%= bussBooks[i].title %></a>
-            <p class="item-subtitle"><%= bussBooks[i].genre %></p>
+            <p class="item-subtitle"><%= bussBooks[i].genre.join(', ') %></p>
             <div class="item-info">
               <div class="rating">
                 <div class="stars-outer">
@@ -180,12 +184,12 @@
             </div>
           </div>
         </div>
-        <% } %>
-        <% } %>
-        <% } else { %>
-        <h3> No related results </h3>
-        <% } %>
       </a>
+      <% } %>
+      <% } %>
+      <% } else { %>
+      <h3> No related results </h3>
+      <% } %>
     </div>
   </div>
   </div>
@@ -209,16 +213,17 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
+
+      <% if (dealBooks.length != 0) { %>
+      <% for (i=0; i<dealBooks.length && i<7; i++) { %>
+      <% if (i>3) { %>
       <a href="books/<%= dealBooks[i]._id %>">
-        <% if (dealBooks.length != 0) { %>
-        <% for (i=0; i<dealBooks.length && i<7; i++) { %>
-        <% if (i>3) { %>
         <% var card = "card-" + (i + 1)%>
         <div class="listing-card <%= card %>">
           <div class="listing-top" style="background-image: url(<%= dealBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
             <a href="#" class="item-title"><%= dealBooks[i].title %></a>
-            <p class="item-subtitle"><%= dealBooks[i].genre %></p>
+            <p class="item-subtitle"><%= dealBooks[i].genre.join(', ') %></p>
             <div class="item-info">
               <div class="rating">
                 <div class="stars-outer">
@@ -236,12 +241,14 @@
             </div>
           </div>
         </div>
-        <% }  else { %>
+      </a>
+      <% }  else { %>
+      <a href="books/<%= dealBooks[i]._id %>">
         <div class="listing-card">
           <div class="listing-top" style="background-image: url(<%= dealBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
             <a href="#" class="item-title"><%= dealBooks[i].title %></a>
-            <p class="item-subtitle"><%= dealBooks[i].genre %></p>
+            <p class="item-subtitle"><%= dealBooks[i].genre.join(', ') %></p>
             <div class="item-info">
               <div class="rating">
                 <div class="stars-outer">
@@ -259,12 +266,12 @@
             </div>
           </div>
         </div>
-        <% } %>
-        <% } %>
-        <% } else { %>
-        <h3> No related results </h3>
-        <% } %>
       </a>
+      <% } %>
+      <% } %>
+      <% } else { %>
+      <h3> No related results </h3>
+      <% } %>
     </div>
   </div>
   </div>
@@ -288,16 +295,16 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
+      <% if (litBooks.length != 0) { %>
+      <% for (i=0; i<litBooks.length && i<7; i++) { %>
+      <% if (i>3) { %>
       <a href="books/<%= litBooks[i]._id %>">
-        <% if (litBooks.length != 0) { %>
-        <% for (i=0; i<litBooks.length && i<7; i++) { %>
-        <% if (i>3) { %>
         <% var card = "card-" + (i + 1)%>
         <div class="listing-card <%= card %>">
           <div class="listing-top" style="background-image: url(<%= litBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
             <a href="#" class="item-title"><%= litBooks[i].title %></a>
-            <p class="item-subtitle"><%= litBooks[i].genre %></p>
+            <p class="item-subtitle"><%= litBooks[i].genre.join(', ') %></p>
             <div class="item-info">
               <div class="rating">
                 <div class="stars-outer">
@@ -315,35 +322,36 @@
             </div>
           </div>
         </div>
-        <% }  else { %>
-        <div class="listing-card">
-          <div class="listing-top" style="background-image: url(<%= litBooks[i].mainImage %>)"></div>
-          <div class="listing-bottom">
-            <a href="#" class="item-title"><%= litBooks[i].title %></a>
-            <p class="item-subtitle"><%= litBooks[i].genre %></p>
-            <div class="item-info">
-              <div class="rating">
-                <div class="stars-outer">
-                  <div class="stars-inner" style="width: <%= getRating(litBooks[i].rating) %>"></div>
-                </div>
-              </div>
-              <div class="price">
-                <% if (litBooks[i].price.match(/Free ebook/,'')) { %>
-                <p>Free</p>
-                <%    } else { %>
-                <%  const match = litBooks[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
-                <p><%= match[match.length - 1] %></p>
-                <%  } %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <% } %>
-        <% } %>
-        <% } else { %>
-        <h3> No related results </h3>
-        <% } %>
       </a>
+      <% }  else { %>
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= litBooks[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= litBooks[i].title %></a>
+          <p class="item-subtitle"><%= litBooks[i].genre.join(', ') %></p>
+          <div class="item-info">
+            <div class="rating">
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(litBooks[i].rating) %>"></div>
+              </div>
+            </div>
+            <div class="price">
+              <% if (litBooks[i].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = litBooks[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      </a>
+      <% } %>
+      <% } %>
+      <% } else { %>
+      <h3> No related results </h3>
+      <% } %>
     </div>
   </div>
   </div>

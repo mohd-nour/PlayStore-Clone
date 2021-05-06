@@ -28,7 +28,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("Mongoose is connected"))
+  .then(() => console.log("Connection to MongoDB established"))
   .catch((error) => {
     console.log(error);
   });
@@ -327,7 +327,14 @@ app.get("/searchmoreMovies/:searchStr", (req, res) => {
   // finding all documents in movies collection
   Movie.find(
     {
-      title: regex,
+      $or: [
+        {
+          title: regex,
+        },
+        {
+          description: regex,
+        },
+      ],
     },
     function (err, movies) {
       // passing array of movies documents to seemoremov.ejs
@@ -347,7 +354,14 @@ app.get("/searchmoreBooks/:searchStr", (req, res) => {
   // finding all documents in movies collection
   Book.find(
     {
-      title: regex,
+      $or: [
+        {
+          title: regex,
+        },
+        {
+          description: regex,
+        },
+      ],
     },
     function (err, books) {
       // passing array of movies documents to seemoremov.ejs
@@ -420,7 +434,14 @@ app.get("/searchmoreapps/:searchStr", (req, res) => {
   // finding all documents in movies collection
   Application.find(
     {
-      title: regex,
+      $or: [
+        {
+          title: regex,
+        },
+        {
+          description: regex,
+        },
+      ],
     },
     function (err, apps) {
       // passing array of movies documents to seemoremov.ejs
@@ -445,13 +466,34 @@ app.get("/search", async (req, res) => {
   const linkArr = ["Movies", "Books", "Apps"];
 
   const appSearch = await Application.find({
-    title: regex,
+    $or: [
+      {
+        title: regex,
+      },
+      {
+        description: regex,
+      },
+    ],
   });
   const bookSearch = await Book.find({
-    title: regex,
+    $or: [
+      {
+        title: regex,
+      },
+      {
+        description: regex,
+      },
+    ],
   });
   const movieSearch = await Movie.find({
-    title: regex,
+    $or: [
+      {
+        title: regex,
+      },
+      {
+        description: regex,
+      },
+    ],
   });
 
   return res.render("searchResults", {
@@ -470,6 +512,12 @@ app.get("/apps/:id", (req, res) => {
     _id: ObjectId(id),
   })
     .then((result) => {
+      User.updateOne(
+        { _id: req.user._id },
+        { $push: { letters: { $each: ["first one"], $position: 0 } } }
+      ).then((res) => {
+        console.log("updated successfully");
+      });
       Review.findOne({
         type: "app",
       })
