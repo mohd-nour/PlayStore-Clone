@@ -86,9 +86,12 @@
                 <% movie.genre.forEach(element => { %> <%= element %> <% })%>
               </p>
               <div class="row second-row">
-                <button type="button" class="btn btn-link stext movie-wishlist">
+                <form action="/add" method="POST">
+                  <input type="text" name="thisItem" value="<%= movie._id %>" style="display: none;">
+                <button type="submit" class="btn btn-link stext">
                   <i class="far fa-plus-square"></i>Add to wishlist
                 </button>
+                </form>
                 <button
                   type="button"
                   class="btn btn-success install movie-price"

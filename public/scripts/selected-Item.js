@@ -7,6 +7,7 @@ function pageLoad() {
   var readmore = document.getElementById("read-more");
   var showHidden = document.getElementsByClassName("showHidden")[0];
   var readMoreReviews = document.getElementById("read-more-reviews");
+  var wishlist = document.querySelector(".second-row form");
   if (leftBtn) {
     leftBtn.onclick = scrollLeft;
   }
@@ -21,6 +22,9 @@ function pageLoad() {
   }
   if (readMoreReviews) {
     readMoreReviews.onclick = readAllReviews;
+  }
+  if (wishlist) {
+    wishlist.onclick = updateWishList;
   }
 }
 
@@ -71,4 +75,9 @@ function showContent(event) {
 function readAllReviews() {
   document.getElementsByClassName("review-list")[0].style.height = "auto";
   document.getElementById("read-more-reviews").style.display = "none";
+}
+
+function updateWishList() {
+  document.querySelector(".second-row form button").innerText =
+    "Added to WishList";
 }

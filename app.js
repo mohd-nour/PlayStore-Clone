@@ -550,6 +550,22 @@ app.get("/apps/:id", isLoggedIn, (req, res) => {
     });
 });
 
+app.post("/add", isLoggedIn, (req, res) => {
+  res.status(204).send();
+  var id = req.body.thisItem;
+  var timestamp = new Date().getTime();
+  User.updateOne(
+    { _id: req.user._id },
+    { $push: { wishlist: { itemId: id, time: timestamp } } }
+  )
+    .then((result) => {
+      console.log("done");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 //get selected movie
 app.get("/movies/:id", isLoggedIn, (req, res) => {
   const id = req.params.id;
@@ -669,8 +685,7 @@ app.post("/signup", (req, res) => {
       });
     },
     passport.authenticate("local")(req, res, function () {
-      res.redirect("/signin"); //
-      //var usern = req.body.username;
+      res.redirect("/signin");
     })
   );
 });
@@ -760,7 +775,6 @@ app.get("/lastvisited", isLoggedIn, async (req, res) => {
         ids = ids.slice(0, 26);
       }
       for (var i = 0; i < ids.length; i++) {
-        console.log("I am here");
         await Book.findOne({ _id: ids[i] }).then((bookresult) => {
           if (bookresult) {
             finalItems.push(bookresult);
@@ -777,8 +791,39 @@ app.get("/lastvisited", isLoggedIn, async (req, res) => {
           }
         });
       }
-      console.log(finalItems);
       res.render("lastvisited", { items: finalItems });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.get("/wishlist", isLoggedIn, async (req, res) => {
+  User.find({ _id: req.user._id })
+    .then(async (result) => {
+      var values = req.user.wishlist.sort((a, b) =>
+        a.time < b.time ? 1 : b.time < a.time ? -1 : 0
+      );
+      const ids = values.map((a) => a.itemId);
+      var finalItems = [];
+      for (var i = 0; i < ids.length; i++) {
+        await Book.findOne({ _id: ids[i] }).then((bookresult) => {
+          if (bookresult) {
+            finalItems.push(bookresult);
+          }
+        });
+        await Movie.findOne({ _id: ids[i] }).then((movieresult) => {
+          if (movieresult) {
+            finalItems.push(movieresult);
+          }
+        });
+        await Application.findOne({ _id: ids[i] }).then((appresult) => {
+          if (appresult) {
+            finalItems.push(appresult);
+          }
+        });
+      }
+      res.render("wishlist", { items: finalItems });
     })
     .catch((err) => {
       console.log(err);

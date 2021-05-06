@@ -90,9 +90,12 @@
                   </p>
                 </div>
                 <div class="row second-row">
-                  <button type="button" class="btn btn-link stext">
+                  <form action="/add" method="POST">
+                    <input type="text" name="thisItem" value="<%= app._id %>" style="display: none;">
+                  <button type="submit" class="btn btn-link stext">
                     <i class="far fa-plus-square"></i>Add to wishlist
                   </button>
+                  </form>
                   <button type="button" class="btn btn-success install">
                     Install
                   </button>

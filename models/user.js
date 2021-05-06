@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema(
     username: String,
     wishlist: [
       {
-        type: String,
+        type: mongoose.Schema.Types.Mixed,
       },
     ], // array of wishlist IDs
     lastVisited: [
