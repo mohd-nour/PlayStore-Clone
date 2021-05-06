@@ -663,10 +663,11 @@ app.post(
   }),
   function (req, res) {}
 );
+
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
-//
+
 app.post("/signup", (req, res) => {
   User.register(
     new User({
@@ -683,10 +684,7 @@ app.post("/signup", (req, res) => {
       passport.authenticate("local")(req, res, function () {
         res.redirect("/signin"); //
       });
-    },
-    passport.authenticate("local")(req, res, function () {
-      res.redirect("/signin");
-    })
+    }
   );
 });
 
