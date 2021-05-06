@@ -506,18 +506,23 @@ app.get("/search", async (req, res) => {
 });
 
 //get selected-app item
-app.get("/apps/:id", (req, res) => {
+app.get("/apps/:id", isLoggedIn, (req, res) => {
   const id = req.params.id;
   Application.findById({
     _id: ObjectId(id),
   })
     .then((result) => {
+      var timestamp = new Date().getTime();
       User.updateOne(
         { _id: req.user._id },
-        { $push: { letters: { $each: ["first one"], $position: 0 } } }
-      ).then((res) => {
-        console.log("updated successfully");
-      });
+        { $push: { lastVisited: { itemId: id, time: timestamp } } }
+      )
+        .then((res) => {
+          console.log("updated successfully");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       Review.findOne({
         type: "app",
       })
@@ -546,12 +551,23 @@ app.get("/apps/:id", (req, res) => {
 });
 
 //get selected movie
-app.get("/movies/:id", (req, res) => {
+app.get("/movies/:id", isLoggedIn, (req, res) => {
   const id = req.params.id;
   Movie.findById({
     _id: ObjectId(id),
   })
     .then((result) => {
+      var timestamp = new Date().getTime();
+      User.updateOne(
+        { _id: req.user._id },
+        { $push: { lastVisited: { itemId: id, time: timestamp } } }
+      )
+        .then((res) => {
+          console.log("updated successfully");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       Review.findOne({
         type: "movie",
       })
@@ -579,12 +595,23 @@ app.get("/movies/:id", (req, res) => {
     });
 });
 
-app.get("/books/:id", (req, res) => {
+app.get("/books/:id", isLoggedIn, (req, res) => {
   const id = req.params.id;
   Book.findById({
     _id: ObjectId(id),
   })
     .then((result) => {
+      var timestamp = new Date().getTime();
+      User.updateOne(
+        { _id: req.user._id },
+        { $push: { lastVisited: { itemId: id, time: timestamp } } }
+      )
+        .then((res) => {
+          console.log("updated successfully");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       Review.findOne({
         type: "book",
       })
@@ -721,10 +748,41 @@ function isLoggedIn(req, res, next) {
   res.redirect("/signin");
 }
 
-app.get("/lastvisited", (req, res) => {
-  Book.find().then((result) => {
-    res.render("lastvisited", { items: result });
-  });
+app.get("/lastvisited", isLoggedIn, async (req, res) => {
+  User.find({ _id: req.user._id })
+    .then(async (result) => {
+      var values = req.user.lastVisited.sort((a, b) =>
+        a.time < b.time ? 1 : b.time < a.time ? -1 : 0
+      );
+      const ids = values.map((a) => a.itemId);
+      var finalItems = [];
+      if (ids.length > 25) {
+        ids = ids.slice(0, 26);
+      }
+      for (var i = 0; i < ids.length; i++) {
+        console.log("I am here");
+        await Book.findOne({ _id: ids[i] }).then((bookresult) => {
+          if (bookresult) {
+            finalItems.push(bookresult);
+          }
+        });
+        await Movie.findOne({ _id: ids[i] }).then((movieresult) => {
+          if (movieresult) {
+            finalItems.push(movieresult);
+          }
+        });
+        await Application.findOne({ _id: ids[i] }).then((appresult) => {
+          if (appresult) {
+            finalItems.push(appresult);
+          }
+        });
+      }
+      console.log(finalItems);
+      res.render("lastvisited", { items: finalItems });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 // app.get("/uploadReview", () => {
