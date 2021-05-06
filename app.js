@@ -7,10 +7,7 @@ const nodemailer = require("nodemailer");
 const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
-const {
-  cwd,
-  resourceUsage
-} = require("process");
+const { cwd, resourceUsage } = require("process");
 var ObjectId = require("mongodb").ObjectID;
 const User = require("./models/user");
 
@@ -71,9 +68,11 @@ const movieSchema = {
   yearProduced: String,
   duration: String,
   price: String,
-  genre: [{
-    type: String,
-  }, ],
+  genre: [
+    {
+      type: String,
+    },
+  ],
   video: String,
   description: String,
   actors: String,
@@ -82,11 +81,12 @@ const movieSchema = {
   quality: String,
   audioLanguage: String,
   subtitles: String,
-  group: [{
-    type: String
-  }]
+  group: [
+    {
+      type: String,
+    },
+  ],
 };
-
 
 // movie model with movies collection
 const Movie = mongoose.model("Movie", movieSchema);
@@ -98,9 +98,11 @@ const bookSchema = {
   rating: Number,
   creator: String,
   date: String,
-  genre: [{
-    type: String,
-  }, ],
+  genre: [
+    {
+      type: String,
+    },
+  ],
   price: String,
   description: String,
   more: String,
@@ -111,7 +113,7 @@ const bookSchema = {
   features: String,
   bestFor: String,
   language: String,
-  group: String
+  group: String,
 };
 
 // book model with books collection
@@ -122,13 +124,17 @@ const appSchema = {
   title: String,
   mainImage: String,
   rating: Number,
-  genre: [{
-    type: String,
-  }, ],
+  genre: [
+    {
+      type: String,
+    },
+  ],
   video: String,
-  images: [{
-    type: String,
-  }, ],
+  images: [
+    {
+      type: String,
+    },
+  ],
   description: String,
   more: String,
   updated: String,
@@ -142,9 +148,11 @@ const appSchema = {
   permission: String,
   offeredBy: String,
   developer: String,
-  group: [{
-    type: String,
-  }]
+  group: [
+    {
+      type: String,
+    },
+  ],
 };
 
 // app model with apps collection
@@ -161,31 +169,38 @@ const reviewSchema = {
   total: {
     type: "String",
   },
-  reviews: [{
-    type: mongoose.Schema.Types.Mixed,
-  }, ],
+  reviews: [
+    {
+      type: mongoose.Schema.Types.Mixed,
+    },
+  ],
 };
 
 // app model with apps collection
 const Review = mongoose.model("Review", reviewSchema);
 
-app.get("/", async (req, res) => { //isLoggedIn,
+app.get("/", async (req, res) => {
+  //isLoggedIn,
 
-  const linkArr = ["Top-Selling Movies", "Business & Investing", "Top-selling eBooks", "Superhero movies"];
+  const linkArr = [
+    "Top-Selling Movies",
+    "Business & Investing",
+    "Top-selling eBooks",
+    "Superhero movies",
+  ];
 
   const topMovies = await Movie.find({
-    group: "Top-Selling Movies"
-  })
+    group: "Top-Selling Movies",
+  });
   const bussBooks = await Book.find({
-    group: "Business & Investing"
-  })
+    group: "Business & Investing",
+  });
   const topBooks = await Book.find({
-    group: "Top-selling eBooks"
-  })
+    group: "Top-selling eBooks",
+  });
   const actionMovies = await Movie.find({
-    group: "Superhero movies"
-  })
-
+    group: "Superhero movies",
+  });
 
   return res.render("entertainment", {
     topMovies: topMovies,
@@ -196,28 +211,32 @@ app.get("/", async (req, res) => { //isLoggedIn,
   });
 });
 
+app.get("/movies", async (req, res) => {
+  //isLoggedIn,
 
-app.get("/movies", async (req, res) => { //isLoggedIn,
+  const linkArr = [
+    "Top-Selling Movies",
+    "New rental movies",
+    "Recommended For You",
+    "Superhero movies",
+  ];
 
-  const linkArr = ["Top-Selling Movies", "New rental movies", "Recommended For You", "Superhero movies"];
-
-  const linkArr2 = ["Top charts", "New releases"]
+  const linkArr2 = ["Top charts", "New releases"];
 
   const linkType = "seemoremov";
 
   const topMovies = await Movie.find({
-    group: "Top-Selling Movies"
-  })
+    group: "Top-Selling Movies",
+  });
   const newMovies = await Movie.find({
-    group: "New rental movies"
-  })
+    group: "New rental movies",
+  });
   const recMovies = await Movie.find({
-    group: "Recommended For You"
-  })
+    group: "Recommended For You",
+  });
   const actionMovies = await Movie.find({
-    group: "Superhero movies"
-  })
-
+    group: "Superhero movies",
+  });
 
   return res.render("movieCategories", {
     topMovies: topMovies,
@@ -226,17 +245,18 @@ app.get("/movies", async (req, res) => { //isLoggedIn,
     actionMovies: actionMovies,
     linkArr: linkArr,
     linkType: linkType,
-    linkArr2: linkArr2
+    linkArr2: linkArr2,
   });
 });
 
 app.get("/seemoremov/:listName", (req, res) => {
   const listName = req.params.listName;
   // finding all documents in movies collection
-  Movie.find({
+  Movie.find(
+    {
       group: listName,
     },
-    function(err, movies) {
+    function (err, movies) {
       // passing array of movies documents to seemoremov.ejs
       res.render("seemoremov", {
         listTitle: listName,
@@ -247,26 +267,29 @@ app.get("/seemoremov/:listName", (req, res) => {
 });
 
 app.get("/books", async (req, res) => {
-
-  const linkArr = ["Top-selling eBooks", "Business & Investing", "Deals on eBooks", "Fiction & Literature"];
+  const linkArr = [
+    "Top-selling eBooks",
+    "Business & Investing",
+    "Deals on eBooks",
+    "Fiction & Literature",
+  ];
 
   const linkArr2 = ["Top charts", "New releases"];
 
   const linkType = "seemorebooks";
 
   const topBooks = await Book.find({
-    group: "Top-selling eBooks"
-  })
+    group: "Top-selling eBooks",
+  });
   const bussBooks = await Book.find({
-    group: "Business & Investing"
-  })
+    group: "Business & Investing",
+  });
   const dealBooks = await Book.find({
-    group: "Deals on eBooks"
-  })
+    group: "Deals on eBooks",
+  });
   const litBooks = await Book.find({
-    group: "Fiction & Literature"
-  })
-
+    group: "Fiction & Literature",
+  });
 
   return res.render("bookCategories", {
     topBooks: topBooks,
@@ -275,17 +298,18 @@ app.get("/books", async (req, res) => {
     litBooks: litBooks,
     linkArr: linkArr,
     linkType: linkType,
-    linkArr2: linkArr2
+    linkArr2: linkArr2,
   });
 });
 
 app.get("/seemorebooks/:listName", (req, res) => {
   const listName = req.params.listName;
   // finding all documents in movies collection
-  Book.find({
+  Book.find(
+    {
       group: listName,
     },
-    function(err, books) {
+    function (err, books) {
       // passing array of movies documents to seemoremov.ejs
       res.render("seemorebooks", {
         listTitle: listName,
@@ -298,17 +322,18 @@ app.get("/seemorebooks/:listName", (req, res) => {
 app.get("/searchmoreMovies/:searchStr", (req, res) => {
   const searchStr = req.params.searchStr;
 
-  const regex = new RegExp(escapeRegex(searchStr), 'gi');
+  const regex = new RegExp(escapeRegex(searchStr), "gi");
 
   // finding all documents in movies collection
-  Movie.find({
+  Movie.find(
+    {
       title: regex,
     },
-    function(err, movies) {
+    function (err, movies) {
       // passing array of movies documents to seemoremov.ejs
       res.render("seemoremov", {
         listTitle: "Movies",
-        movies: movies
+        movies: movies,
       });
     }
   );
@@ -317,43 +342,47 @@ app.get("/searchmoreMovies/:searchStr", (req, res) => {
 app.get("/searchmoreBooks/:searchStr", (req, res) => {
   const searchStr = req.params.searchStr;
 
-  const regex = new RegExp(escapeRegex(searchStr), 'gi');
+  const regex = new RegExp(escapeRegex(searchStr), "gi");
 
   // finding all documents in movies collection
-  Book.find({
+  Book.find(
+    {
       title: regex,
     },
-    function(err, books) {
+    function (err, books) {
       // passing array of movies documents to seemoremov.ejs
       res.render("seemorebooks", {
         listTitle: "Books",
-        books: books
+        books: books,
       });
     }
   );
 });
 
 app.get("/apps", async (req, res) => {
+  const linkArr = [
+    "New & Updated Games",
+    "Recommended For You",
+    "Just Updated",
+    "Discover Science",
+  ];
 
-  const linkArr = ["New & Updated Games", "Recommended For You", "Just Updated", "Discover Science"];
-
-  const linkArr2 = ["Top charts", "New releases"]
+  const linkArr2 = ["Top charts", "New releases"];
 
   const linkType = "seemoreapps";
 
   const newApps = await Application.find({
-    group: "New & Updated Games"
-  })
+    group: "New & Updated Games",
+  });
   const recApps = await Application.find({
-    group: "Recommended For You"
-  })
+    group: "Recommended For You",
+  });
   const upApps = await Application.find({
-    group: "Just Updated"
-  })
+    group: "Just Updated",
+  });
   const sciApps = await Application.find({
-    group: "Discover Science"
-  })
-
+    group: "Discover Science",
+  });
 
   return res.render("appCategories", {
     newApps: newApps,
@@ -362,21 +391,22 @@ app.get("/apps", async (req, res) => {
     sciApps: sciApps,
     linkArr: linkArr,
     linkType: linkType,
-    linkArr2: linkArr2
+    linkArr2: linkArr2,
   });
 });
 
 app.get("/seemoreApps/:listName", (req, res) => {
   const listName = req.params.listName;
   // finding all documents in movies collection
-  Application.find({
+  Application.find(
+    {
       group: listName,
     },
-    function(err, apps) {
+    function (err, apps) {
       // passing array of movies documents to seemoremov.ejs
       res.render("seemoreapps", {
         listTitle: listName,
-        apps: apps
+        apps: apps,
       });
     }
   );
@@ -385,17 +415,18 @@ app.get("/seemoreApps/:listName", (req, res) => {
 app.get("/searchmoreapps/:searchStr", (req, res) => {
   const searchStr = req.params.searchStr;
 
-  const regex = new RegExp(escapeRegex(searchStr), 'gi');
+  const regex = new RegExp(escapeRegex(searchStr), "gi");
 
   // finding all documents in movies collection
-  Application.find({
+  Application.find(
+    {
       title: regex,
     },
-    function(err, apps) {
+    function (err, apps) {
       // passing array of movies documents to seemoremov.ejs
       res.render("seemoreapps", {
         listTitle: "Apps",
-        apps: apps
+        apps: apps,
       });
     }
   );
@@ -409,44 +440,43 @@ app.get("/test", (req, res) => {
 app.get("/search", async (req, res) => {
   const searchStr = req.query.searchStr;
 
-  const regex = new RegExp(escapeRegex(searchStr), 'gi');
+  const regex = new RegExp(escapeRegex(searchStr), "gi");
 
   const linkArr = ["Movies", "Books", "Apps"];
 
   const appSearch = await Application.find({
-    title: regex
-  })
+    title: regex,
+  });
   const bookSearch = await Book.find({
-    title: regex
-  })
+    title: regex,
+  });
   const movieSearch = await Movie.find({
-    title: regex
-  })
+    title: regex,
+  });
 
   return res.render("searchResults", {
     appSearch: appSearch,
     bookSearch: bookSearch,
     movieSearch: movieSearch,
     searchStr: searchStr,
-    linkArr: linkArr
+    linkArr: linkArr,
   });
-
 });
 
 //get selected-app item
 app.get("/apps/:id", (req, res) => {
   const id = req.params.id;
   Application.findById({
-      _id: ObjectId(id),
-    })
+    _id: ObjectId(id),
+  })
     .then((result) => {
       Review.findOne({
-          type: "app",
-        })
+        type: "app",
+      })
         .then((appReview) => {
           Application.find({
-              group: result.group[0]
-            })
+            group: result.group[0],
+          })
             .then((finalRes) => {
               res.render("pages/app", {
                 app: result,
@@ -471,16 +501,16 @@ app.get("/apps/:id", (req, res) => {
 app.get("/movies/:id", (req, res) => {
   const id = req.params.id;
   Movie.findById({
-      _id: ObjectId(id),
-    })
+    _id: ObjectId(id),
+  })
     .then((result) => {
       Review.findOne({
-          type: "movie",
-        })
+        type: "movie",
+      })
         .then((movReview) => {
           Movie.find({
-              group: result.group[0]
-            })
+            group: result.group[0],
+          })
             .then((finalRes) => {
               res.render("pages/movie", {
                 movie: result,
@@ -504,15 +534,15 @@ app.get("/movies/:id", (req, res) => {
 app.get("/books/:id", (req, res) => {
   const id = req.params.id;
   Book.findById({
-      _id: ObjectId(id),
-    })
+    _id: ObjectId(id),
+  })
     .then((result) => {
       Review.findOne({
-          type: "book",
-        })
+        type: "book",
+      })
         .then((bookReview) => {
           Book.find({
-            group: result.group
+            group: result.group,
           }).then((finalRes) => {
             res.render("pages/book", {
               book: result,
@@ -540,7 +570,7 @@ app.post(
     successRedirect: "/",
     failureRedirect: "/signin",
   }),
-  function(req, res) {}
+  function (req, res) {}
 );
 app.get("/signup", (req, res) => {
   res.render("signup");
@@ -552,18 +582,18 @@ app.post("/signup", (req, res) => {
       username: req.body.username,
     }),
     req.body.password,
-    function(err, user) {
+    function (err, user) {
       if (err) {
         console.log(err);
         res.render("signup");
       } else if (req.body.cpassword != req.body.password) {
         res.render("signup");
       }
-      passport.authenticate("local")(req, res, function() {
+      passport.authenticate("local")(req, res, function () {
         res.redirect("/signin"); //
       });
     },
-    passport.authenticate("local")(req, res, function() {
+    passport.authenticate("local")(req, res, function () {
       res.redirect("/signin"); //
       //var usern = req.body.username;
     })
@@ -589,10 +619,11 @@ app.post("/sendemail", isLoggedIn, (req, res) => {
     from: "gpstore084@gmail.com",
     to: req.user.username,
     subject: "Cloned Playstore News and Offers",
-    text: "Starting from now, you will start receiving emails about new releases and offers related to our website. \nYou can stop us from sending such emails whenever you want",
+    text:
+      "Starting from now, you will start receiving emails about new releases and offers related to our website. \nYou can stop us from sending such emails whenever you want",
   };
 
-  transporter.sendMail(mailOptions, function(error, info) {
+  transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
       res.redirect("/");
@@ -615,10 +646,11 @@ app.post("/stopsendemail", isLoggedIn, (req, res) => {
     from: "gpstore084@gmail.com",
     to: req.user.username,
     subject: "Cloned Playstore News and Offers",
-    text: "You will no longer receive emails about new releases and offers related to our website. \nThe feature has been stopped.",
+    text:
+      "You will no longer receive emails about new releases and offers related to our website. \nThe feature has been stopped.",
   };
 
-  transporter.sendMail(mailOptions, function(error, info) {
+  transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
       res.redirect("/");
@@ -629,7 +661,7 @@ app.post("/stopsendemail", isLoggedIn, (req, res) => {
   });
 });
 app.post("/logout", (req, res) => {
-  req.session.destroy(function(err) {
+  req.session.destroy(function (err) {
     res.redirect("/signin");
   });
 });
@@ -641,6 +673,12 @@ function isLoggedIn(req, res, next) {
   res.redirect("/signin");
 }
 
+app.get("/lastvisited", (req, res) => {
+  Book.find().then((result) => {
+    res.render("lastvisited", { items: result });
+  });
+});
+
 // app.get("/uploadReview", () => {
 //   console.log("started ...");
 //   console.log("Finished ...");
@@ -648,7 +686,7 @@ function isLoggedIn(req, res, next) {
 
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-};
+}
 
 // listen on port 3000
 app.listen(3000, () => {
