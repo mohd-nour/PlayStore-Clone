@@ -100,14 +100,14 @@ div {
   font: 13px/27px Arial, sans-serif;
 }
 
-.logo > a > img {
+.logo>a>img {
   width: 183px;
   height: 39px;
   border: 0;
   vertical-align: middle;
 }
 
-.logo > a {
+.logo>a {
   display: inline-block;
   outline: none;
   vertical-align: middle;
@@ -208,7 +208,7 @@ body {
 }
 
 img {
-  width: 65px;
+  width: auto;
   margin: 0;
   padding: 0;
 }
@@ -271,6 +271,10 @@ img {
   text-align: center;
 }
 
+.prof_sign2 img {
+  width: 65px;
+}
+
 .prof_sign3 {
   width: 100%;
 }
@@ -279,7 +283,7 @@ img {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.prof_sign3 > div > input {
+.prof_sign3>div>input {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -298,7 +302,7 @@ img {
   position: relative;
 }
 
-.profile > a {
+.profile>a {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -765,15 +769,17 @@ a {
   margin-top: 17px;
 }
 
-.currency{
+.currency {
   margin-top: 15px;
 }
-.currency_label{
-    color: #737373;
-    font-family: "Roboto", arial, sans-serif;
-    font-size: 15px;
-    width: 100px;
+
+.currency_label {
+  color: #737373;
+  font-family: "Roboto", arial, sans-serif;
+  font-size: 15px;
+  width: 100px;
 }
+
 .help_settings_container {
   float: right;
   width: 370px;
