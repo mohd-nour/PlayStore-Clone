@@ -41,10 +41,10 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
+      <% if (newApps.length != 0) { %>
+      <% for (i=0; i<newApps.length && i<7; i++) { %>
+      <% if (i>3) { %>
       <a href="apps/<%= newApps[i]._id %>">
-        <% if (newApps.length != 0) { %>
-        <% for (i=0; i<newApps.length && i<7; i++) { %>
-        <% if (i>3) { %>
         <% var card = "card-" + (i + 1)%>
         <div class="listing-card <%= card %>">
           <div class="listing-top-app" style="background-image: url(<%= newApps[i].mainImage %>)"></div>
@@ -63,7 +63,9 @@
             </div>
           </div>
         </div>
-        <% }  else { %>
+      </a>
+      <% }  else { %>
+      <a href="apps/<%= newApps[i]._id %>">
         <div class="listing-card">
           <div class="listing-top-app" style="background-image: url(<%= newApps[i].mainImage %>)"></div>
           <div class="listing-bottom">
@@ -81,12 +83,12 @@
             </div>
           </div>
         </div>
-        <% } %>
-        <% } %>
-        <% } else { %>
-        <h3> No related results </h3>
-        <% } %>
       </a>
+      <% } %>
+      <% } %>
+      <% } else { %>
+      <h3> No related results </h3>
+      <% } %>
     </div>
   </div>
   </div>
@@ -110,10 +112,10 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
+      <% if (recApps.length != 0) { %>
+      <% for (i=0; i<recApps.length && i<7; i++) { %>
+      <% if (i>3) { %>
       <a href="apps/<%= recApps[i]._id %>">
-        <% if (recApps.length != 0) { %>
-        <% for (i=0; i<recApps.length && i<7; i++) { %>
-        <% if (i>3) { %>
         <% var card = "card-" + (i + 1)%>
         <div class="listing-card <%= card %>">
           <div class="listing-top-app" style="background-image: url(<%= recApps[i].mainImage %>)"></div>
@@ -132,7 +134,9 @@
             </div>
           </div>
         </div>
-        <% }  else { %>
+      </a>
+      <% }  else { %>
+      <a href="apps/<%= recApps[i]._id %>">
         <div class="listing-card">
           <div class="listing-top-app" style="background-image: url(<%= recApps[i].mainImage %>)"></div>
           <div class="listing-bottom">
@@ -150,12 +154,12 @@
             </div>
           </div>
         </div>
-        <% } %>
-        <% } %>
-        <% } else { %>
-        <h3> No related results </h3>
-        <% } %>
       </a>
+      <% } %>
+      <% } %>
+      <% } else { %>
+      <h3> No related results </h3>
+      <% } %>
     </div>
   </div>
   </div>
@@ -179,10 +183,10 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
+      <% if (upApps.length != 0) { %>
+      <% for (i=0; i<upApps.length && i<7; i++) { %>
+      <% if (i>3) { %>
       <a href="apps/<%= upApps[i]._id %>">
-        <% if (upApps.length != 0) { %>
-        <% for (i=0; i<upApps.length && i<7; i++) { %>
-        <% if (i>3) { %>
         <% var card = "card-" + (i + 1)%>
         <div class="listing-card <%= card %>">
           <div class="listing-top-app" style="background-image: url(<%= upApps[i].mainImage %>)"></div>
@@ -201,7 +205,9 @@
             </div>
           </div>
         </div>
-        <% }  else { %>
+      </a>
+      <% }  else { %>
+      <a href="apps/<%= upApps[i]._id %>">
         <div class="listing-card">
           <div class="listing-top-app" style="background-image: url(<%= upApps[i].mainImage %>)"></div>
           <div class="listing-bottom">
@@ -219,12 +225,12 @@
             </div>
           </div>
         </div>
-        <% } %>
-        <% } %>
-        <% } else { %>
-        <h3> No related results </h3>
-        <% } %>
       </a>
+      <% } %>
+      <% } %>
+      <% } else { %>
+      <h3> No related results </h3>
+      <% } %>
     </div>
   </div>
   </div>
@@ -233,10 +239,10 @@
   <div class="category-container">
     <div class="title-header">
       <div class="heading-title">
-        <h2 class="category-title">Discover sciAppsence</h2>
+        <h2 class="category-title">Discover Science</h2>
       </div>
       <div class="see-more">
-        <form action="/seemoreapps/Discover sciAppsence" method="get">
+        <form action="/seemoreapps/Discover Science" method="get">
           <button class="see-more-btn" type="submit" name="button">
             See more
           </button>
@@ -248,10 +254,11 @@
     <div class="listing-body">
       <!-- Loop over first 4 top cards -->
       <!-- Card -->
+
+      <% if (sciApps.length != 0) { %>
+      <% for (i=0; i<sciApps.length && i<7; i++) { %>
+      <% if (i>3) { %>
       <a href="apps/<%= sciApps[i]._id %>">
-        <% if (sciApps.length != 0) { %>
-        <% for (i=0; i<sciApps.length && i<7; i++) { %>
-        <% if (i>3) { %>
         <% var card = "card-" + (i + 1)%>
         <div class="listing-card <%= card %>">
           <div class="listing-top-app" style="background-image: url(<%= sciApps[i].mainImage %>)"></div>
@@ -270,7 +277,9 @@
             </div>
           </div>
         </div>
-        <% }  else { %>
+      </a>
+      <% }  else { %>
+      <a href="apps/<%= sciApps[i]._id %>">
         <div class="listing-card">
           <div class="listing-top-app" style="background-image: url(<%= sciApps[i].mainImage %>)"></div>
           <div class="listing-bottom">
@@ -288,14 +297,14 @@
             </div>
           </div>
         </div>
-        <% } %>
-        <% } %>
-        <% } else { %>
-        <h3> No related results </h3>
-        <% } %>
       </a>
+      <% } %>
+      <% } %>
+      <% } else { %>
+      <h3> No related results </h3>
+      <% } %>
     </div>
-    </div>
+  </div>
   </div>
 </body>
 <%- include('partials/footer.ejs') %>
