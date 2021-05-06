@@ -42,42 +42,46 @@
     <% if (movieSearch.length != 0) { %>
     <% for (i=0; i<movieSearch.length && i<7; i++) { %>
     <% if (i>3) { %>
-    <% var card = "card-" + (i + 1)%>
-    <div class="listing-card <%= card %>">
-      <div class="listing-top" style="background-image: url(<%= movieSearch[i].mainImage %>)"></div>
-      <div class="listing-bottom">
-        <a href="#" class="item-title"><%= movieSearch[i].title %></a>
-        <p class="item-subtitle"><%= movieSearch[i].genre %></p>
-        <div class="item-info">
-          <div class="rating">
-            <div class="stars-outer">
-              <div class="stars-inner" style="width: <%= getRating(movieSearch[i].rating) %>"></div>
+    <a href="movies/<%= movieSearch[i]._id %>">
+      <% var card = "card-" + (i + 1)%>
+      <div class="listing-card <%= card %>">
+        <div class="listing-top" style="background-image: url(<%= movieSearch[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= movieSearch[i].title %></a>
+          <p class="item-subtitle"><%= movieSearch[i].genre %></p>
+          <div class="item-info">
+            <div class="rating">
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(movieSearch[i].rating) %>"></div>
+              </div>
             </div>
-          </div>
-          <div class="price">
-            <p>LBP <%= movieSearch[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+            <div class="price">
+              <p>LBP <%= movieSearch[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
     <% }  else { %>
-    <div class="listing-card">
-      <div class="listing-top" style="background-image: url(<%= movieSearch[i].mainImage %>)"></div>
-      <div class="listing-bottom">
-        <a href="#" class="item-title"><%= movieSearch[i].title %></a>
-        <p class="item-subtitle"><%= movieSearch[i].genre %></p>
-        <div class="item-info">
-          <div class="rating">
-            <div class="stars-outer">
-              <div class="stars-inner" style="width: <%= getRating(movieSearch[i].rating) %>"></div>
+    <a href="movies/<%= movieSearch[i]._id %>">
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= movieSearch[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= movieSearch[i].title %></a>
+          <p class="item-subtitle"><%= movieSearch[i].genre %></p>
+          <div class="item-info">
+            <div class="rating">
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(movieSearch[i].rating) %>"></div>
+              </div>
             </div>
-          </div>
-          <div class="price">
-            <p>LBP <%= movieSearch[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+            <div class="price">
+              <p>LBP <%= movieSearch[i].price.match(/\d{0,3}\,*\d{0,3}\,*\d{3}/,'') %></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
     <% } %>
     <% } %>
     <% } else { %>
@@ -106,52 +110,56 @@
     <% if (bookSearch.length != 0) { %>
     <% for (i=0; i<bookSearch.length && i<7; i++) { %>
     <% if (i>3) { %>
-    <% var card = "card-" + (i + 1)%>
-    <div class="listing-card <%= card %>">
-      <div class="listing-top" style="background-image: url(<%= bookSearch[i].mainImage %>)"></div>
-      <div class="listing-bottom">
-        <a href="#" class="item-title"><%= bookSearch[i].title %></a>
-        <p class="item-subtitle"><%= bookSearch[i].genre %></p>
-        <div class="item-info">
-          <div class="rating">
-            <div class="stars-outer">
-              <div class="stars-inner" style="width: <%= getRating(bookSearch[i].rating) %>"></div>
+    <a href="books/<%= bookSearch[i]._id %>">
+      <% var card = "card-" + (i + 1)%>
+      <div class="listing-card <%= card %>">
+        <div class="listing-top" style="background-image: url(<%= bookSearch[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= bookSearch[i].title %></a>
+          <p class="item-subtitle"><%= bookSearch[i].genre %></p>
+          <div class="item-info">
+            <div class="rating">
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(bookSearch[i].rating) %>"></div>
+              </div>
             </div>
-          </div>
-          <div class="price">
-            <% if (bookSearch[i].price.match(/Free ebook/,'')) { %>
-            <p>Free</p>
-            <%    } else { %>
-            <%  const match = bookSearch[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
-            <p><%= match[match.length - 1] %></p>
-            <%  } %>
+            <div class="price">
+              <% if (bookSearch[i].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = bookSearch[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
     <% }  else { %>
-    <div class="listing-card">
-      <div class="listing-top" style="background-image: url(<%= bookSearch[i].mainImage %>)"></div>
-      <div class="listing-bottom">
-        <a href="#" class="item-title"><%= bookSearch[i].title %></a>
-        <p class="item-subtitle"><%= bookSearch[i].genre %></p>
-        <div class="item-info">
-          <div class="rating">
-            <div class="stars-outer">
-              <div class="stars-inner" style="width: <%= getRating(bookSearch[i].rating) %>"></div>
+    <a href="books/<%= bookSearch[i]._id %>">
+      <div class="listing-card">
+        <div class="listing-top" style="background-image: url(<%= bookSearch[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= bookSearch[i].title %></a>
+          <p class="item-subtitle"><%= bookSearch[i].genre %></p>
+          <div class="item-info">
+            <div class="rating">
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(bookSearch[i].rating) %>"></div>
+              </div>
             </div>
-          </div>
-          <div class="price">
-            <% if (bookSearch[i].price.match(/Free ebook/,'')) { %>
-            <p>Free</p>
-            <%    } else { %>
-            <%  const match = bookSearch[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
-            <p><%= match[match.length - 1] %></p>
-            <%  } %>
+            <div class="price">
+              <% if (bookSearch[i].price.match(/Free ebook/,'')) { %>
+              <p>Free</p>
+              <%    } else { %>
+              <%  const match = bookSearch[i].price.match(/\$\d{0,3}\.\d{0,3}/g,'') %>
+              <p><%= match[match.length - 1] %></p>
+              <%  } %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
     <% } %>
     <% } %>
     <% } else { %>
@@ -180,42 +188,46 @@
     <% if (appSearch.length != 0) { %>
     <% for (i=0; i<appSearch.length && i<7; i++) { %>
     <% if (i>3) { %>
-    <% var card = "card-" + (i + 1)%>
-    <div class="listing-card <%= card %>">
-      <div class="listing-top-app" style="background-image: url(<%= appSearch[i].mainImage %>)"></div>
-      <div class="listing-bottom">
-        <a href="#" class="item-title"><%= appSearch[i].title %></a>
-        <p class="item-subtitle"><%= appSearch[i].genre %></p>
-        <div class="item-info">
-          <div class="rating">
-            <div class="stars-outer">
-              <div class="stars-inner" style="width: <%= getRating(appSearch[i].rating) %>"></div>
+    <a href="apps/<%= appSearch[i]._id %>">
+      <% var card = "card-" + (i + 1)%>
+      <div class="listing-card <%= card %>">
+        <div class="listing-top-app" style="background-image: url(<%= appSearch[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= appSearch[i].title %></a>
+          <p class="item-subtitle"><%= appSearch[i].genre %></p>
+          <div class="item-info">
+            <div class="rating">
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(appSearch[i].rating) %>"></div>
+              </div>
             </div>
-          </div>
-          <div class="price">
-            <p>&#8203</p>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
     <% }  else { %>
-    <div class="listing-card">
-      <div class="listing-top-app" style="background-image: url(<%= appSearch[i].mainImage %>)"></div>
-      <div class="listing-bottom">
-        <a href="#" class="item-title"><%= appSearch[i].title %></a>
-        <p class="item-subtitle"><%= appSearch[i].genre %></p>
-        <div class="item-info">
-          <div class="rating">
-            <div class="stars-outer">
-              <div class="stars-inner" style="width: <%= getRating(appSearch[i].rating) %>"></div>
+    <a href="apps/<%= appSearch[i]._id %>">
+      <div class="listing-card">
+        <div class="listing-top-app" style="background-image: url(<%= appSearch[i].mainImage %>)"></div>
+        <div class="listing-bottom">
+          <a href="#" class="item-title"><%= appSearch[i].title %></a>
+          <p class="item-subtitle"><%= appSearch[i].genre %></p>
+          <div class="item-info">
+            <div class="rating">
+              <div class="stars-outer">
+                <div class="stars-inner" style="width: <%= getRating(appSearch[i].rating) %>"></div>
+              </div>
             </div>
-          </div>
-          <div class="price">
-            <p>&#8203</p>
+            <div class="price">
+              <p>&#8203</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
     <% } %>
     <% } %>
     <% } else { %>
