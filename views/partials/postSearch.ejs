@@ -6,8 +6,8 @@
   <title>search</title>
   <link rel="shortcut icon" href="../images/favicon.ico">
   <link rel="stylesheet" href="/css/search.css">
+  <script src="/scripts/search.js" type="text/javascript"></script>
 </head>
-
 <div id="search_bar">
   <div class="logo_container">
     <div class="logo_cont">
@@ -105,6 +105,27 @@
     </li>
   </ul>
 
+  <div class="filter_settings">
+
+    <div class="filter_cont">
+
+    </div>
+
+    <!--<div class="help_settings_container">
+      <div class="h_s_cont">
+        <div class="help_container">
+          <button class="help" id="help">
+            <span class="help_icon" id="help_icon"></span>
+        </div>
+        <div class="settings_container">
+          <div class="settings" id="settings">
+            <span class="settings_icon" id="settings_icon"></span>
+          </div>
+        </div>
+      </div>
+    </div>-->
+  </div>
+
   <div class="left_bottom_categ">
     <ul class="settings_category">
       <!--<li class="account_settings">
@@ -114,13 +135,13 @@
         </a>
       </li>-->
       <li class="account_settings">
-        <a href="/wishlist" class="account_a">
+        <a href="/test" class="account_a">
           <span></span>
           <span class="acc">My wishlist</span>
         </a>
       </li>
       <li class="account_settings">
-        <a href="/lastVisited" class="account_a">
+        <a href="" class="account_a">
           <span></span>
           <span class="acc">Last visited</span>
         </a>
@@ -130,13 +151,9 @@
           <input value="Receive news and offers" type="submit" class="account_a" id="sendemail">
         </li>
       </form>
-      <form action="/stopsendemail" method="POST">
-        <li class="account_settings">
-          <input value="Stop receiving news" type="submit" class="account_a" id="stopsendemail">
-        </li>
-      </form>
     </ul>
   </div>
 </div>
+
 
 </html>
