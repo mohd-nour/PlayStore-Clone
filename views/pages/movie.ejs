@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="../css/selected-item.css" />
     <link rel="stylesheet" href="../css/movie.css" />
     <link rel="stylesheet" href="../css/review.css" />
-    <link rel="stylesheet" href="../css/appCategories.css" />
+    <link rel="stylesheet" href="../css/categories.css" />
     <link rel="stylesheet" href="../css/stars.css" />
     <style>
       #headerPopup {
@@ -240,7 +240,7 @@
               <a class="text-white text-decoration-none" href="/movies"> See more</a> 
             </button>
           </div>
-          <%- include("../partials/similar.ejs", {title: movie.title})%>
+          <%- include("../partials/similar.ejs", {title: movie.title, type:"movies"})%>
         </div>
       </div>
 

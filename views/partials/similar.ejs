@@ -3,10 +3,13 @@
     <%if(similar[i].title == title){%>
         <% i++;%>
     <%}else{%>
-        <div class="listing-card card-6 pt-1" style="width: 90%;">
-            <div class="listing-top" style="background-image: url(<%= similar[i].mainImage %>)"></div>
+      <a href="/<%= type %>/<%=similar[i]._id %>">
+        <div class="listing-card card-6 pt-0 mb-3">
+            <div class="listing-top w-auto h-auto" >
+              <img src="<%= similar[i].mainImage %>" alt="main Image" class="w-100">
+            </div>
               <div class="listing-bottom">
-                <a href="#" class="item-title"><%= similar[i].title %></a>
+                <a href="/<%= type %>/<%=similar[i]._id %>" class="item-title"><%= similar[i].title %></a>
                 <p class="item-subtitle"><%= similar[i].genre.join(', ') %></p>
                 <div class="item-info">
                   <div class="rating">
@@ -20,6 +23,7 @@
                 </div>
               </div>
           </div>
+          </a>
           <% i++; items++;%>
     <%}%>
   <%}%>
