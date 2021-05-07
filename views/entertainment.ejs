@@ -116,7 +116,7 @@
       <% for (i=0; i<bussBooks.length && i<7; i++) { %>
       <% if (i>3) { %>
       <% var card = "card-" + (i + 1)%>
-      <a href="movies/<%= bussBooks[i]._id %>">
+      <a href="books/<%= bussBooks[i]._id %>">
         <div class="listing-card <%= card %>">
           <div class="listing-top" style="background-image: url(<%= bussBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
@@ -141,7 +141,7 @@
         </div>
       </a>
       <% }  else { %>
-      <a href="movies/<%= bussBooks[i]._id %>">
+      <a href="books/<%= bussBooks[i]._id %>">
         <div class="listing-card">
           <div class="listing-top" style="background-image: url(<%= bussBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
@@ -196,7 +196,7 @@
       <% for (i=0; i<topBooks.length && i<7; i++) { %>
       <% if (i>3) { %>
       <% var card = "card-" + (i + 1)%>
-      <a href="movies/<%= topBooks[i]._id %>">
+      <a href="books/<%= topBooks[i]._id %>">
         <div class="listing-card <%= card %>">
           <div class="listing-top" style="background-image: url(<%= topBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
@@ -221,7 +221,7 @@
         </div>
       </a>
       <% }  else { %>
-      <a href="movies/<%= topBooks[i]._id %>">
+      <a href="books/<%= topBooks[i]._id %>">
         <div class="listing-card">
           <div class="listing-top" style="background-image: url(<%= topBooks[i].mainImage %>)"></div>
           <div class="listing-bottom">
