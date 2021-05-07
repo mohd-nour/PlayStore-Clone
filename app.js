@@ -793,7 +793,7 @@ app.get("/lastvisited", isLoggedIn, async (req, res) => {
       var values = req.user.lastVisited.sort((a, b) =>
         a.time < b.time ? 1 : b.time < a.time ? -1 : 0
       );
-      const ids = values.map((a) => a.itemId);
+      var ids = values.map((a) => a.itemId);
       var finalItems = [];
       if (ids.length > 25) {
         ids = ids.slice(0, 26);
@@ -828,7 +828,7 @@ app.get("/wishlist", isLoggedIn, async (req, res) => {
       var values = req.user.wishlist.sort((a, b) =>
         a.time < b.time ? 1 : b.time < a.time ? -1 : 0
       );
-      const ids = values.map((a) => a.itemId);
+      var ids = values.map((a) => a.itemId);
       var finalItems = [];
       for (var i = 0; i < ids.length; i++) {
         await Book.findOne({ _id: ids[i] }).then((bookresult) => {
