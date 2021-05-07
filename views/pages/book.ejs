@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="../css/selected-item.css" />
     <link rel="stylesheet" href="../css/book.css" />
     <link rel="stylesheet" href="../css/review.css" />
-    <link rel="stylesheet" href="../css/appCategories.css" />
+    <link rel="stylesheet" href="../css/categories.css" />
     <link rel="stylesheet" href="../css/stars.css" />
     <style>
       #headerPopup {
@@ -224,7 +224,7 @@
               See more
             </button>
           </div>
-          <%- include("../partials/similar.ejs", {title: book.title})%>
+          <%- include("../partials/similar.ejs", {title: book.title, type:"books"})%>
         </div>
       </div>
     </div>

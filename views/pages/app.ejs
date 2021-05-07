@@ -30,7 +30,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="../css/selected-item.css" />
     <link rel="stylesheet" href="../css/review.css" />
-    <link rel="stylesheet" href="../css/appCategories.css" />
+    <link rel="stylesheet" href="../css/categories.css" />
     <link rel="stylesheet" href="../css/stars.css" />
     <style>
       #headerPopup {
@@ -300,7 +300,7 @@
                 <a class="text-white text-decoration-none" href="/apps">See more</a>
               </button>
             </div>
-            <%- include("../partials/similar.ejs", {title : app.title})%>
+            <%- include("../partials/similar.ejs", {title : app.title, type:"apps"})%>
           </div>
         </div>
       </div>
