@@ -1,10 +1,10 @@
 window.onload = function(){
-    document.getElementById("home_btn").addEventListener("click", home_click);
-    document.getElementById("top_btn").addEventListener("click", top_click);
-    document.getElementById("new_btn").addEventListener("click", new_click);
     document.getElementById("profile_pic").addEventListener("mouseover", pic_display);
     document.getElementById("prof_sign").addEventListener("mouseover", pic_display);
     document.getElementById("prof_sign").addEventListener("mouseout", rem_display);
+    document.getElementById("home_btn").addEventListener("click", home_click);
+    document.getElementById("top_btn").addEventListener("click", top_click);
+    document.getElementById("new_btn").addEventListener("click", new_click);
     //document.getElementById("sendemail").addEventListener("click", SendEmail);
 };
 function pic_display(){
