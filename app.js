@@ -182,7 +182,7 @@ const reviewSchema = {
 // app model with apps collection
 const Review = mongoose.model("Review", reviewSchema);
 
-app.get("/",isLoggedIn, async (req, res) => {
+app.get("/", isLoggedIn, async (req, res) => {
   //isLoggedIn,
   const userName = req.user.username[0].charAt(0).toUpperCase();
   const linkArr = [
@@ -250,7 +250,7 @@ app.get("/movies", isLoggedIn, async (req, res) => {
     linkArr: linkArr,
     linkType: linkType,
     linkArr2: linkArr2,
-    pic:userName,
+    pic: userName,
   });
 });
 
@@ -267,7 +267,7 @@ app.get("/seemoremov/:listName", (req, res) => {
       res.render("seemoremov", {
         listTitle: listName,
         movies: movies,
-        pic:userName
+        pic: userName,
       });
     }
   );
@@ -307,7 +307,7 @@ app.get("/books", async (req, res) => {
     linkArr: linkArr,
     linkType: linkType,
     linkArr2: linkArr2,
-    pic:userName
+    pic: userName,
   });
 });
 
@@ -324,7 +324,7 @@ app.get("/seemorebooks/:listName", (req, res) => {
       res.render("seemorebooks", {
         listTitle: listName,
         books: books,
-        pic:userName
+        pic: userName,
       });
     }
   );
@@ -353,7 +353,7 @@ app.get("/searchmoreMovies/:searchStr", (req, res) => {
       res.render("seemoremov", {
         listTitle: "Movies",
         movies: movies,
-        pic:userName
+        pic: userName,
       });
     }
   );
@@ -382,7 +382,7 @@ app.get("/searchmoreBooks/:searchStr", (req, res) => {
       res.render("seemorebooks", {
         listTitle: "Books",
         books: books,
-        pic:userName
+        pic: userName,
       });
     }
   );
@@ -422,7 +422,7 @@ app.get("/apps", async (req, res) => {
     linkArr: linkArr,
     linkType: linkType,
     linkArr2: linkArr2,
-    pic:userName
+    pic: userName,
   });
 });
 
@@ -439,7 +439,7 @@ app.get("/seemoreApps/:listName", (req, res) => {
       res.render("seemoreapps", {
         listTitle: listName,
         apps: apps,
-        pic:userName
+        pic: userName,
       });
     }
   );
@@ -468,7 +468,7 @@ app.get("/searchmoreapps/:searchStr", (req, res) => {
       res.render("seemoreapps", {
         listTitle: "Apps",
         apps: apps,
-        pic:userName
+        pic: userName,
       });
     }
   );
@@ -520,7 +520,7 @@ app.get("/search", async (req, res) => {
     movieSearch: movieSearch,
     searchStr: searchStr,
     linkArr: linkArr,
-    pic:userName,
+    pic: userName,
   });
 });
 
@@ -555,7 +555,7 @@ app.get("/apps/:id", isLoggedIn, (req, res) => {
                 app: result,
                 review: appReview,
                 similar: finalRes,
-                pic:userName
+                pic: userName,
               });
             })
             .catch((err) => {
@@ -618,7 +618,7 @@ app.get("/movies/:id", isLoggedIn, (req, res) => {
                 movie: result,
                 review: movReview,
                 similar: finalRes,
-                pic:userName
+                pic: userName,
               });
             })
             .catch((err) => {
@@ -663,7 +663,7 @@ app.get("/books/:id", isLoggedIn, (req, res) => {
               book: result,
               review: bookReview,
               similar: finalRes,
-              pic:userName
+              pic: userName,
             });
           });
         })
@@ -814,6 +814,7 @@ function isLoggedIn(req, res, next) {
 }
 
 app.get("/lastvisited", isLoggedIn, async (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   User.find({ _id: req.user._id })
     .then(async (result) => {
       var values = req.user.lastVisited.sort((a, b) =>
@@ -841,7 +842,7 @@ app.get("/lastvisited", isLoggedIn, async (req, res) => {
           }
         });
       }
-      res.render("lastvisited", { items: finalItems });
+      res.render("lastvisited", { items: finalItems, pic: userName });
     })
     .catch((err) => {
       console.log(err);
@@ -849,6 +850,7 @@ app.get("/lastvisited", isLoggedIn, async (req, res) => {
 });
 
 app.get("/wishlist", isLoggedIn, async (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   User.find({ _id: req.user._id })
     .then(async (result) => {
       var values = req.user.wishlist.sort((a, b) =>
@@ -873,7 +875,7 @@ app.get("/wishlist", isLoggedIn, async (req, res) => {
           }
         });
       }
-      res.render("wishlist", { items: finalItems });
+      res.render("wishlist", { items: finalItems, pic: userName });
     })
     .catch((err) => {
       console.log(err);
