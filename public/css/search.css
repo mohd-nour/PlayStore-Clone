@@ -237,12 +237,10 @@ img {
 
 .prof_sign {
   z-index: 11;
-  max-height: calc(100vh - 44px - 15px - 100px);
   display: none;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 350px;
-  height: 150px;
+
+  width: 250px;
+  height: 25px;
   border-radius: 8px;
   margin-left: 12px;
   background: #fff;
@@ -265,7 +263,7 @@ img {
   margin-left: 0px;
   margin-bottom: 10px;
   position: relative;
-  height: 86px;
+  
   width: 100%;
   display: block;
   text-align: center;
@@ -300,6 +298,8 @@ img {
   display: flex;
   flex: 0 1 auto;
   position: relative;
+  background-color: #452711;
+  border-radius: 50%;
 }
 
 .profile>a {
@@ -307,19 +307,14 @@ img {
   text-decoration: none;
   display: inline-block;
   vertical-align: middle;
-  height: 30px;
+  
   width: 30px;
 }
 
 #profile_pic {
-  background-size: 32px 32px;
-  border: 0;
-  border-radius: 50%;
-  display: block;
-  margin: -1px;
-  position: relative;
-  height: 32px;
-  width: 32px;
+  color: white;
+  margin-top: 2px;
+  margin-right: 10px;
 }
 
 #divtwo {
