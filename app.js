@@ -182,9 +182,9 @@ const reviewSchema = {
 // app model with apps collection
 const Review = mongoose.model("Review", reviewSchema);
 
-app.get("/", async (req, res) => {
+app.get("/",isLoggedIn, async (req, res) => {
   //isLoggedIn,
-
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const linkArr = [
     "Top-Selling Movies",
     "Business & Investing",
@@ -211,12 +211,13 @@ app.get("/", async (req, res) => {
     topBooks: topBooks,
     actionMovies: actionMovies,
     linkArr: linkArr,
+    pic: userName,
   });
 });
 
-app.get("/movies", async (req, res) => {
+app.get("/movies", isLoggedIn, async (req, res) => {
   //isLoggedIn,
-
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const linkArr = [
     "Top-Selling Movies",
     "New rental movies",
@@ -249,10 +250,12 @@ app.get("/movies", async (req, res) => {
     linkArr: linkArr,
     linkType: linkType,
     linkArr2: linkArr2,
+    pic:userName,
   });
 });
 
 app.get("/seemoremov/:listName", (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const listName = req.params.listName;
   // finding all documents in movies collection
   Movie.find(
@@ -264,12 +267,14 @@ app.get("/seemoremov/:listName", (req, res) => {
       res.render("seemoremov", {
         listTitle: listName,
         movies: movies,
+        pic:userName
       });
     }
   );
 });
 
 app.get("/books", async (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const linkArr = [
     "Top-selling eBooks",
     "Business & Investing",
@@ -302,10 +307,12 @@ app.get("/books", async (req, res) => {
     linkArr: linkArr,
     linkType: linkType,
     linkArr2: linkArr2,
+    pic:userName
   });
 });
 
 app.get("/seemorebooks/:listName", (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const listName = req.params.listName;
   // finding all documents in movies collection
   Book.find(
@@ -317,12 +324,14 @@ app.get("/seemorebooks/:listName", (req, res) => {
       res.render("seemorebooks", {
         listTitle: listName,
         books: books,
+        pic:userName
       });
     }
   );
 });
 
 app.get("/searchmoreMovies/:searchStr", (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const searchStr = req.params.searchStr;
 
   const regex = new RegExp(escapeRegex(searchStr), "gi");
@@ -344,12 +353,14 @@ app.get("/searchmoreMovies/:searchStr", (req, res) => {
       res.render("seemoremov", {
         listTitle: "Movies",
         movies: movies,
+        pic:userName
       });
     }
   );
 });
 
 app.get("/searchmoreBooks/:searchStr", (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const searchStr = req.params.searchStr;
 
   const regex = new RegExp(escapeRegex(searchStr), "gi");
@@ -371,12 +382,14 @@ app.get("/searchmoreBooks/:searchStr", (req, res) => {
       res.render("seemorebooks", {
         listTitle: "Books",
         books: books,
+        pic:userName
       });
     }
   );
 });
 
 app.get("/apps", async (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const linkArr = [
     "New & Updated Games",
     "Recommended For You",
@@ -409,10 +422,12 @@ app.get("/apps", async (req, res) => {
     linkArr: linkArr,
     linkType: linkType,
     linkArr2: linkArr2,
+    pic:userName
   });
 });
 
 app.get("/seemoreApps/:listName", (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const listName = req.params.listName;
   // finding all documents in movies collection
   Application.find(
@@ -424,12 +439,14 @@ app.get("/seemoreApps/:listName", (req, res) => {
       res.render("seemoreapps", {
         listTitle: listName,
         apps: apps,
+        pic:userName
       });
     }
   );
 });
 
 app.get("/searchmoreapps/:searchStr", (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const searchStr = req.params.searchStr;
 
   const regex = new RegExp(escapeRegex(searchStr), "gi");
@@ -451,6 +468,7 @@ app.get("/searchmoreapps/:searchStr", (req, res) => {
       res.render("seemoreapps", {
         listTitle: "Apps",
         apps: apps,
+        pic:userName
       });
     }
   );
@@ -458,6 +476,7 @@ app.get("/searchmoreapps/:searchStr", (req, res) => {
 
 // Fuzzy search functionality
 app.get("/search", async (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const searchStr = req.query.searchStr;
 
   const regex = new RegExp(escapeRegex(searchStr), "gi");
@@ -501,11 +520,13 @@ app.get("/search", async (req, res) => {
     movieSearch: movieSearch,
     searchStr: searchStr,
     linkArr: linkArr,
+    pic:userName,
   });
 });
 
 //get selected-app item
 app.get("/apps/:id", isLoggedIn, (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const id = req.params.id;
   Application.findById({
     _id: ObjectId(id),
@@ -534,6 +555,7 @@ app.get("/apps/:id", isLoggedIn, (req, res) => {
                 app: result,
                 review: appReview,
                 similar: finalRes,
+                pic:userName
               });
             })
             .catch((err) => {
@@ -567,6 +589,7 @@ app.post("/add", isLoggedIn, (req, res) => {
 
 //get selected movie
 app.get("/movies/:id", isLoggedIn, (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const id = req.params.id;
   Movie.findById({
     _id: ObjectId(id),
@@ -595,6 +618,7 @@ app.get("/movies/:id", isLoggedIn, (req, res) => {
                 movie: result,
                 review: movReview,
                 similar: finalRes,
+                pic:userName
               });
             })
             .catch((err) => {
@@ -611,6 +635,7 @@ app.get("/movies/:id", isLoggedIn, (req, res) => {
 });
 
 app.get("/books/:id", isLoggedIn, (req, res) => {
+  const userName = req.user.username[0].charAt(0).toUpperCase();
   const id = req.params.id;
   Book.findById({
     _id: ObjectId(id),
@@ -638,6 +663,7 @@ app.get("/books/:id", isLoggedIn, (req, res) => {
               book: result,
               review: bookReview,
               similar: finalRes,
+              pic:userName
             });
           });
         })
